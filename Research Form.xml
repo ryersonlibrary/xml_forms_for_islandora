@@ -569,9 +569,132 @@
 				</properties>
 				<children/>
 			</element>
-			<element name="doi"/>
-			<element name="isbn"/>
-			<element name="issn"/>
+			<element name="identifiers">
+				<properties>
+					<type>fieldset</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<description>A collection of fields that are used to identify this publication for a variety of systems and purposes.</description>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Identifiers</title>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="isbn">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<collapsed>FALSE</collapsed>
+							<collapsible>FALSE</collapsible>
+							<description>International Standard Book Number</description>
+							<disabled>FALSE</disabled>
+							<executes_submit_callback>FALSE</executes_submit_callback>
+							<multiple>FALSE</multiple>
+							<required>FALSE</required>
+							<resizable>FALSE</resizable>
+							<title>ISBN</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;identifier type="isbn"&gt;%value%&lt;/identifier&gt;</value>
+								</create>
+								<read>
+									<path>mods:identifier[@type='isbn']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+					<element name="issn">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<collapsed>FALSE</collapsed>
+							<collapsible>FALSE</collapsible>
+							<description>International Standard Serial Number</description>
+							<disabled>FALSE</disabled>
+							<executes_submit_callback>FALSE</executes_submit_callback>
+							<multiple>FALSE</multiple>
+							<required>FALSE</required>
+							<resizable>FALSE</resizable>
+							<title>ISSN</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;identifier type="issn"&gt;%value%&lt;/identifier&gt;</value>
+								</create>
+								<read>
+									<path>mods:identifier[@type='issn']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+					<element name="doi">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<collapsed>FALSE</collapsed>
+							<collapsible>FALSE</collapsible>
+							<description>Digital object identifier of the item</description>
+							<disabled>FALSE</disabled>
+							<executes_submit_callback>FALSE</executes_submit_callback>
+							<multiple>FALSE</multiple>
+							<required>FALSE</required>
+							<resizable>FALSE</resizable>
+							<title>DOI</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;identifier type="doi"&gt;%value%&lt;/identifier&gt;</value>
+								</create>
+								<read>
+									<path>mods:identifier[@type='doi']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
+			</element>
 		</children>
 	</form>
 </definition>
