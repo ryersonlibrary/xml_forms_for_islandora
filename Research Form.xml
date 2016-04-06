@@ -496,10 +496,79 @@
 					</element>
 				</children>
 			</element>
-			<element name="note"/>
+			<element name="note">
+				<properties>
+					<type>textarea</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Note</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>element</type>
+							<prefix>NULL</prefix>
+							<value>note</value>
+						</create>
+						<read>
+							<path>mods:note[not(@*)]</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
 
 			<!-- FORM-SPECIFIC -->
-			<element name="note_citation"/>
+			<element name="note_citation">
+				<properties>
+					<type>textarea</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<description>If this work has been published, please provide as much information as possible (e.g., journal title, pages).</description>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Citation</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>xml</type>
+							<prefix>NULL</prefix>
+							<value>&lt;mods:note type="citation/reference"&gt;%value%&lt;/mods:note&gt;</value>
+						</create>
+						<read>
+							<path>mods:note[@type="citation/reference"]</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
 			<element name="doi"/>
 			<element name="isbn"/>
 			<element name="issn"/>
