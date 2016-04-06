@@ -113,7 +113,40 @@
 				</properties>
 				<children/>
 			</element>
-			<element name="type_of_resource"/>
+			<element name="typeOfResource">
+				<properties>
+					<type>hidden</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>xml</type>
+							<prefix>NULL</prefix>
+							<value>&lt;typeOfResource&gt;text&lt;/typeOfResource&gt;</value>
+						</create>
+						<read>
+							<path>mods:typeOfResource</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
 
 			<element name="titleInfo">
 				<properties>
@@ -187,7 +220,43 @@
 					</element>
 				</children>
 			</element>
-			<element name="abstract"/>
+			<element name="abstract">
+				<properties>
+					<type>textarea</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<description>Abstract or summary of the item</description>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<rows>12</rows>
+					<title>Abstract</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>element</type>
+							<prefix>NULL</prefix>
+							<value>abstract</value>
+						</create>
+						<read>
+							<path>mods:abstract</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
 			<element name="subjects_group"/>
 			<element name="license"/>
 			<element name="date_published"/>
