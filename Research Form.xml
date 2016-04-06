@@ -34,92 +34,110 @@
 			<element name="contributors_personal_group"/>
 			<!-- TODO -->
 			<element name="contributors_corporate_group"/>
+
 			<!-- REQUIRED ELEMENTS -->
-			<element name="genre">
+			<element name="hidden">
 				<properties>
-					<type>textfield</type>
+					<type>fieldset</type>
 					<access>TRUE</access>
-					<default_value>article</default_value>
-					<title>Genre</title>
+					<description>These elements will be hidden and have hardcoded values based on the form.</description>
+					<title>FOR REVIEW ONLY</title>
 					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;genre authority="marcgt"&gt;%value%&lt;/language&gt;</value>
-						</create>
-						<read>
-							<path>mods:genre</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
 				</properties>
-				<children/>
+				<children>
+					<element name="genre">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<default_value>article</default_value>
+							<title>Genre</title>
+							<description>Values constrained to marcgt terms</description>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;genre authority="marcgt"&gt;%value%&lt;/language&gt;</value>
+								</create>
+								<read>
+									<path>mods:genre</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+					<element name="language">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<default_value>eng</default_value>
+							<title>Language</title>
+							<description>Values constrained to iso639-2b</description>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+								</create>
+								<read>
+									<path>mods:language/mods:languageTerm[@authority="iso639-2b" and @type="code"]</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+					<element name="typeOfResource">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<default_value>text</default_value>
+							<title>Type Of Resource</title>
+							<description>Values constrained to MODS guidelines</description>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;typeOfResource&gt;%value%&lt;/typeOfResource&gt;</value>
+								</create>
+								<read>
+									<path>mods:typeOfResource</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
 			</element>
-			<element name="language">
-				<properties>
-					<type>textfield</type>
-					<access>TRUE</access>
-					<description>iso639-2b</description>
-					<title>Language</title>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
-						</create>
-						<read>
-							<path>mods:language/mods:languageTerm[@authority="iso639-2b" and @type="code"]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-			<element name="typeOfResource">
-				<properties>
-					<type>hidden</type>
-					<access>TRUE</access>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;typeOfResource&gt;text&lt;/typeOfResource&gt;</value>
-						</create>
-						<read>
-							<path>mods:typeOfResource</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
+
 			<element name="titleInfo">
 				<properties>
 					<type>markup</type>
@@ -210,54 +228,12 @@
 			</element>
 			<!-- TODO -->
 			<element name="subjects_group"/>
-			<element name="license">
+			<element name="originInfo">
 				<properties>
 					<type>fieldset</type>
 					<access>TRUE</access>
-					<title>Licensing</title>
 					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="accessCondition">
-						<properties>
-							<type>select</type>
-							<access>TRUE</access>
-							<description>Copyright information related to the publication; could be related to who owns the copyright to the abstract, etc.</description>
-							<options>
-								<index key="cc-by">Creative Commons Attribution 4.0 (CC-BY) International Public License</index>
-								<index key="c">All Rights Reserved</index>
-							</options>
-							<title>Copyright Information</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;mods:accessCondition type="restrictionOnAccess"&gt;%value%&lt;/mods:accessCondition&gt;</value>
-								</create>
-								<read>
-									<path>mods:accessCondition[@type='restrictionOnAccess']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
-			</element>
-			<element name="originInfo">
-				<properties>
-					<type>markup</type>
-					<access>TRUE</access>
-					<tree>TRUE</tree>
+					<title>Dates</title>
 					<actions>
 						<create>
 							<path>self::node()</path>
@@ -283,7 +259,8 @@
 						<properties>
 							<type>datepicker</type>
 							<access>TRUE</access>
-							<title>Date Issued</title>
+							<title>Publication Date</title>
+							<description>TODO: more information about dates</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -338,50 +315,36 @@
 					</element>
 				</children>
 			</element>
-			<!-- OPTIONAL ELEMENTS -->
-			<element name="location">
+			<element name="licensing">
 				<properties>
-					<type>markup</type>
+					<type>fieldset</type>
 					<access>TRUE</access>
+					<title>Licensing</title>
 					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>location</value>
-						</create>
-						<read>
-							<path>mods:location</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
 				</properties>
 				<children>
-					<element name="url">
+					<element name="accessCondition">
 						<properties>
-							<type>textfield</type>
+							<type>select</type>
 							<access>TRUE</access>
-							<title>URL</title>
+							<description>Copyright information related to the publication; could be related to who owns the copyright to the abstract, etc.</description>
+							<options>
+								<index key="cc-by">Creative Commons Attribution 4.0 (CC-BY) International Public License</index>
+								<index key="c">All Rights Reserved</index>
+							</options>
+							<title>Copyright Information</title>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
 									<path>self::node()</path>
 									<context>parent</context>
 									<schema/>
-									<type>element</type>
+									<type>xml</type>
 									<prefix>NULL</prefix>
-									<value>url</value>
+									<value>&lt;mods:accessCondition type="restrictionOnAccess"&gt;%value%&lt;/mods:accessCondition&gt;</value>
 								</create>
 								<read>
-									<path>mods:url</path>
+									<path>mods:accessCondition[@type='restrictionOnAccess']</path>
 									<context>parent</context>
 								</read>
 								<update>
@@ -393,36 +356,9 @@
 						</properties>
 						<children/>
 					</element>
-				</children>
-			</element>
-			<element name="note">
-				<properties>
-					<type>textarea</type>
-					<access>TRUE</access>
-					<title>Note</title>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>note</value>
-						</create>
-						<read>
-							<path>mods:note[not(@*)]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
+					</children>
+					</element>
+
 			<!-- FORM-SPECIFIC -->
 			<element name="note_citation">
 				<properties>
@@ -457,7 +393,6 @@
 				<properties>
 					<type>fieldset</type>
 					<access>TRUE</access>
-					<description>A collection of fields that are used to identify this publication for a variety of systems and purposes.</description>
 					<title>Identifiers</title>
 					<tree>TRUE</tree>
 				</properties>
@@ -550,6 +485,92 @@
 						<children/>
 					</element>
 				</children>
+			</element>
+
+			<!-- OPTIONAL ELEMENTS -->
+			<element name="location">
+				<properties>
+					<type>markup</type>
+					<access>TRUE</access>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>element</type>
+							<prefix>NULL</prefix>
+							<value>location</value>
+						</create>
+						<read>
+							<path>mods:location</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children>
+					<element name="url">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<title>URL</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>element</type>
+									<prefix>NULL</prefix>
+									<value>url</value>
+								</create>
+								<read>
+									<path>mods:url</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
+			</element>
+			<element name="note">
+				<properties>
+					<type>textarea</type>
+					<access>TRUE</access>
+					<title>Note</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>element</type>
+							<prefix>NULL</prefix>
+							<value>note</value>
+						</create>
+						<read>
+							<path>mods:note[not(@*)]</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
 			</element>
 		</children>
 	</form>
