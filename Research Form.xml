@@ -34,7 +34,6 @@
 			<element name="contributors_personal_group"/>
 			<!-- TODO -->
 			<element name="contributors_corporate_group"/>
-
 			<!-- REQUIRED ELEMENTS -->
 			<element name="hidden">
 				<properties>
@@ -137,7 +136,6 @@
 					</element>
 				</children>
 			</element>
-
 			<element name="titleInfo">
 				<properties>
 					<type>markup</type>
@@ -356,9 +354,8 @@
 						</properties>
 						<children/>
 					</element>
-					</children>
-					</element>
-
+				</children>
+			</element>
 			<!-- FORM-SPECIFIC -->
 			<element name="note_citation">
 				<properties>
@@ -486,7 +483,6 @@
 					</element>
 				</children>
 			</element>
-
 			<!-- OPTIONAL ELEMENTS -->
 			<element name="location">
 				<properties>

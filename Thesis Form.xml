@@ -34,7 +34,6 @@
 			<element name="contributors_personal_group"/>
 			<!-- TODO -->
 			<element name="contributors_corporate_group"/>
-
 			<!-- REQUIRED ELEMENTS -->
 			<element name="hidden">
 				<properties>
@@ -137,7 +136,6 @@
 					</element>
 				</children>
 			</element>
-
 			<element name="titleInfo">
 				<properties>
 					<type>markup</type>
@@ -317,7 +315,6 @@
 			</element>
 			<!-- TODO -->
 			<element name="license"/>
-
 			<!-- FORM-SPECIFIC -->
 			<element name="extension">
 				<properties>
@@ -434,7 +431,6 @@
 					</element>
 				</children>
 			</element>
-
 			<!-- OPTIONAL ELEMENTS -->
 			<element name="location">
 				<properties>
