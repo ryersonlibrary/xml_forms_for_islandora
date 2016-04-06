@@ -37,7 +37,9 @@
 					1) @type="personal" ; multi-part names
 					2) @type="corporate" ; single-part names
 			-->
+			<!-- TODO -->
 			<element name="contributors_personal_group"/>
+			<!-- TODO -->
 			<element name="contributors_corporate_group"/>
 
 			<!-- REQUIRED ELEMENTS -->
@@ -257,8 +259,65 @@
 				</properties>
 				<children/>
 			</element>
+			<!-- TODO -->
 			<element name="subjects_group"/>
-			<element name="license"/>
+			<element name="license">
+				<properties>
+					<type>fieldset</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Licensing</title>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="accessCondition">
+						<properties>
+							<type>select</type>
+							<access>TRUE</access>
+							<collapsed>FALSE</collapsed>
+							<collapsible>FALSE</collapsible>
+							<description>Copyright information related to the publication; could be related to who owns the copyright to the abstract, etc.</description>
+							<disabled>FALSE</disabled>
+							<executes_submit_callback>FALSE</executes_submit_callback>
+							<multiple>FALSE</multiple>
+							<options>
+								<index key="cc-by">Creative Commons Attribution 4.0 (CC-BY) International Public License</index>
+								<index key="c">All Rights Reserved</index>
+							</options>
+							<required>FALSE</required>
+							<resizable>FALSE</resizable>
+							<title>Copyright Information</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;mods:accessCondition type="restrictionOnAccess"&gt;%value%&lt;/mods:accessCondition&gt;</value>
+								</create>
+								<read>
+									<path>mods:accessCondition[@type='restrictionOnAccess']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
+			</element>
 			<element name="date_published"/>
 
 			<!-- OPTIONAL ELEMENTS -->

@@ -37,7 +37,9 @@
 					1) @type="personal" ; multi-part names
 					2) @type="corporate" ; single-part names
 			-->
+			<!-- TODO -->
 			<element name="contributors_personal_group"/>
+			<!-- TODO -->
 			<element name="contributors_corporate_group"/>
 
 			<!-- REQUIRED ELEMENTS -->
@@ -257,7 +259,9 @@
 				</properties>
 				<children/>
 			</element>
+			<!-- TODO -->
 			<element name="subjects_group"/>
+			<!-- TODO -->
 			<element name="license"/>
 			<element name="date_published"/>
 
