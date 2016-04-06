@@ -331,11 +331,46 @@
 						</properties>
 						<children/>
 					</element>
+					<element name="dateOther">
+						<properties>
+							<type>datepicker</type>
+							<access>TRUE</access>
+							<collapsed>FALSE</collapsed>
+							<collapsible>FALSE</collapsible>
+							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months.</description>
+							<disabled>FALSE</disabled>
+							<executes_submit_callback>FALSE</executes_submit_callback>
+							<multiple>FALSE</multiple>
+							<required>FALSE</required>
+							<resizable>FALSE</resizable>
+							<title>Embargo Date</title>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;mods:dateOther type="dateAvailable"&gt;%value%&lt;/mods:dateOther&gt;</value>
+								</create>
+								<read>
+									<path>mods:dateOther[@type="dateAvailable"]</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
 				</children>
 			</element>
 
 			<!-- OPTIONAL ELEMENTS -->
-			<element name="date_embargo"/>
 			<element name="url"/>
 			<element name="note"/>
 
