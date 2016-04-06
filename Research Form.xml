@@ -41,8 +41,78 @@
 			<element name="contributors_corporate_group"/>
 
 			<!-- REQUIRED ELEMENTS -->
-			<element name="genre"/>
-			<element name="language"/>
+			<element name="genre">
+				<properties>
+					<type>textfield</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<default_value>Dissertation/Thesis</default_value>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Genre</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>xml</type>
+							<prefix>NULL</prefix>
+							<value>&lt;genre authority="marcgt"&gt;%value%&lt;/language&gt;</value>
+						</create>
+						<read>
+							<path>mods:genre</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
+			<element name="language">
+				<properties>
+					<type>textfield</type>
+					<access>TRUE</access>
+					<collapsed>FALSE</collapsed>
+					<collapsible>FALSE</collapsible>
+					<description>iso639-2b</description>
+					<disabled>FALSE</disabled>
+					<executes_submit_callback>FALSE</executes_submit_callback>
+					<multiple>FALSE</multiple>
+					<required>FALSE</required>
+					<resizable>FALSE</resizable>
+					<title>Language</title>
+					<tree>TRUE</tree>
+					<actions>
+						<create>
+							<path>self::node()</path>
+							<context>parent</context>
+							<schema/>
+							<type>xml</type>
+							<prefix>NULL</prefix>
+							<value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+						</create>
+						<read>
+							<path>mods:language/mods:languageTerm[@authority="iso639-2b" and @type="code"]</path>
+							<context>parent</context>
+						</read>
+						<update>
+							<path>self::node()</path>
+							<context>self</context>
+						</update>
+						<delete>NULL</delete>
+					</actions>
+				</properties>
+				<children/>
+			</element>
 			<element name="type_of_resource"/>
 
 			<element name="titleInfo">
