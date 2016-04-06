@@ -59,7 +59,7 @@
 									<schema/>
 									<type>xml</type>
 									<prefix>NULL</prefix>
-									<value>&lt;genre authority="marcgt"&gt;%value%&lt;/language&gt;</value>
+									<value>&lt;genre authority="marcgt"&gt;%value%&lt;/genre&gt;</value>
 								</create>
 								<read>
 									<path>mods:genre</path>
