@@ -484,7 +484,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>Digital Object Identifier (DOI)</title>
-							<description>Begin with prefix number; eg. 10.6084/m9.figshare.3142000</description>
+							<description>Begin with prefix number; eg. 10.6084/m9.figshare.3142000; do not include http://dx.doi.org</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -513,7 +513,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>Uniform Resource Identifier (URI)</title>
-							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, prefix the DOI like: http://dx.doi.org/10.1002/poi3.91</description>
+							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, use the DOI prefixed by http://dx.doi.org/, eg. http://dx.doi.org/10.1002/poi3.91</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -544,6 +544,7 @@
 					<type>textarea</type>
 					<access>TRUE</access>
 					<title>Note</title>
+					<description>Any additional information about the item that may be relevant.</description>
 					<tree>TRUE</tree>
 					<actions>
 						<create>
