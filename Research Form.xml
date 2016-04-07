@@ -134,6 +134,63 @@
 						</properties>
 						<children/>
 					</element>
+					<element name="location">
+						<properties>
+							<type>markup</type>
+							<access>TRUE</access>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>element</type>
+									<prefix>NULL</prefix>
+									<value>location</value>
+								</create>
+								<read>
+									<path>mods:location</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children>
+							<element name="url">
+								<properties>
+									<type>markup</type>
+									<access>TRUE</access>
+									<title>URL</title>
+									<description>This will create an empty element used by the OAI module to inject a URL for the object.</description>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>element</type>
+											<prefix>NULL</prefix>
+											<value>url</value>
+										</create>
+										<read>
+											<path>mods:url</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+						</children>
+					</element>
 				</children>
 			</element>
 			<element name="titleInfo">
@@ -166,7 +223,7 @@
 						<properties>
 							<type>textarea</type>
 							<access>TRUE</access>
-							<description>The title of this publication.</description>
+							<description>Title of the item.</description>
 							<rows>2</rows>
 							<title>Title</title>
 							<tree>TRUE</tree>
@@ -198,7 +255,7 @@
 				<properties>
 					<type>textarea</type>
 					<access>TRUE</access>
-					<description>Abstract or summary of the item</description>
+					<description>Abstract or summary of the item.</description>
 					<rows>12</rows>
 					<title>Abstract</title>
 					<tree>TRUE</tree>
@@ -258,7 +315,7 @@
 							<type>datepicker</type>
 							<access>TRUE</access>
 							<title>Publication Date</title>
-							<description>TODO: more information about dates</description>
+							<description>Date of publication (if published) or last revised date.</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -286,7 +343,7 @@
 						<properties>
 							<type>datepicker</type>
 							<access>TRUE</access>
-							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months.</description>
+							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
 							<title>Embargo Date</title>
 							<tree>TRUE</tree>
 							<actions>
@@ -398,8 +455,8 @@
 						<properties>
 							<type>textfield</type>
 							<access>TRUE</access>
-							<description>International Standard Book Number</description>
-							<title>ISBN</title>
+							<title>International Standard Book Number (ISBN)</title>
+							<description>Include hyphens in 10- or 13-digit number; eg. 978-0-662-48548-3</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -423,41 +480,12 @@
 						</properties>
 						<children/>
 					</element>
-					<element name="issn">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<description>International Standard Serial Number</description>
-							<title>ISSN</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;identifier type="issn"&gt;%value%&lt;/identifier&gt;</value>
-								</create>
-								<read>
-									<path>mods:identifier[@type='issn']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
 					<element name="doi">
 						<properties>
 							<type>textfield</type>
 							<access>TRUE</access>
-							<description>Digital object identifier of the item</description>
-							<title>DOI</title>
+							<title>Digital Object Identifier (DOI)</title>
+							<description>Begin with prefix number; eg. 10.6084/m9.figshare.3142000</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -484,22 +512,24 @@
 				</children>
 			</element>
 			<!-- OPTIONAL ELEMENTS -->
-			<element name="location">
+			<element name="uri">
 				<properties>
-					<type>markup</type>
+					<type>textfield</type>
 					<access>TRUE</access>
+					<title>Uniform Resource Identifier (URI)</title>
+					<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, prefix the DOI like: http://dx.doi.org/10.1002/poi3.91</description>
 					<tree>TRUE</tree>
 					<actions>
 						<create>
 							<path>self::node()</path>
 							<context>parent</context>
 							<schema/>
-							<type>element</type>
+							<type>xml</type>
 							<prefix>NULL</prefix>
-							<value>location</value>
+							<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
 						</create>
 						<read>
-							<path>mods:location</path>
+							<path>mods:identifier[@type='uri']</path>
 							<context>parent</context>
 						</read>
 						<update>
@@ -509,36 +539,7 @@
 						<delete>NULL</delete>
 					</actions>
 				</properties>
-				<children>
-					<element name="url">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<title>URL</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>url</value>
-								</create>
-								<read>
-									<path>mods:url</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
+				<children/>
 			</element>
 			<element name="note">
 				<properties>
