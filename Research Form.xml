@@ -164,8 +164,6 @@
 								<properties>
 									<type>markup</type>
 									<access>TRUE</access>
-									<title>URL</title>
-									<description>This will create an empty element used by the OAI module to inject a URL for the object.</description>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -443,6 +441,7 @@
 				</properties>
 				<children/>
 			</element>
+			<!-- OPTIONAL ELEMENTS -->
 			<element name="identifiers">
 				<properties>
 					<type>fieldset</type>
@@ -509,37 +508,36 @@
 						</properties>
 						<children/>
 					</element>
+					<element name="uri">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<title>Uniform Resource Identifier (URI)</title>
+							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, prefix the DOI like: http://dx.doi.org/10.1002/poi3.91</description>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+								</create>
+								<read>
+									<path>mods:identifier[@type='uri']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
 				</children>
-			</element>
-			<!-- OPTIONAL ELEMENTS -->
-			<element name="uri">
-				<properties>
-					<type>textfield</type>
-					<access>TRUE</access>
-					<title>Uniform Resource Identifier (URI)</title>
-					<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, prefix the DOI like: http://dx.doi.org/10.1002/poi3.91</description>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
-						</create>
-						<read>
-							<path>mods:identifier[@type='uri']</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
 			</element>
 			<element name="note">
 				<properties>

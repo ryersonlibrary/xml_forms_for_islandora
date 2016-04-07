@@ -164,8 +164,6 @@
 								<properties>
 									<type>markup</type>
 									<access>TRUE</access>
-									<title>URL</title>
-									<description>This will create an empty element used by the OAI module to inject a URL for the object.</description>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -343,7 +341,7 @@
 						<properties>
 							<type>datepicker</type>
 							<access>TRUE</access>
-							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months.</description>
+							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
 							<title>Embargo Date</title>
 							<tree>TRUE</tree>
 							<actions>
@@ -489,34 +487,44 @@
 				</children>
 			</element>
 			<!-- OPTIONAL ELEMENTS -->
-			<element name="uri">
+			<element name="identifiers">
 				<properties>
-					<type>textfield</type>
+					<type>fieldset</type>
 					<access>TRUE</access>
-					<title>Uniform Resource Identifier (URI)</title>
-					<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519</description>
+					<title>Identifiers</title>
 					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
-						</create>
-						<read>
-							<path>mods:identifier[@type='uri']</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
 				</properties>
-				<children/>
+				<children>
+					<element name="uri">
+						<properties>
+							<type>textfield</type>
+							<access>TRUE</access>
+							<title>Uniform Resource Identifier (URI)</title>
+							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519</description>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+								</create>
+								<read>
+									<path>mods:identifier[@type='uri']</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>NULL</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
 			</element>
 			<element name="note">
 				<properties>
