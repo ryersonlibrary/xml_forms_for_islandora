@@ -279,8 +279,49 @@
 				</properties>
 				<children/>
 			</element>
-			<!-- TODO -->
-			<element name="subjects_group"/>
+			<element name="subjects_group">
+				<properties>
+					<type>tags</type>
+					<access>TRUE</access>
+					<title>Subjects</title>
+					<description>LC Subject Headings for the item. Use full double-dash format with spaces, e.g. Open spaces -- Ontario -- Toronto</description>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="0">
+						<properties>
+							<type>tag</type>
+							<access>TRUE</access>
+							<tree>TRUE</tree>
+							<title>TEST1</title>
+							<descriptiomn>TEST2</descriptiomn>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;subject authority="lcsh"&gt;&lt;topic&gt;%value%&lt;/topic&gt;&lt;/subject&gt;</value>
+								</create>
+								<read>
+									<path>mods:subject[@authority='lcsh']/mods:topic</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>
+									<path>self::node()</path>
+									<context>self</context>
+								</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
+			</element>
 			<element name="originInfo">
 				<properties>
 					<type>fieldset</type>
@@ -500,7 +541,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>Uniform Resource Identifier (URI)</title>
-							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519</description>
+							<description>e.g. http://www.ncbi.nlm.nih.gov/pubmed/22722519</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>

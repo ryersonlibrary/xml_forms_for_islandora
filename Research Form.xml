@@ -279,8 +279,49 @@
 				</properties>
 				<children/>
 			</element>
-			<!-- TODO -->
-			<element name="subjects_group"/>
+			<element name="subjects_group">
+				<properties>
+					<type>tags</type>
+					<access>TRUE</access>
+					<title>Subjects</title>
+					<description>LC Subject Headings for the item. Use full double-dash format with spaces, e.g. Open spaces -- Ontario -- Toronto</description>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="0">
+						<properties>
+							<type>tag</type>
+							<access>TRUE</access>
+							<tree>TRUE</tree>
+							<title>TEST1</title>
+							<descriptiomn>TEST2</descriptiomn>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>xml</type>
+									<prefix>NULL</prefix>
+									<value>&lt;subject authority="lcsh"&gt;&lt;topic&gt;%value%&lt;/topic&gt;&lt;/subject&gt;</value>
+								</create>
+								<read>
+									<path>mods:subject[@authority='lcsh']/mods:topic</path>
+									<context>parent</context>
+								</read>
+								<update>
+									<path>self::node()</path>
+									<context>self</context>
+								</update>
+								<delete>
+									<path>self::node()</path>
+									<context>self</context>
+								</delete>
+							</actions>
+						</properties>
+						<children/>
+					</element>
+				</children>
+			</element>
 			<element name="originInfo">
 				<properties>
 					<type>fieldset</type>
@@ -455,7 +496,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>International Standard Book Number (ISBN)</title>
-							<description>Include hyphens in 10- or 13-digit number; eg. 978-0-662-48548-3</description>
+							<description>Include hyphens in 10- or 13-digit number; e.g. 978-0-662-48548-3</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -484,7 +525,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>Digital Object Identifier (DOI)</title>
-							<description>Begin with prefix number; eg. 10.6084/m9.figshare.3142000; do not include http://dx.doi.org</description>
+							<description>Begin with prefix number; e.g. 10.6084/m9.figshare.3142000; do not include http://dx.doi.org</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
@@ -513,7 +554,7 @@
 							<type>textfield</type>
 							<access>TRUE</access>
 							<title>Uniform Resource Identifier (URI)</title>
-							<description>eg. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, use the DOI prefixed by http://dx.doi.org/, eg. http://dx.doi.org/10.1002/poi3.91</description>
+							<description>e.g. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, use the DOI prefixed by http://dx.doi.org/, e.g. http://dx.doi.org/10.1002/poi3.91</description>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
