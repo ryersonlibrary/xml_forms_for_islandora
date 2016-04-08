@@ -38,11 +38,111 @@
 				<children>
 					<element name="genre">
 						<properties>
-							<type>textfield</type>
+							<type>select</type>
 							<access>TRUE</access>
 							<default_value>article</default_value>
 							<title>Genre</title>
-							<description>Values constrained to marcgt terms</description>
+							<options>
+								<index key="abstract or summary">abstract or summary</index>
+								<index key="art original">art original</index>
+								<index key="art reproduction">art reproduction</index>
+								<index key="article">article</index>
+								<index key="atlas">atlas</index>
+								<index key="autobiography">autobiography</index>
+								<index key="bibliography">bibliography</index>
+								<index key="biography">biography</index>
+								<index key="book">book</index>
+								<index key="book_contribution">book_contribution</index>
+								<index key="calendar">calendar</index>
+								<index key="catalog">catalog</index>
+								<index key="chart">chart</index>
+								<index key="comic or graphic novel">comic or graphic novel</index>
+								<index key="comic strip">comic strip</index>
+								<index key="conference publication">conference publication</index>
+								<index key="database">database</index>
+								<index key="dictionary">dictionary</index>
+								<index key="diorama">diorama</index>
+								<index key="directory">directory</index>
+								<index key="discography">discography</index>
+								<index key="drama">drama</index>
+								<index key="encyclopedia">encyclopedia</index>
+								<index key="essay">essay</index>
+								<index key="festschrift">festschrift</index>
+								<index key="fiction">fiction</index>
+								<index key="filmography">filmography</index>
+								<index key="filmstrip">filmstrip</index>
+								<index key="finding aid">finding aid</index>
+								<index key="flash card">flash card</index>
+								<index key="folktale">folktale</index>
+								<index key="font">font</index>
+								<index key="game">game</index>
+								<index key="globe">globe</index>
+								<index key="government publication">government publication</index>
+								<index key="graphic">graphic</index>
+								<index key="handbook">handbook</index>
+								<index key="history">history</index>
+								<index key="humor, satire">humor, satire</index>
+								<index key="hymnal">hymnal</index>
+								<index key="index">index</index>
+								<index key="instruction">instruction</index>
+								<index key="interview">interview</index>
+								<index key="issue">issue</index>
+								<index key="journal">journal</index>
+								<index key="kit">kit</index>
+								<index key="language instruction">language instruction</index>
+								<index key="law report or digest">law report or digest</index>
+								<index key="legal article">legal article</index>
+								<index key="legal case and case notes">legal case and case notes</index>
+								<index key="legislation">legislation</index>
+								<index key="letter">letter</index>
+								<index key="loose-leaf">loose-leaf</index>
+								<index key="map">map</index>
+								<index key="memoir">memoir</index>
+								<index key="microscope slide">microscope slide</index>
+								<index key="model">model</index>
+								<index key="motion picture">motion picture</index>
+								<index key="multivolume monograph">multivolume monograph</index>
+								<index key="newspaper">newspaper</index>
+								<index key="novel">novel</index>
+								<index key="numeric data">numeric data</index>
+								<index key="occasional">occasional</index>
+								<index key="offprint">offprint</index>
+								<index key="online system or service">online system or service</index>
+								<index key="other">other</index>
+								<index key="patent">patent</index>
+								<index key="periodical">periodical</index>
+								<index key="picture">picture</index>
+								<index key="poetry">poetry</index>
+								<index key="popular_press">popular_press</index>
+								<index key="presentation">presentation</index>
+								<index key="programmed text">programmed text</index>
+								<index key="realia">realia</index>
+								<index key="rehearsal">rehearsal</index>
+								<index key="remote sensing image">remote sensing image</index>
+								<index key="reporting">reporting</index>
+								<index key="review">review</index>
+								<index key="script">script</index>
+								<index key="series">series</index>
+								<index key="short story">short story</index>
+								<index key="slide">slide</index>
+								<index key="sound">sound</index>
+								<index key="speech">speech</index>
+								<index key="standard or specification">standard or specification</index>
+								<index key="statistics">statistics</index>
+								<index key="survey of literature">survey of literature</index>
+								<index key="technical drawing">technical drawing</index>
+								<index key="technical report">technical report</index>
+								<index key="techreport">techreport</index>
+								<index key="thesis">thesis</index>
+								<index key="toy">toy</index>
+								<index key="transparency">transparency</index>
+								<index key="treaty">treaty</index>
+								<index key="unpublished_paper">unpublished_paper</index>
+								<index key="videorecording">videorecording</index>
+								<index key="web site">web site</index>
+								<index key="working_paper">working_paper</index>
+								<index key="yearbook">yearbook</index>
+							</options>
 							<tree>TRUE</tree>
 							<actions>
 								<create>
