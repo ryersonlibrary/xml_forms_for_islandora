@@ -395,10 +395,14 @@
 							</element>
 							<element name="role">
 								<properties>
-									<type>textfield</type>
+									<type>select</type>
 									<access>TRUE</access>
 									<title>Role</title>
-									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
+									<options>
+										<index key="Author">Author</index>
+										<index key="Degree supervisor">Degree supervisor</index>
+										<index key="Thesis advisor">Thesis advisor</index>
+									</options>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -519,10 +523,282 @@
 							</element>
 							<element name="role">
 								<properties>
-									<type>textfield</type>
+									<type>select</type>
 									<access>TRUE</access>
 									<title>Role</title>
-									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
+									<options>
+										<index key="Abridger">Abridger</index>
+										<index key="Art copyist">Art copyist</index>
+										<index key="Actor">Actor</index>
+										<index key="Art director">Art director</index>
+										<index key="Adapter">Adapter</index>
+										<index key="Author of afterword, colophon, etc.">Author of afterword, colophon, etc.</index>
+										<index key="Analyst">Analyst</index>
+										<index key="Animator">Animator</index>
+										<index key="Annotator">Annotator</index>
+										<index key="Bibliographic antecedent">Bibliographic antecedent</index>
+										<index key="Appellee">Appellee</index>
+										<index key="Appellant">Appellant</index>
+										<index key="Applicant">Applicant</index>
+										<index key="Author in quotations or text abstracts">Author in quotations or text abstracts</index>
+										<index key="Architect">Architect</index>
+										<index key="Artistic director">Artistic director</index>
+										<index key="Arranger">Arranger</index>
+										<index key="Artist">Artist</index>
+										<index key="Assignee">Assignee</index>
+										<index key="Associated name">Associated name</index>
+										<index key="Autographer">Autographer</index>
+										<index key="Attributed name">Attributed name</index>
+										<index key="Auctioneer">Auctioneer</index>
+										<index key="Author of dialog">Author of dialog</index>
+										<index key="Author of introduction, etc.">Author of introduction, etc.</index>
+										<index key="Screenwriter">Screenwriter</index>
+										<index key="Author">Author</index>
+										<index key="Binding designer">Binding designer</index>
+										<index key="Bookjacket designer">Bookjacket designer</index>
+										<index key="Book designer">Book designer</index>
+										<index key="Book producer">Book producer</index>
+										<index key="Blurb writer">Blurb writer</index>
+										<index key="Binder">Binder</index>
+										<index key="Bookplate designer">Bookplate designer</index>
+										<index key="Broadcaster">Broadcaster</index>
+										<index key="Braille embosser">Braille embosser</index>
+										<index key="Bookseller">Bookseller</index>
+										<index key="Caster">Caster</index>
+										<index key="Conceptor">Conceptor</index>
+										<index key="Choreographer">Choreographer</index>
+										<index key="Collaborator">Collaborator</index>
+										<index key="Client">Client</index>
+										<index key="Calligrapher">Calligrapher</index>
+										<index key="Colorist">Colorist</index>
+										<index key="Collotyper">Collotyper</index>
+										<index key="Commentator">Commentator</index>
+										<index key="Composer">Composer</index>
+										<index key="Compositor">Compositor</index>
+										<index key="Conductor">Conductor</index>
+										<index key="Cinematographer">Cinematographer</index>
+										<index key="Censor">Censor</index>
+										<index key="Contestant-appellee">Contestant-appellee</index>
+										<index key="Collector">Collector</index>
+										<index key="Compiler">Compiler</index>
+										<index key="Conservator">Conservator</index>
+										<index key="Collection registrar">Collection registrar</index>
+										<index key="Contestant">Contestant</index>
+										<index key="Contestant-appellant">Contestant-appellant</index>
+										<index key="Court governed">Court governed</index>
+										<index key="Cover designer">Cover designer</index>
+										<index key="Copyright claimant">Copyright claimant</index>
+										<index key="Complainant-appellee">Complainant-appellee</index>
+										<index key="Copyright holder">Copyright holder</index>
+										<index key="Complainant">Complainant</index>
+										<index key="Complainant-appellant">Complainant-appellant</index>
+										<index key="Creator">Creator</index>
+										<index key="Correspondent">Correspondent</index>
+										<index key="Corrector">Corrector</index>
+										<index key="Court reporter">Court reporter</index>
+										<index key="Consultant">Consultant</index>
+										<index key="Consultant to a project">Consultant to a project</index>
+										<index key="Costume designer">Costume designer</index>
+										<index key="Contributor">Contributor</index>
+										<index key="Contestee-appellee">Contestee-appellee</index>
+										<index key="Cartographer">Cartographer</index>
+										<index key="Contractor">Contractor</index>
+										<index key="Contestee">Contestee</index>
+										<index key="Contestee-appellant">Contestee-appellant</index>
+										<index key="Curator">Curator</index>
+										<index key="Commentator for written text">Commentator for written text</index>
+										<index key="Distribution place">Distribution place</index>
+										<index key="Defendant">Defendant</index>
+										<index key="Defendant-appellee">Defendant-appellee</index>
+										<index key="Defendant-appellant">Defendant-appellant</index>
+										<index key="Degree granting institution">Degree granting institution</index>
+										<index key="Degree supervisor">Degree supervisor</index>
+										<index key="Dissertant">Dissertant</index>
+										<index key="Delineator">Delineator</index>
+										<index key="Dancer">Dancer</index>
+										<index key="Donor">Donor</index>
+										<index key="Depicted">Depicted</index>
+										<index key="Depositor">Depositor</index>
+										<index key="Draftsman">Draftsman</index>
+										<index key="Director">Director</index>
+										<index key="Designer">Designer</index>
+										<index key="Distributor">Distributor</index>
+										<index key="Data contributor">Data contributor</index>
+										<index key="Dedicatee">Dedicatee</index>
+										<index key="Data manager">Data manager</index>
+										<index key="Dedicator">Dedicator</index>
+										<index key="Dubious author">Dubious author</index>
+										<index key="Editor of compilation">Editor of compilation</index>
+										<index key="Editor of moving image work">Editor of moving image work</index>
+										<index key="Editor">Editor</index>
+										<index key="Engraver">Engraver</index>
+										<index key="Electrician">Electrician</index>
+										<index key="Electrotyper">Electrotyper</index>
+										<index key="Engineer">Engineer</index>
+										<index key="Enacting jurisdiction">Enacting jurisdiction</index>
+										<index key="Etcher">Etcher</index>
+										<index key="Event place">Event place</index>
+										<index key="Expert">Expert</index>
+										<index key="Facsimilist">Facsimilist</index>
+										<index key="Film distributor">Film distributor</index>
+										<index key="Field director">Field director</index>
+										<index key="Film editor">Film editor</index>
+										<index key="Film director">Film director</index>
+										<index key="Filmmaker">Filmmaker</index>
+										<index key="Former owner">Former owner</index>
+										<index key="Film producer">Film producer</index>
+										<index key="Funder">Funder</index>
+										<index key="First party">First party</index>
+										<index key="Forger">Forger</index>
+										<index key="Geographic information specialist">Geographic information specialist</index>
+										<index key="Graphic technician">Graphic technician</index>
+										<index key="Host institution">Host institution</index>
+										<index key="Honoree">Honoree</index>
+										<index key="Host">Host</index>
+										<index key="Illustrator">Illustrator</index>
+										<index key="Illuminator">Illuminator</index>
+										<index key="Inscriber">Inscriber</index>
+										<index key="Inventor">Inventor</index>
+										<index key="Issuing body">Issuing body</index>
+										<index key="Instrumentalist">Instrumentalist</index>
+										<index key="Interviewee">Interviewee</index>
+										<index key="Interviewer">Interviewer</index>
+										<index key="Judge">Judge</index>
+										<index key="Jurisdiction governed">Jurisdiction governed</index>
+										<index key="Laboratory">Laboratory</index>
+										<index key="Librettist">Librettist</index>
+										<index key="Laboratory director">Laboratory director</index>
+										<index key="Lead">Lead</index>
+										<index key="Libelee-appellee">Libelee-appellee</index>
+										<index key="Libelee">Libelee</index>
+										<index key="Lender">Lender</index>
+										<index key="Libelee-appellant">Libelee-appellant</index>
+										<index key="Lighting designer">Lighting designer</index>
+										<index key="Libelant-appellee">Libelant-appellee</index>
+										<index key="Libelant">Libelant</index>
+										<index key="Libelant-appellant">Libelant-appellant</index>
+										<index key="Landscape architect">Landscape architect</index>
+										<index key="Licensee">Licensee</index>
+										<index key="Licensor">Licensor</index>
+										<index key="Lithographer">Lithographer</index>
+										<index key="Lyricist">Lyricist</index>
+										<index key="Music copyist">Music copyist</index>
+										<index key="Metadata contact">Metadata contact</index>
+										<index key="Medium">Medium</index>
+										<index key="Manufacture place">Manufacture place</index>
+										<index key="Manufacturer">Manufacturer</index>
+										<index key="Moderator">Moderator</index>
+										<index key="Monitor">Monitor</index>
+										<index key="Marbler">Marbler</index>
+										<index key="Markup editor">Markup editor</index>
+										<index key="Musical director">Musical director</index>
+										<index key="Metal-engraver">Metal-engraver</index>
+										<index key="Minute taker">Minute taker</index>
+										<index key="Musician">Musician</index>
+										<index key="Narrator">Narrator</index>
+										<index key="Opponent">Opponent</index>
+										<index key="Originator">Originator</index>
+										<index key="Organizer">Organizer</index>
+										<index key="Onscreen presenter">Onscreen presenter</index>
+										<index key="Other">Other</index>
+										<index key="Owner">Owner</index>
+										<index key="Panelist">Panelist</index>
+										<index key="Patron">Patron</index>
+										<index key="Publishing director">Publishing director</index>
+										<index key="Publisher">Publisher</index>
+										<index key="Project director">Project director</index>
+										<index key="Proofreader">Proofreader</index>
+										<index key="Photographer">Photographer</index>
+										<index key="Platemaker">Platemaker</index>
+										<index key="Permitting agency">Permitting agency</index>
+										<index key="Production manager">Production manager</index>
+										<index key="Printer of plates">Printer of plates</index>
+										<index key="Papermaker">Papermaker</index>
+										<index key="Puppeteer">Puppeteer</index>
+										<index key="Praeses">Praeses</index>
+										<index key="Process contact">Process contact</index>
+										<index key="Production personnel">Production personnel</index>
+										<index key="Presenter">Presenter</index>
+										<index key="Performer">Performer</index>
+										<index key="Programmer">Programmer</index>
+										<index key="Printmaker">Printmaker</index>
+										<index key="Production company">Production company</index>
+										<index key="Producer">Producer</index>
+										<index key="Production place">Production place</index>
+										<index key="Production designer">Production designer</index>
+										<index key="Printer">Printer</index>
+										<index key="Provider">Provider</index>
+										<index key="Patent applicant">Patent applicant</index>
+										<index key="Plaintiff-appellee">Plaintiff-appellee</index>
+										<index key="Plaintiff">Plaintiff</index>
+										<index key="Patent holder">Patent holder</index>
+										<index key="Plaintiff-appellant">Plaintiff-appellant</index>
+										<index key="Publication place">Publication place</index>
+										<index key="Rubricator">Rubricator</index>
+										<index key="Recordist">Recordist</index>
+										<index key="Recording engineer">Recording engineer</index>
+										<index key="Addressee">Addressee</index>
+										<index key="Radio director">Radio director</index>
+										<index key="Redaktor">Redaktor</index>
+										<index key="Renderer">Renderer</index>
+										<index key="Researcher">Researcher</index>
+										<index key="Reviewer">Reviewer</index>
+										<index key="Radio producer">Radio producer</index>
+										<index key="Repository">Repository</index>
+										<index key="Reporter">Reporter</index>
+										<index key="Responsible party">Responsible party</index>
+										<index key="Respondent-appellee">Respondent-appellee</index>
+										<index key="Restager">Restager</index>
+										<index key="Respondent">Respondent</index>
+										<index key="Restorationist">Restorationist</index>
+										<index key="Respondent-appellant">Respondent-appellant</index>
+										<index key="Research team head">Research team head</index>
+										<index key="Research team member">Research team member</index>
+										<index key="Scientific advisor">Scientific advisor</index>
+										<index key="Scenarist">Scenarist</index>
+										<index key="Sculptor">Sculptor</index>
+										<index key="Scribe">Scribe</index>
+										<index key="Sound designer">Sound designer</index>
+										<index key="Secretary">Secretary</index>
+										<index key="Stage director">Stage director</index>
+										<index key="Signer">Signer</index>
+										<index key="Supporting host">Supporting host</index>
+										<index key="Seller">Seller</index>
+										<index key="Singer">Singer</index>
+										<index key="Speaker">Speaker</index>
+										<index key="Sponsor">Sponsor</index>
+										<index key="Second party">Second party</index>
+										<index key="Surveyor">Surveyor</index>
+										<index key="Set designer">Set designer</index>
+										<index key="Setting">Setting</index>
+										<index key="Storyteller">Storyteller</index>
+										<index key="Stage manager">Stage manager</index>
+										<index key="Standards body">Standards body</index>
+										<index key="Stereotyper">Stereotyper</index>
+										<index key="Technical director">Technical director</index>
+										<index key="Teacher">Teacher</index>
+										<index key="Thesis advisor">Thesis advisor</index>
+										<index key="Television director">Television director</index>
+										<index key="Television producer">Television producer</index>
+										<index key="Transcriber">Transcriber</index>
+										<index key="Translator">Translator</index>
+										<index key="Type designer">Type designer</index>
+										<index key="Typographer">Typographer</index>
+										<index key="University place">University place</index>
+										<index key="Voice actor">Voice actor</index>
+										<index key="Videographer">Videographer</index>
+										<index key="Vocalist">Vocalist</index>
+										<index key="Writer of added commentary">Writer of added commentary</index>
+										<index key="Writer of added lyrics">Writer of added lyrics</index>
+										<index key="Writer of accompanying material">Writer of accompanying material</index>
+										<index key="Writer of added text">Writer of added text</index>
+										<index key="Woodcutter">Woodcutter</index>
+										<index key="Wood engraver">Wood engraver</index>
+										<index key="Writer of introduction">Writer of introduction</index>
+										<index key="Witness">Witness</index>
+										<index key="Writer of preface">Writer of preface</index>
+										<index key="Writer of supplementary textual content">Writer of supplementary textual content</index>
+									</options>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -746,10 +1022,32 @@
 						<children>
 							<element name="name">
 								<properties>
-									<type>textfield</type>
+									<type>select</type>
 									<access>TRUE</access>
 									<title>Name</title>
-									<description>Name of the degree being granted. (TODO: WILL BE A DROPDOWN)</description>
+									<options>
+										<index key="Bachelor of Engineering">Bachelor of Engineering</index>
+										<index key="Bachelor of Interior Design">Bachelor of Interior Design</index>
+										<index key="Bachelor of Urban and Regional Planning">Bachelor of Urban and Regional Planning</index>
+										<index key="Doctor of Philosophy">Doctor of Philosophy</index>
+										<index key="Master of Applied Science">Master of Applied Science</index>
+										<index key="Master of Architecture">Master of Architecture</index>
+										<index key="Master of Arts">Master of Arts</index>
+										<index key="Master of Building Science">Master of Building Science</index>
+										<index key="Master of Business Administration">Master of Business Administration</index>
+										<index key="Master of Computer Science">Master of Computer Science</index>
+										<index key="Master of Engineering">Master of Engineering</index>
+										<index key="Master of Environmental Applied Science and Management">Master of Environmental Applied Science and Management</index>
+										<index key="Master of Fine Arts">Master of Fine Arts</index>
+										<index key="Master of Management Science">Master of Management Science</index>
+										<index key="Master of Management Science in the Management of Technology and...">Master of Management Science in the Management of Technology and...</index>
+										<index key="Master of Nursing">Master of Nursing</index>
+										<index key="Master of Planning">Master of Planning</index>
+										<index key="Master of Professional Communication">Master of Professional Communication</index>
+										<index key="Master of Science">Master of Science</index>
+										<index key="Master of Social Work">Master of Social Work</index>
+										<index key="Master of Spatial Analysis">Master of Spatial Analysis</index>
+									</options>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -775,10 +1073,32 @@
 							</element>
 							<element name="department">
 								<properties>
-									<type>textfield</type>
+									<type>select</type>
 									<access>TRUE</access>
 									<title>Department</title>
-									<description>Name of the department granting the degree. (TODO: WILL BE A DROPDOWN)</description>
+									<options>
+										<index key="Bachelor of Engineering">Bachelor of Engineering</index>
+										<index key="Bachelor of Interior Design">Bachelor of Interior Design</index>
+										<index key="Bachelor of Urban and Regional Planning">Bachelor of Urban and Regional Planning</index>
+										<index key="Doctor of Philosophy">Doctor of Philosophy</index>
+										<index key="Master of Applied Science">Master of Applied Science</index>
+										<index key="Master of Architecture">Master of Architecture</index>
+										<index key="Master of Arts">Master of Arts</index>
+										<index key="Master of Building Science">Master of Building Science</index>
+										<index key="Master of Business Administration">Master of Business Administration</index>
+										<index key="Master of Computer Science">Master of Computer Science</index>
+										<index key="Master of Engineering">Master of Engineering</index>
+										<index key="Master of Environmental Applied Science and Management">Master of Environmental Applied Science and Management</index>
+										<index key="Master of Fine Arts">Master of Fine Arts</index>
+										<index key="Master of Management Science">Master of Management Science</index>
+										<index key="Master of Management Science in the Management of Technology and...">Master of Management Science in the Management of Technology and...</index>
+										<index key="Master of Nursing">Master of Nursing</index>
+										<index key="Master of Planning">Master of Planning</index>
+										<index key="Master of Professional Communication">Master of Professional Communication</index>
+										<index key="Master of Science">Master of Science</index>
+										<index key="Master of Social Work">Master of Social Work</index>
+										<index key="Master of Spatial Analysis">Master of Spatial Analysis</index>
+									</options>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
