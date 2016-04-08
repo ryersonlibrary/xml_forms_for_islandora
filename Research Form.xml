@@ -26,286 +26,6 @@
 			</actions>
 		</properties>
 		<children>
-			<!--	Tab Panels for contributors:
-					1) @type="personal" ; multi-part names
-					2) @type="corporate" ; single-part names
-			-->
-			<element name="contributors_personal_group">
-				<properties>
-					<type>tabs</type>
-					<access>TRUE</access>
-					<title>Name</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="0">
-						<properties>
-							<type>tabpanel</type>
-							<access>TRUE</access>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>name</value>
-								</create>
-								<read>
-									<path>mods:name</path>
-									<context>parent</context>
-								</read>
-								<update>NULL</update>
-								<delete>
-									<path>self::node()</path>
-									<context>self</context>
-								</delete>
-							</actions>
-						</properties>
-						<children>
-							<element name="type">
-								<properties>
-									<type>hidden</type>
-									<access>TRUE</access>
-									<default_value>personal</default_value>
-									<title>Type</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>attribute</type>
-											<prefix>NULL</prefix>
-											<value>type</value>
-										</create>
-										<read>
-											<path>@type</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePartGiven">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Given Name</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart type='given'&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart[@type = 'given']</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePartFamily">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Family Name</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart type='family'&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart[@type='family']</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="role">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Role</title>
-									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
-										</create>
-										<read>
-											<path>mods:role/mods:roleTerm</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
-					</element>
-				</children>
-			</element>
-			<element name="contributors_corporate_group">
-				<properties>
-					<type>tabs</type>
-					<access>TRUE</access>
-					<title>Name</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="0">
-						<properties>
-							<type>tabpanel</type>
-							<access>TRUE</access>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>name</value>
-								</create>
-								<read>
-									<path>mods:name</path>
-									<context>parent</context>
-								</read>
-								<update>NULL</update>
-								<delete>
-									<path>self::node()</path>
-									<context>self</context>
-								</delete>
-							</actions>
-						</properties>
-						<children>
-							<element name="type">
-								<properties>
-									<type>hidden</type>
-									<access>TRUE</access>
-									<default_value>corporate</default_value>
-									<title>Type</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>attribute</type>
-											<prefix>NULL</prefix>
-											<value>type</value>
-										</create>
-										<read>
-											<path>@type</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePart">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Name</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="role">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Role</title>
-									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
-										</create>
-										<read>
-											<path>mods:role/mods:roleTerm</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
-					</element>
-				</children>
-			</element>
 			<!-- REQUIRED ELEMENTS -->
 			<element name="hidden">
 				<properties>
@@ -550,6 +270,285 @@
 					</actions>
 				</properties>
 				<children/>
+			</element>
+			<!--	Tab Panels for contributors:
+					1) @type="personal" ; multi-part names
+					2) @type="corporate" ; single-part names
+			-->
+			<element name="contributors_personal_group">
+				<properties>
+					<type>tabs</type>
+					<access>TRUE</access>
+					<title>Individual Contributors</title>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="0">
+						<properties>
+							<type>tabpanel</type>
+							<access>TRUE</access>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>element</type>
+									<prefix>NULL</prefix>
+									<value>name</value>
+								</create>
+								<read>
+									<path>mods:name</path>
+									<context>parent</context>
+								</read>
+								<update>NULL</update>
+								<delete>
+									<path>self::node()</path>
+									<context>self</context>
+								</delete>
+							</actions>
+						</properties>
+						<children>
+							<element name="type">
+								<properties>
+									<type>hidden</type>
+									<access>TRUE</access>
+									<default_value>personal</default_value>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>attribute</type>
+											<prefix>NULL</prefix>
+											<value>type</value>
+										</create>
+										<read>
+											<path>@type</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+							<element name="namePartGiven">
+								<properties>
+									<type>textfield</type>
+									<access>TRUE</access>
+									<title>First Name, Initial</title>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>xml</type>
+											<prefix>NULL</prefix>
+											<value>&lt;namePart type='given'&gt;%value%&lt;/namePart&gt;</value>
+										</create>
+										<read>
+											<path>mods:namePart[@type = 'given']</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+							<element name="namePartFamily">
+								<properties>
+									<type>textfield</type>
+									<access>TRUE</access>
+									<title>Last Name</title>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>xml</type>
+											<prefix>NULL</prefix>
+											<value>&lt;namePart type='family'&gt;%value%&lt;/namePart&gt;</value>
+										</create>
+										<read>
+											<path>mods:namePart[@type='family']</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+							<element name="role">
+								<properties>
+									<type>textfield</type>
+									<access>TRUE</access>
+									<title>Role</title>
+									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>xml</type>
+											<prefix>NULL</prefix>
+											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
+										</create>
+										<read>
+											<path>mods:role/mods:roleTerm</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+						</children>
+					</element>
+				</children>
+			</element>
+			<element name="contributors_corporate_group">
+				<properties>
+					<type>tabs</type>
+					<access>TRUE</access>
+					<title>Group Contributors</title>
+					<tree>TRUE</tree>
+				</properties>
+				<children>
+					<element name="0">
+						<properties>
+							<type>tabpanel</type>
+							<access>TRUE</access>
+							<tree>TRUE</tree>
+							<actions>
+								<create>
+									<path>self::node()</path>
+									<context>parent</context>
+									<schema/>
+									<type>element</type>
+									<prefix>NULL</prefix>
+									<value>name</value>
+								</create>
+								<read>
+									<path>mods:name</path>
+									<context>parent</context>
+								</read>
+								<update>NULL</update>
+								<delete>
+									<path>self::node()</path>
+									<context>self</context>
+								</delete>
+							</actions>
+						</properties>
+						<children>
+							<element name="type">
+								<properties>
+									<type>hidden</type>
+									<access>TRUE</access>
+									<default_value>corporate</default_value>
+									<title>Type</title>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>attribute</type>
+											<prefix>NULL</prefix>
+											<value>type</value>
+										</create>
+										<read>
+											<path>@type</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+							<element name="namePart">
+								<properties>
+									<type>textfield</type>
+									<access>TRUE</access>
+									<title>Name</title>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>xml</type>
+											<prefix>NULL</prefix>
+											<value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
+										</create>
+										<read>
+											<path>mods:namePart</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+							<element name="role">
+								<properties>
+									<type>textfield</type>
+									<access>TRUE</access>
+									<title>Role</title>
+									<description>From https://www.loc.gov/marc/relators/relaterm.html (TODO: WILL BE A DROPDOWN)</description>
+									<tree>TRUE</tree>
+									<actions>
+										<create>
+											<path>self::node()</path>
+											<context>parent</context>
+											<schema/>
+											<type>xml</type>
+											<prefix>NULL</prefix>
+											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
+										</create>
+										<read>
+											<path>mods:role/mods:roleTerm</path>
+											<context>parent</context>
+										</read>
+										<update>
+											<path>self::node()</path>
+											<context>self</context>
+										</update>
+										<delete>NULL</delete>
+									</actions>
+								</properties>
+								<children/>
+							</element>
+						</children>
+					</element>
+				</children>
 			</element>
 			<element name="subjects_group">
 				<properties>
