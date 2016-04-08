@@ -29,7 +29,7 @@
 			<!-- REQUIRED ELEMENTS -->
 			<element name="hidden">
 				<properties>
-					<type>fieldset</type>
+					<type>hidden</type>
 					<access>TRUE</access>
 					<description>These elements will be hidden and have hardcoded values based on the form.</description>
 					<title>FOR REVIEW ONLY</title>
