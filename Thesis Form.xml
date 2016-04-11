@@ -1119,8 +1119,6 @@
 					</element>
 				</children>
 			</element>
-			<!-- TODO -->
-			<element name="license"/>
 			<!-- FORM-SPECIFIC -->
 			<element name="extension">
 				<properties>
