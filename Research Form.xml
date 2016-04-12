@@ -441,7 +441,7 @@
 								<properties>
 									<type>textfield</type>
 									<access>TRUE</access>
-									<title>First Name, Initial</title>
+									<title>First Name, Middle Name or Initial</title>
 									<tree>TRUE</tree>
 									<actions>
 										<create>
@@ -1274,7 +1274,7 @@
 				<children>
 					<element name="dateIssued">
 						<properties>
-							<type>datepicker</type>
+							<type>date_popup</type>
 							<access>TRUE</access>
 							<title>Publication Date</title>
 							<description>Date of publication (if published) or last revised date.</description>
@@ -1303,7 +1303,7 @@
 					</element>
 					<element name="dateOther">
 						<properties>
-							<type>datepicker</type>
+							<type>date_popup</type>
 							<access>TRUE</access>
 							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
 							<title>Embargo Date</title>
