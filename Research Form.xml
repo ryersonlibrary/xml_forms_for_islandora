@@ -27,6 +27,12 @@
 		</properties>
 		<children>
 			<!-- REQUIRED ELEMENTS -->
+			<element name="form_name">
+				<properties>
+					<type>fieldset</type>
+					<title>Research Submission</title>
+				</properties>
+			</element>
 			<element name="hidden">
 				<properties>
 					<type>hidden</type>
