@@ -257,7 +257,7 @@
 							</element>
 						</children>
 					</element>
-					<element name="granter">
+					<element name="grantor">
 						<properties>
 							<type>markup</type>
 							<access>TRUE</access>
@@ -269,10 +269,10 @@
 									<schema/>
 									<type>xml</type>
 									<prefix>NULL</prefix>
-									<value>&lt;name type='corporate' authority='lcnaf'&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Degree grantor&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
+									<value>&lt;name type='corporate' authority='lcnaf'&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Degree granting institution&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
 								</create>
 								<read>
-									<path>mods:name[@type='corporate' and @authority='lcnaf']/mods:role[mods:roleTerm = 'Degree grantor']/..</path>
+									<path>mods:name[@type='corporate' and @authority='lcnaf']/mods:role[mods:roleTerm = 'Degree grantor' or mods:roleTerm = 'Degree granting institution']/..</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
