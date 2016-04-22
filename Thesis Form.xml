@@ -227,35 +227,6 @@
 								<delete>NULL</delete>
 							</actions>
 						</properties>
-						<children>
-							<element name="url">
-								<properties>
-									<type>markup</type>
-									<access>TRUE</access>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>element</type>
-											<prefix>NULL</prefix>
-											<value>url</value>
-										</create>
-										<read>
-											<path>mods:url</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
 					</element>
 					<element name="grantor">
 						<properties>
@@ -269,10 +240,10 @@
 									<schema/>
 									<type>xml</type>
 									<prefix>NULL</prefix>
-									<value>&lt;name type='corporate' authority='lcnaf'&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Degree granting institution&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
+									<value>&lt;name type='corporate'&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Degree granting institution&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
 								</create>
 								<read>
-									<path>mods:name[@type='corporate' and @authority='lcnaf']/mods:role[mods:roleTerm = 'Degree grantor' or mods:roleTerm = 'Degree granting institution']/..</path>
+									<path>mods:name[@type='corporate']/mods:role[mods:roleTerm = 'Degree grantor' or mods:roleTerm = 'Degree granting institution']/..</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
