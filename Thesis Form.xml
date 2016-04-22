@@ -946,7 +946,7 @@
 									<value>name</value>
 								</create>
 								<read>
-									<path>mods:name</path>
+									<path>mods:name[@type = 'personal']</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
@@ -1101,7 +1101,7 @@
 									<value>name</value>
 								</create>
 								<read>
-									<path>mods:name</path>
+									<path>mods:name[@type = 'corporate']</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>

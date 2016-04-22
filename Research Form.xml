@@ -4,7 +4,6 @@
 		<root_name>mods:mods</root_name>
 		<schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
 		<namespaces default="http://www.loc.gov/mods/v3">
-			<namespace prefix="etd">http://www.ndltd.org/standards/metadata/etdms/1.0</namespace>
 			<namespace prefix="mods">http://www.loc.gov/mods/v3</namespace>
 			<namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</namespace>
 			<namespace prefix="xlink">http://www.w3.org/1999/xlink</namespace>
@@ -891,7 +890,7 @@
 									<value>name</value>
 								</create>
 								<read>
-									<path>mods:name</path>
+									<path>mods:name[@type = 'personal']</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
@@ -1314,7 +1313,7 @@
 									<value>name</value>
 								</create>
 								<read>
-									<path>mods:name</path>
+									<path>mods:name[@type = 'corporate']</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
