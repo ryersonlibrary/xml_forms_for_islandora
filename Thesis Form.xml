@@ -1072,7 +1072,7 @@
 									<value>name</value>
 								</create>
 								<read>
-									<path>mods:name[@type = 'corporate']</path>
+									<path>mods:name[@type = 'corporate' and not(mods:role/mods:roleTerm[. = 'Degree grantor' or . = 'Degree granting institution'])]</path>
 									<context>parent</context>
 								</read>
 								<update>NULL</update>
