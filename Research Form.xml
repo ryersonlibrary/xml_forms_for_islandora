@@ -1,2000 +1,2005 @@
 <?xml version="1.0"?>
 <definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3">
-	<properties>
-		<root_name>mods:mods</root_name>
-		<schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
-		<namespaces default="http://www.loc.gov/mods/v3">
-			<namespace prefix="mods">http://www.loc.gov/mods/v3</namespace>
-			<namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</namespace>
-			<namespace prefix="xlink">http://www.w3.org/1999/xlink</namespace>
-		</namespaces>
-	</properties>
-	<form>
-		<properties>
-			<type>form</type>
-			<access>TRUE</access>
-			<tree>TRUE</tree>
-			<actions>
-				<create>NULL</create>
-				<read>
-					<path>//mods:mods[1]</path>
-					<context>document</context>
-				</read>
-				<update>NULL</update>
-				<delete>NULL</delete>
-			</actions>
-		</properties>
-		<children>
-			<!-- REQUIRED ELEMENTS -->
-			<element name="form_name_research">
-				<properties>
-					<type>fieldset</type>
-					<title>Research Submission</title>
-				</properties>
-			</element>
-			<element name="hidden">
-				<properties>
-					<type>hidden</type>
-					<access>TRUE</access>
-					<description>These elements will be hidden and have hardcoded values based on the form.</description>
-					<title>FOR REVIEW ONLY</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="typeOfResource">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<default_value>text</default_value>
-							<title>Type Of Resource</title>
-							<description>Values constrained to MODS guidelines</description>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;typeOfResource&gt;%value%&lt;/typeOfResource&gt;</value>
-								</create>
-								<read>
-									<path>mods:typeOfResource</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-					<element name="location">
-						<properties>
-							<type>markup</type>
-							<access>TRUE</access>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>location</value>
-								</create>
-								<read>
-									<path>mods:location</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-					</element>
-				</children>
-			</element>
-			<element name="language">
-				<properties>
-					<type>select</type>
-					<access>TRUE</access>
-					<default_value>eng</default_value>
-					<title>Language</title>
-					<options>
-						<index key="aar">Afar</index>
-						<index key="abk">Abkhazian</index>
-						<index key="ace">Achinese</index>
-						<index key="ach">Acoli</index>
-						<index key="ada">Adangme</index>
-						<index key="ady">Adyghe; Adygei</index>
-						<index key="afa">Afro-Asiatic languages</index>
-						<index key="afh">Afrihili</index>
-						<index key="afr">Afrikaans</index>
-						<index key="ain">Ainu</index>
-						<index key="aka">Akan</index>
-						<index key="akk">Akkadian</index>
-						<index key="alb">Albanian</index>
-						<index key="ale">Aleut</index>
-						<index key="alg">Algonquian languages</index>
-						<index key="alt">Southern Altai</index>
-						<index key="amh">Amharic</index>
-						<index key="ang">English, Old (ca. 450-1100)</index>
-						<index key="anp">Angika</index>
-						<index key="apa">Apache languages</index>
-						<index key="ara">Arabic</index>
-						<index key="arc">Aramaic (700-300 BCE)</index>
-						<index key="arg">Aragonese</index>
-						<index key="arm">Armenian</index>
-						<index key="arn">Mapudungun; Mapuche</index>
-						<index key="arp">Arapaho</index>
-						<index key="art">Artificial languages</index>
-						<index key="arw">Arawak</index>
-						<index key="asm">Assamese</index>
-						<index key="ast">Asturian; Bable; Leonese; Asturleonese</index>
-						<index key="ath">Athapascan languages</index>
-						<index key="aus">Australian languages</index>
-						<index key="ava">Avaric</index>
-						<index key="ave">Avestan</index>
-						<index key="awa">Awadhi</index>
-						<index key="aym">Aymara</index>
-						<index key="aze">Azerbaijani</index>
-						<index key="bad">Banda languages</index>
-						<index key="bai">Bamileke languages</index>
-						<index key="bak">Bashkir</index>
-						<index key="bal">Baluchi</index>
-						<index key="bam">Bambara</index>
-						<index key="ban">Balinese</index>
-						<index key="baq">Basque</index>
-						<index key="bas">Basa</index>
-						<index key="bat">Baltic languages</index>
-						<index key="bej">Beja; Bedawiyet</index>
-						<index key="bel">Belarusian</index>
-						<index key="bem">Bemba</index>
-						<index key="ben">Bengali</index>
-						<index key="ber">Berber languages</index>
-						<index key="bho">Bhojpuri</index>
-						<index key="bih">Bihari languages</index>
-						<index key="bik">Bikol</index>
-						<index key="bin">Bini; Edo</index>
-						<index key="bis">Bislama</index>
-						<index key="bla">Siksika</index>
-						<index key="bnt">Bantu languages</index>
-						<index key="bos">Bosnian</index>
-						<index key="bra">Braj</index>
-						<index key="bre">Breton</index>
-						<index key="btk">Batak languages</index>
-						<index key="bua">Buriat</index>
-						<index key="bug">Buginese</index>
-						<index key="bul">Bulgarian</index>
-						<index key="bur">Burmese</index>
-						<index key="byn">Blin; Bilin</index>
-						<index key="cad">Caddo</index>
-						<index key="cai">Central American Indian languages</index>
-						<index key="car">Galibi Carib</index>
-						<index key="cat">Catalan; Valencian</index>
-						<index key="cau">Caucasian languages</index>
-						<index key="ceb">Cebuano</index>
-						<index key="cel">Celtic languages</index>
-						<index key="cha">Chamorro</index>
-						<index key="chb">Chibcha</index>
-						<index key="che">Chechen</index>
-						<index key="chg">Chagatai</index>
-						<index key="chi">Chinese</index>
-						<index key="chk">Chuukese</index>
-						<index key="chm">Mari</index>
-						<index key="chn">Chinook jargon</index>
-						<index key="cho">Choctaw</index>
-						<index key="chp">Chipewyan; Dene Suline</index>
-						<index key="chr">Cherokee</index>
-						<index key="chu">Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic</index>
-						<index key="chv">Chuvash</index>
-						<index key="chy">Cheyenne</index>
-						<index key="cmc">Chamic languages</index>
-						<index key="cop">Coptic</index>
-						<index key="cor">Cornish</index>
-						<index key="cos">Corsican</index>
-						<index key="cpe">Creoles and pidgins, English based</index>
-						<index key="cpf">Creoles and pidgins, French-based</index>
-						<index key="cpp">Creoles and pidgins, Portuguese-based</index>
-						<index key="cre">Cree</index>
-						<index key="crh">Crimean Tatar; Crimean Turkish</index>
-						<index key="crp">Creoles and pidgins</index>
-						<index key="csb">Kashubian</index>
-						<index key="cus">Cushitic languages</index>
-						<index key="cze">Czech</index>
-						<index key="dak">Dakota</index>
-						<index key="dan">Danish</index>
-						<index key="dar">Dargwa</index>
-						<index key="day">Land Dayak languages</index>
-						<index key="del">Delaware</index>
-						<index key="den">Slave (Athapascan)</index>
-						<index key="dgr">Dogrib</index>
-						<index key="din">Dinka</index>
-						<index key="div">Divehi; Dhivehi; Maldivian</index>
-						<index key="doi">Dogri</index>
-						<index key="dra">Dravidian languages</index>
-						<index key="dsb">Lower Sorbian</index>
-						<index key="dua">Duala</index>
-						<index key="dum">Dutch, Middle (ca.1050-1350)</index>
-						<index key="dut">Dutch; Flemish</index>
-						<index key="dyu">Dyula</index>
-						<index key="dzo">Dzongkha</index>
-						<index key="efi">Efik</index>
-						<index key="egy">Egyptian (Ancient)</index>
-						<index key="eka">Ekajuk</index>
-						<index key="elx">Elamite</index>
-						<index key="eng">English</index>
-						<index key="enm">English, Middle (1100-1500)</index>
-						<index key="epo">Esperanto</index>
-						<index key="est">Estonian</index>
-						<index key="ewe">Ewe</index>
-						<index key="ewo">Ewondo</index>
-						<index key="fan">Fang</index>
-						<index key="fao">Faroese</index>
-						<index key="fat">Fanti</index>
-						<index key="fij">Fijian</index>
-						<index key="fil">Filipino; Pilipino</index>
-						<index key="fin">Finnish</index>
-						<index key="fiu">Finno-Ugrian languages</index>
-						<index key="fon">Fon</index>
-						<index key="fre">French</index>
-						<index key="frm">French, Middle (ca.1400-1600)</index>
-						<index key="fro">French, Old (842-ca.1400)</index>
-						<index key="frr">Northern Frisian</index>
-						<index key="frs">Eastern Frisian</index>
-						<index key="fry">Western Frisian</index>
-						<index key="ful">Fulah</index>
-						<index key="fur">Friulian</index>
-						<index key="gaa">Ga</index>
-						<index key="gay">Gayo</index>
-						<index key="gba">Gbaya</index>
-						<index key="gem">Germanic languages</index>
-						<index key="geo">Georgian</index>
-						<index key="ger">German</index>
-						<index key="gez">Geez</index>
-						<index key="gil">Gilbertese</index>
-						<index key="gla">Gaelic; Scottish Gaelic</index>
-						<index key="gle">Irish</index>
-						<index key="glg">Galician</index>
-						<index key="glv">Manx</index>
-						<index key="gmh">German, Middle High (ca.1050-1500)</index>
-						<index key="goh">German, Old High (ca.750-1050)</index>
-						<index key="gon">Gondi</index>
-						<index key="gor">Gorontalo</index>
-						<index key="got">Gothic</index>
-						<index key="grb">Grebo</index>
-						<index key="grc">Greek, Ancient (to 1453)</index>
-						<index key="gre">Greek, Modern (1453-)</index>
-						<index key="grn">Guarani</index>
-						<index key="gsw">Swiss German; Alemannic; Alsatian</index>
-						<index key="guj">Gujarati</index>
-						<index key="gwi">Gwich'in</index>
-						<index key="hai">Haida</index>
-						<index key="hat">Haitian; Haitian Creole</index>
-						<index key="hau">Hausa</index>
-						<index key="haw">Hawaiian</index>
-						<index key="heb">Hebrew</index>
-						<index key="her">Herero</index>
-						<index key="hil">Hiligaynon</index>
-						<index key="him">Himachali languages; Western Pahari languages</index>
-						<index key="hin">Hindi</index>
-						<index key="hit">Hittite</index>
-						<index key="hmn">Hmong; Mong</index>
-						<index key="hmo">Hiri Motu</index>
-						<index key="hrv">Croatian</index>
-						<index key="hsb">Upper Sorbian</index>
-						<index key="hun">Hungarian</index>
-						<index key="hup">Hupa</index>
-						<index key="iba">Iban</index>
-						<index key="ibo">Igbo</index>
-						<index key="ice">Icelandic</index>
-						<index key="ido">Ido</index>
-						<index key="iii">Sichuan Yi; Nuosu</index>
-						<index key="ijo">Ijo languages</index>
-						<index key="iku">Inuktitut</index>
-						<index key="ile">Interlingue; Occidental</index>
-						<index key="ilo">Iloko</index>
-						<index key="ina">Interlingua (International Auxiliary Language Association)</index>
-						<index key="inc">Indic languages</index>
-						<index key="ind">Indonesian</index>
-						<index key="ine">Indo-European languages</index>
-						<index key="inh">Ingush</index>
-						<index key="ipk">Inupiaq</index>
-						<index key="ira">Iranian languages</index>
-						<index key="iro">Iroquoian languages</index>
-						<index key="ita">Italian</index>
-						<index key="jav">Javanese</index>
-						<index key="jbo">Lojban</index>
-						<index key="jpn">Japanese</index>
-						<index key="jpr">Judeo-Persian</index>
-						<index key="jrb">Judeo-Arabic</index>
-						<index key="kaa">Kara-Kalpak</index>
-						<index key="kab">Kabyle</index>
-						<index key="kac">Kachin; Jingpho</index>
-						<index key="kal">Kalaallisut; Greenlandic</index>
-						<index key="kam">Kamba</index>
-						<index key="kan">Kannada</index>
-						<index key="kar">Karen languages</index>
-						<index key="kas">Kashmiri</index>
-						<index key="kau">Kanuri</index>
-						<index key="kaw">Kawi</index>
-						<index key="kaz">Kazakh</index>
-						<index key="kbd">Kabardian</index>
-						<index key="kha">Khasi</index>
-						<index key="khi">Khoisan languages</index>
-						<index key="khm">Central Khmer</index>
-						<index key="kho">Khotanese; Sakan</index>
-						<index key="kik">Kikuyu; Gikuyu</index>
-						<index key="kin">Kinyarwanda</index>
-						<index key="kir">Kirghiz; Kyrgyz</index>
-						<index key="kmb">Kimbundu</index>
-						<index key="kok">Konkani</index>
-						<index key="kom">Komi</index>
-						<index key="kon">Kongo</index>
-						<index key="kor">Korean</index>
-						<index key="kos">Kosraean</index>
-						<index key="kpe">Kpelle</index>
-						<index key="krc">Karachay-Balkar</index>
-						<index key="krl">Karelian</index>
-						<index key="kro">Kru languages</index>
-						<index key="kru">Kurukh</index>
-						<index key="kua">Kuanyama; Kwanyama</index>
-						<index key="kum">Kumyk</index>
-						<index key="kur">Kurdish</index>
-						<index key="kut">Kutenai</index>
-						<index key="lad">Ladino</index>
-						<index key="lah">Lahnda</index>
-						<index key="lam">Lamba</index>
-						<index key="lao">Lao</index>
-						<index key="lat">Latin</index>
-						<index key="lav">Latvian</index>
-						<index key="lez">Lezghian</index>
-						<index key="lim">Limburgan; Limburger; Limburgish</index>
-						<index key="lin">Lingala</index>
-						<index key="lit">Lithuanian</index>
-						<index key="lol">Mongo</index>
-						<index key="loz">Lozi</index>
-						<index key="ltz">Luxembourgish; Letzeburgesch</index>
-						<index key="lua">Luba-Lulua</index>
-						<index key="lub">Luba-Katanga</index>
-						<index key="lug">Ganda</index>
-						<index key="lui">Luiseno</index>
-						<index key="lun">Lunda</index>
-						<index key="luo">Luo (Kenya and Tanzania)</index>
-						<index key="lus">Lushai</index>
-						<index key="mac">Macedonian</index>
-						<index key="mad">Madurese</index>
-						<index key="mag">Magahi</index>
-						<index key="mah">Marshallese</index>
-						<index key="mai">Maithili</index>
-						<index key="mak">Makasar</index>
-						<index key="mal">Malayalam</index>
-						<index key="man">Mandingo</index>
-						<index key="mao">Maori</index>
-						<index key="map">Austronesian languages</index>
-						<index key="mar">Marathi</index>
-						<index key="mas">Masai</index>
-						<index key="may">Malay</index>
-						<index key="mdf">Moksha</index>
-						<index key="mdr">Mandar</index>
-						<index key="men">Mende</index>
-						<index key="mga">Irish, Middle (900-1200)</index>
-						<index key="mic">Mi'kmaq; Micmac</index>
-						<index key="min">Minangkabau</index>
-						<index key="mis">Uncoded languages</index>
-						<index key="mkh">Mon-Khmer languages</index>
-						<index key="mlg">Malagasy</index>
-						<index key="mlt">Maltese</index>
-						<index key="mnc">Manchu</index>
-						<index key="mni">Manipuri</index>
-						<index key="mno">Manobo languages</index>
-						<index key="moh">Mohawk</index>
-						<index key="mon">Mongolian</index>
-						<index key="mos">Mossi</index>
-						<index key="mul">Multiple languages</index>
-						<index key="mun">Munda languages</index>
-						<index key="mus">Creek</index>
-						<index key="mwl">Mirandese</index>
-						<index key="mwr">Marwari</index>
-						<index key="myn">Mayan languages</index>
-						<index key="myv">Erzya</index>
-						<index key="nah">Nahuatl languages</index>
-						<index key="nai">North American Indian languages</index>
-						<index key="nap">Neapolitan</index>
-						<index key="nau">Nauru</index>
-						<index key="nav">Navajo; Navaho</index>
-						<index key="nbl">Ndebele, South; South Ndebele</index>
-						<index key="nde">Ndebele, North; North Ndebele</index>
-						<index key="ndo">Ndonga</index>
-						<index key="nds">Low German; Low Saxon; German, Low; Saxon, Low</index>
-						<index key="nep">Nepali</index>
-						<index key="new">Nepal Bhasa; Newari</index>
-						<index key="nia">Nias</index>
-						<index key="nic">Niger-Kordofanian languages</index>
-						<index key="niu">Niuean</index>
-						<index key="nno">Norwegian Nynorsk; Nynorsk, Norwegian</index>
-						<index key="nob">Bokm&#xE5;l, Norwegian; Norwegian Bokm&#xE5;l</index>
-						<index key="nog">Nogai</index>
-						<index key="non">Norse, Old</index>
-						<index key="nor">Norwegian</index>
-						<index key="nqo">N'Ko</index>
-						<index key="nso">Pedi; Sepedi; Northern Sotho</index>
-						<index key="nub">Nubian languages</index>
-						<index key="nwc">Classical Newari; Old Newari; Classical Nepal Bhasa</index>
-						<index key="nya">Chichewa; Chewa; Nyanja</index>
-						<index key="nym">Nyamwezi</index>
-						<index key="nyn">Nyankole</index>
-						<index key="nyo">Nyoro</index>
-						<index key="nzi">Nzima</index>
-						<index key="oci">Occitan (post 1500)</index>
-						<index key="oji">Ojibwa</index>
-						<index key="ori">Oriya</index>
-						<index key="orm">Oromo</index>
-						<index key="osa">Osage</index>
-						<index key="oss">Ossetian; Ossetic</index>
-						<index key="ota">Turkish, Ottoman (1500-1928)</index>
-						<index key="oto">Otomian languages</index>
-						<index key="paa">Papuan languages</index>
-						<index key="pag">Pangasinan</index>
-						<index key="pal">Pahlavi</index>
-						<index key="pam">Pampanga; Kapampangan</index>
-						<index key="pan">Panjabi; Punjabi</index>
-						<index key="pap">Papiamento</index>
-						<index key="pau">Palauan</index>
-						<index key="peo">Persian, Old (ca.600-400 B.C.)</index>
-						<index key="per">Persian</index>
-						<index key="phi">Philippine languages</index>
-						<index key="phn">Phoenician</index>
-						<index key="pli">Pali</index>
-						<index key="pol">Polish</index>
-						<index key="pon">Pohnpeian</index>
-						<index key="por">Portuguese</index>
-						<index key="pra">Prakrit languages</index>
-						<index key="pro">Proven&#xE7;al, Old (to 1500);Occitan, Old (to 1500)</index>
-						<index key="pus">Pushto; Pashto</index>
-						<index key="qaa-qtz">Reserved for local use</index>
-						<index key="que">Quechua</index>
-						<index key="raj">Rajasthani</index>
-						<index key="rap">Rapanui</index>
-						<index key="rar">Rarotongan; Cook Islands Maori</index>
-						<index key="roa">Romance languages</index>
-						<index key="roh">Romansh</index>
-						<index key="rom">Romany</index>
-						<index key="rum">Romanian; Moldavian; Moldovan</index>
-						<index key="run">Rundi</index>
-						<index key="rup">Aromanian; Arumanian; Macedo-Romanian</index>
-						<index key="rus">Russian</index>
-						<index key="sad">Sandawe</index>
-						<index key="sag">Sango</index>
-						<index key="sah">Yakut</index>
-						<index key="sai">South American Indian languages</index>
-						<index key="sal">Salishan languages</index>
-						<index key="sam">Samaritan Aramaic</index>
-						<index key="san">Sanskrit</index>
-						<index key="sas">Sasak</index>
-						<index key="sat">Santali</index>
-						<index key="scn">Sicilian</index>
-						<index key="sco">Scots</index>
-						<index key="sel">Selkup</index>
-						<index key="sem">Semitic languages</index>
-						<index key="sga">Irish, Old (to 900)</index>
-						<index key="sgn">Sign Languages</index>
-						<index key="shn">Shan</index>
-						<index key="sid">Sidamo</index>
-						<index key="sin">Sinhala; Sinhalese</index>
-						<index key="sio">Siouan languages</index>
-						<index key="sit">Sino-Tibetan languages</index>
-						<index key="sla">Slavic languages</index>
-						<index key="slo">Slovak</index>
-						<index key="slv">Slovenian</index>
-						<index key="sma">Southern Sami</index>
-						<index key="sme">Northern Sami</index>
-						<index key="smi">Sami languages</index>
-						<index key="smj">Lule Sami</index>
-						<index key="smn">Inari Sami</index>
-						<index key="smo">Samoan</index>
-						<index key="sms">Skolt Sami</index>
-						<index key="sna">Shona</index>
-						<index key="snd">Sindhi</index>
-						<index key="snk">Soninke</index>
-						<index key="sog">Sogdian</index>
-						<index key="som">Somali</index>
-						<index key="son">Songhai languages</index>
-						<index key="sot">Sotho, Southern</index>
-						<index key="spa">Spanish; Castilian</index>
-						<index key="srd">Sardinian</index>
-						<index key="srn">Sranan Tongo</index>
-						<index key="srp">Serbian</index>
-						<index key="srr">Serer</index>
-						<index key="ssa">Nilo-Saharan languages</index>
-						<index key="ssw">Swati</index>
-						<index key="suk">Sukuma</index>
-						<index key="sun">Sundanese</index>
-						<index key="sus">Susu</index>
-						<index key="sux">Sumerian</index>
-						<index key="swa">Swahili</index>
-						<index key="swe">Swedish</index>
-						<index key="syc">Classical Syriac</index>
-						<index key="syr">Syriac</index>
-						<index key="tah">Tahitian</index>
-						<index key="tai">Tai languages</index>
-						<index key="tam">Tamil</index>
-						<index key="tat">Tatar</index>
-						<index key="tel">Telugu</index>
-						<index key="tem">Timne</index>
-						<index key="ter">Tereno</index>
-						<index key="tet">Tetum</index>
-						<index key="tgk">Tajik</index>
-						<index key="tgl">Tagalog</index>
-						<index key="tha">Thai</index>
-						<index key="tib">Tibetan</index>
-						<index key="tig">Tigre</index>
-						<index key="tir">Tigrinya</index>
-						<index key="tiv">Tiv</index>
-						<index key="tkl">Tokelau</index>
-						<index key="tlh">Klingon; tlhIngan-Hol</index>
-						<index key="tli">Tlingit</index>
-						<index key="tmh">Tamashek</index>
-						<index key="tog">Tonga (Nyasa)</index>
-						<index key="ton">Tonga (Tonga Islands)</index>
-						<index key="tpi">Tok Pisin</index>
-						<index key="tsi">Tsimshian</index>
-						<index key="tsn">Tswana</index>
-						<index key="tso">Tsonga</index>
-						<index key="tuk">Turkmen</index>
-						<index key="tum">Tumbuka</index>
-						<index key="tup">Tupi languages</index>
-						<index key="tur">Turkish</index>
-						<index key="tut">Altaic languages</index>
-						<index key="tvl">Tuvalu</index>
-						<index key="twi">Twi</index>
-						<index key="tyv">Tuvinian</index>
-						<index key="udm">Udmurt</index>
-						<index key="uga">Ugaritic</index>
-						<index key="uig">Uighur; Uyghur</index>
-						<index key="ukr">Ukrainian</index>
-						<index key="umb">Umbundu</index>
-						<index key="und">Undetermined</index>
-						<index key="urd">Urdu</index>
-						<index key="uzb">Uzbek</index>
-						<index key="vai">Vai</index>
-						<index key="ven">Venda</index>
-						<index key="vie">Vietnamese</index>
-						<index key="vol">Volap&#xFC;k</index>
-						<index key="vot">Votic</index>
-						<index key="wak">Wakashan languages</index>
-						<index key="wal">Wolaitta; Wolaytta</index>
-						<index key="war">Waray</index>
-						<index key="was">Washo</index>
-						<index key="wel">Welsh</index>
-						<index key="wen">Sorbian languages</index>
-						<index key="wln">Walloon</index>
-						<index key="wol">Wolof</index>
-						<index key="xal">Kalmyk; Oirat</index>
-						<index key="xho">Xhosa</index>
-						<index key="yao">Yao</index>
-						<index key="yap">Yapese</index>
-						<index key="yid">Yiddish</index>
-						<index key="yor">Yoruba</index>
-						<index key="ypk">Yupik languages</index>
-						<index key="zap">Zapotec</index>
-						<index key="zbl">Blissymbols; Blissymbolics; Bliss</index>
-						<index key="zen">Zenaga</index>
-						<index key="zgh">Standard Moroccan Tamazight</index>
-						<index key="zha">Zhuang; Chuang</index>
-						<index key="znd">Zande languages</index>
-						<index key="zul">Zulu</index>
-						<index key="zun">Zuni</index>
-						<index key="zxx">No linguistic content; Not applicable</index>
-						<index key="zza">Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki</index>
-					</options>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
-						</create>
-						<read>
-							<path>mods:language/mods:languageTerm[@authority="iso639-2b" and @type="code"]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-			<element name="genre">
-				<properties>
-					<type>select</type>
-					<access>TRUE</access>
-					<default_value>article</default_value>
-					<title>Genre</title>
-					<options>
-						<index key="abstract or summary">abstract or summary</index>
-						<index key="art original">art original</index>
-						<index key="art reproduction">art reproduction</index>
-						<index key="article">article</index>
-						<index key="atlas">atlas</index>
-						<index key="autobiography">autobiography</index>
-						<index key="bibliography">bibliography</index>
-						<index key="biography">biography</index>
-						<index key="book">book</index>
-						<index key="book_contribution">book_contribution</index>
-						<index key="calendar">calendar</index>
-						<index key="catalog">catalog</index>
-						<index key="chart">chart</index>
-						<index key="comic or graphic novel">comic or graphic novel</index>
-						<index key="comic strip">comic strip</index>
-						<index key="conference publication">conference publication</index>
-						<index key="database">database</index>
-						<index key="dictionary">dictionary</index>
-						<index key="diorama">diorama</index>
-						<index key="directory">directory</index>
-						<index key="discography">discography</index>
-						<index key="drama">drama</index>
-						<index key="encyclopedia">encyclopedia</index>
-						<index key="essay">essay</index>
-						<index key="festschrift">festschrift</index>
-						<index key="fiction">fiction</index>
-						<index key="filmography">filmography</index>
-						<index key="filmstrip">filmstrip</index>
-						<index key="finding aid">finding aid</index>
-						<index key="flash card">flash card</index>
-						<index key="folktale">folktale</index>
-						<index key="font">font</index>
-						<index key="game">game</index>
-						<index key="globe">globe</index>
-						<index key="government publication">government publication</index>
-						<index key="graphic">graphic</index>
-						<index key="handbook">handbook</index>
-						<index key="history">history</index>
-						<index key="humor, satire">humor, satire</index>
-						<index key="hymnal">hymnal</index>
-						<index key="index">index</index>
-						<index key="instruction">instruction</index>
-						<index key="interview">interview</index>
-						<index key="issue">issue</index>
-						<index key="journal">journal</index>
-						<index key="kit">kit</index>
-						<index key="language instruction">language instruction</index>
-						<index key="law report or digest">law report or digest</index>
-						<index key="legal article">legal article</index>
-						<index key="legal case and case notes">legal case and case notes</index>
-						<index key="legislation">legislation</index>
-						<index key="letter">letter</index>
-						<index key="loose-leaf">loose-leaf</index>
-						<index key="map">map</index>
-						<index key="memoir">memoir</index>
-						<index key="microscope slide">microscope slide</index>
-						<index key="model">model</index>
-						<index key="motion picture">motion picture</index>
-						<index key="multivolume monograph">multivolume monograph</index>
-						<index key="newspaper">newspaper</index>
-						<index key="novel">novel</index>
-						<index key="numeric data">numeric data</index>
-						<index key="occasional">occasional</index>
-						<index key="offprint">offprint</index>
-						<index key="online system or service">online system or service</index>
-						<index key="other">other</index>
-						<index key="patent">patent</index>
-						<index key="periodical">periodical</index>
-						<index key="picture">picture</index>
-						<index key="poetry">poetry</index>
-						<index key="popular_press">popular_press</index>
-						<index key="presentation">presentation</index>
-						<index key="programmed text">programmed text</index>
-						<index key="realia">realia</index>
-						<index key="rehearsal">rehearsal</index>
-						<index key="remote sensing image">remote sensing image</index>
-						<index key="reporting">reporting</index>
-						<index key="review">review</index>
-						<index key="script">script</index>
-						<index key="series">series</index>
-						<index key="short story">short story</index>
-						<index key="slide">slide</index>
-						<index key="sound">sound</index>
-						<index key="speech">speech</index>
-						<index key="standard or specification">standard or specification</index>
-						<index key="statistics">statistics</index>
-						<index key="survey of literature">survey of literature</index>
-						<index key="technical drawing">technical drawing</index>
-						<index key="technical report">technical report</index>
-						<index key="techreport">techreport</index>
-						<index key="thesis">thesis</index>
-						<index key="toy">toy</index>
-						<index key="transparency">transparency</index>
-						<index key="treaty">treaty</index>
-						<index key="unpublished_paper">unpublished_paper</index>
-						<index key="videorecording">videorecording</index>
-						<index key="web site">web site</index>
-						<index key="working_paper">working_paper</index>
-						<index key="yearbook">yearbook</index>
-					</options>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;genre authority="marcgt"&gt;%value%&lt;/genre&gt;</value>
-						</create>
-						<read>
-							<path>mods:genre</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-			<element name="titleInfo">
-				<properties>
-					<type>markup</type>
-					<access>TRUE</access>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>titleInfo</value>
-						</create>
-						<read>
-							<path>mods:titleInfo[not(@*)]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children>
-					<element name="title">
-						<properties>
-							<type>textarea</type>
-							<access>TRUE</access>
-							<description>Title of the item.</description>
-							<rows>2</rows>
-							<title>Title</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>title</value>
-								</create>
-								<read>
-									<path>mods:title</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
-			</element>
-			<element name="abstract">
-				<properties>
-					<type>textarea</type>
-					<access>TRUE</access>
-					<description>Abstract or summary of the item.</description>
-					<rows>12</rows>
-					<title>Abstract</title>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>abstract</value>
-						</create>
-						<read>
-							<path>mods:abstract</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-			<!--	Tab Panels for contributors:
-					1) @type="personal" ; multi-part names
-					2) @type="corporate" ; single-part names
-			-->
-			<element name="contributors_personal_group">
-				<properties>
-					<type>tabs</type>
-					<access>TRUE</access>
-					<title>Individual Contributors</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="0">
-						<properties>
-							<type>tabpanel</type>
-							<access>TRUE</access>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>name</value>
-								</create>
-								<read>
-									<path>mods:name[@type = 'personal']</path>
-									<context>parent</context>
-								</read>
-								<update>NULL</update>
-								<delete>
-									<path>self::node()</path>
-									<context>self</context>
-								</delete>
-							</actions>
-						</properties>
-						<children>
-							<element name="type">
-								<properties>
-									<type>hidden</type>
-									<access>TRUE</access>
-									<default_value>personal</default_value>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>attribute</type>
-											<prefix>NULL</prefix>
-											<value>type</value>
-										</create>
-										<read>
-											<path>@type</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePartGiven">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>First Name Middle Name or Initial.</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart type='given'&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart[@type = 'given']</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePartFamily">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Last Name</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart type='family'&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart[@type='family']</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="role">
-								<properties>
-									<type>select</type>
-									<access>TRUE</access>
-									<title>Role</title>
-									<options>
-										<index key="Abridger">Abridger</index>
-										<index key="Art copyist">Art copyist</index>
-										<index key="Actor">Actor</index>
-										<index key="Art director">Art director</index>
-										<index key="Adapter">Adapter</index>
-										<index key="Author of afterword, colophon, etc.">Author of afterword, colophon, etc.</index>
-										<index key="Analyst">Analyst</index>
-										<index key="Animator">Animator</index>
-										<index key="Annotator">Annotator</index>
-										<index key="Bibliographic antecedent">Bibliographic antecedent</index>
-										<index key="Appellee">Appellee</index>
-										<index key="Appellant">Appellant</index>
-										<index key="Applicant">Applicant</index>
-										<index key="Author in quotations or text abstracts">Author in quotations or text abstracts</index>
-										<index key="Architect">Architect</index>
-										<index key="Artistic director">Artistic director</index>
-										<index key="Arranger">Arranger</index>
-										<index key="Artist">Artist</index>
-										<index key="Assignee">Assignee</index>
-										<index key="Associated name">Associated name</index>
-										<index key="Autographer">Autographer</index>
-										<index key="Attributed name">Attributed name</index>
-										<index key="Auctioneer">Auctioneer</index>
-										<index key="Author of dialog">Author of dialog</index>
-										<index key="Author of introduction, etc.">Author of introduction, etc.</index>
-										<index key="Screenwriter">Screenwriter</index>
-										<index key="Author">Author</index>
-										<index key="Binding designer">Binding designer</index>
-										<index key="Bookjacket designer">Bookjacket designer</index>
-										<index key="Book designer">Book designer</index>
-										<index key="Book producer">Book producer</index>
-										<index key="Blurb writer">Blurb writer</index>
-										<index key="Binder">Binder</index>
-										<index key="Bookplate designer">Bookplate designer</index>
-										<index key="Broadcaster">Broadcaster</index>
-										<index key="Braille embosser">Braille embosser</index>
-										<index key="Bookseller">Bookseller</index>
-										<index key="Caster">Caster</index>
-										<index key="Conceptor">Conceptor</index>
-										<index key="Choreographer">Choreographer</index>
-										<index key="Collaborator">Collaborator</index>
-										<index key="Client">Client</index>
-										<index key="Calligrapher">Calligrapher</index>
-										<index key="Colorist">Colorist</index>
-										<index key="Collotyper">Collotyper</index>
-										<index key="Commentator">Commentator</index>
-										<index key="Composer">Composer</index>
-										<index key="Compositor">Compositor</index>
-										<index key="Conductor">Conductor</index>
-										<index key="Cinematographer">Cinematographer</index>
-										<index key="Censor">Censor</index>
-										<index key="Contestant-appellee">Contestant-appellee</index>
-										<index key="Collector">Collector</index>
-										<index key="Compiler">Compiler</index>
-										<index key="Conservator">Conservator</index>
-										<index key="Collection registrar">Collection registrar</index>
-										<index key="Contestant">Contestant</index>
-										<index key="Contestant-appellant">Contestant-appellant</index>
-										<index key="Court governed">Court governed</index>
-										<index key="Cover designer">Cover designer</index>
-										<index key="Copyright claimant">Copyright claimant</index>
-										<index key="Complainant-appellee">Complainant-appellee</index>
-										<index key="Copyright holder">Copyright holder</index>
-										<index key="Complainant">Complainant</index>
-										<index key="Complainant-appellant">Complainant-appellant</index>
-										<index key="Creator">Creator</index>
-										<index key="Correspondent">Correspondent</index>
-										<index key="Corrector">Corrector</index>
-										<index key="Court reporter">Court reporter</index>
-										<index key="Consultant">Consultant</index>
-										<index key="Consultant to a project">Consultant to a project</index>
-										<index key="Costume designer">Costume designer</index>
-										<index key="Contributor">Contributor</index>
-										<index key="Contestee-appellee">Contestee-appellee</index>
-										<index key="Cartographer">Cartographer</index>
-										<index key="Contractor">Contractor</index>
-										<index key="Contestee">Contestee</index>
-										<index key="Contestee-appellant">Contestee-appellant</index>
-										<index key="Curator">Curator</index>
-										<index key="Commentator for written text">Commentator for written text</index>
-										<index key="Distribution place">Distribution place</index>
-										<index key="Defendant">Defendant</index>
-										<index key="Defendant-appellee">Defendant-appellee</index>
-										<index key="Defendant-appellant">Defendant-appellant</index>
-										<index key="Degree granting institution">Degree granting institution</index>
-										<index key="Degree supervisor">Degree supervisor</index>
-										<index key="Dissertant">Dissertant</index>
-										<index key="Delineator">Delineator</index>
-										<index key="Dancer">Dancer</index>
-										<index key="Donor">Donor</index>
-										<index key="Depicted">Depicted</index>
-										<index key="Depositor">Depositor</index>
-										<index key="Draftsman">Draftsman</index>
-										<index key="Director">Director</index>
-										<index key="Designer">Designer</index>
-										<index key="Distributor">Distributor</index>
-										<index key="Data contributor">Data contributor</index>
-										<index key="Dedicatee">Dedicatee</index>
-										<index key="Data manager">Data manager</index>
-										<index key="Dedicator">Dedicator</index>
-										<index key="Dubious author">Dubious author</index>
-										<index key="Editor of compilation">Editor of compilation</index>
-										<index key="Editor of moving image work">Editor of moving image work</index>
-										<index key="Editor">Editor</index>
-										<index key="Engraver">Engraver</index>
-										<index key="Electrician">Electrician</index>
-										<index key="Electrotyper">Electrotyper</index>
-										<index key="Engineer">Engineer</index>
-										<index key="Enacting jurisdiction">Enacting jurisdiction</index>
-										<index key="Etcher">Etcher</index>
-										<index key="Event place">Event place</index>
-										<index key="Expert">Expert</index>
-										<index key="Facsimilist">Facsimilist</index>
-										<index key="Film distributor">Film distributor</index>
-										<index key="Field director">Field director</index>
-										<index key="Film editor">Film editor</index>
-										<index key="Film director">Film director</index>
-										<index key="Filmmaker">Filmmaker</index>
-										<index key="Former owner">Former owner</index>
-										<index key="Film producer">Film producer</index>
-										<index key="Funder">Funder</index>
-										<index key="First party">First party</index>
-										<index key="Forger">Forger</index>
-										<index key="Geographic information specialist">Geographic information specialist</index>
-										<index key="Graphic technician">Graphic technician</index>
-										<index key="Host institution">Host institution</index>
-										<index key="Honoree">Honoree</index>
-										<index key="Host">Host</index>
-										<index key="Illustrator">Illustrator</index>
-										<index key="Illuminator">Illuminator</index>
-										<index key="Inscriber">Inscriber</index>
-										<index key="Inventor">Inventor</index>
-										<index key="Issuing body">Issuing body</index>
-										<index key="Instrumentalist">Instrumentalist</index>
-										<index key="Interviewee">Interviewee</index>
-										<index key="Interviewer">Interviewer</index>
-										<index key="Judge">Judge</index>
-										<index key="Jurisdiction governed">Jurisdiction governed</index>
-										<index key="Laboratory">Laboratory</index>
-										<index key="Librettist">Librettist</index>
-										<index key="Laboratory director">Laboratory director</index>
-										<index key="Lead">Lead</index>
-										<index key="Libelee-appellee">Libelee-appellee</index>
-										<index key="Libelee">Libelee</index>
-										<index key="Lender">Lender</index>
-										<index key="Libelee-appellant">Libelee-appellant</index>
-										<index key="Lighting designer">Lighting designer</index>
-										<index key="Libelant-appellee">Libelant-appellee</index>
-										<index key="Libelant">Libelant</index>
-										<index key="Libelant-appellant">Libelant-appellant</index>
-										<index key="Landscape architect">Landscape architect</index>
-										<index key="Licensee">Licensee</index>
-										<index key="Licensor">Licensor</index>
-										<index key="Lithographer">Lithographer</index>
-										<index key="Lyricist">Lyricist</index>
-										<index key="Music copyist">Music copyist</index>
-										<index key="Metadata contact">Metadata contact</index>
-										<index key="Medium">Medium</index>
-										<index key="Manufacture place">Manufacture place</index>
-										<index key="Manufacturer">Manufacturer</index>
-										<index key="Moderator">Moderator</index>
-										<index key="Monitor">Monitor</index>
-										<index key="Marbler">Marbler</index>
-										<index key="Markup editor">Markup editor</index>
-										<index key="Musical director">Musical director</index>
-										<index key="Metal-engraver">Metal-engraver</index>
-										<index key="Minute taker">Minute taker</index>
-										<index key="Musician">Musician</index>
-										<index key="Narrator">Narrator</index>
-										<index key="Opponent">Opponent</index>
-										<index key="Originator">Originator</index>
-										<index key="Organizer">Organizer</index>
-										<index key="Onscreen presenter">Onscreen presenter</index>
-										<index key="Other">Other</index>
-										<index key="Owner">Owner</index>
-										<index key="Panelist">Panelist</index>
-										<index key="Patron">Patron</index>
-										<index key="Publishing director">Publishing director</index>
-										<index key="Publisher">Publisher</index>
-										<index key="Project director">Project director</index>
-										<index key="Proofreader">Proofreader</index>
-										<index key="Photographer">Photographer</index>
-										<index key="Platemaker">Platemaker</index>
-										<index key="Permitting agency">Permitting agency</index>
-										<index key="Production manager">Production manager</index>
-										<index key="Printer of plates">Printer of plates</index>
-										<index key="Papermaker">Papermaker</index>
-										<index key="Puppeteer">Puppeteer</index>
-										<index key="Praeses">Praeses</index>
-										<index key="Process contact">Process contact</index>
-										<index key="Production personnel">Production personnel</index>
-										<index key="Presenter">Presenter</index>
-										<index key="Performer">Performer</index>
-										<index key="Programmer">Programmer</index>
-										<index key="Printmaker">Printmaker</index>
-										<index key="Production company">Production company</index>
-										<index key="Producer">Producer</index>
-										<index key="Production place">Production place</index>
-										<index key="Production designer">Production designer</index>
-										<index key="Printer">Printer</index>
-										<index key="Provider">Provider</index>
-										<index key="Patent applicant">Patent applicant</index>
-										<index key="Plaintiff-appellee">Plaintiff-appellee</index>
-										<index key="Plaintiff">Plaintiff</index>
-										<index key="Patent holder">Patent holder</index>
-										<index key="Plaintiff-appellant">Plaintiff-appellant</index>
-										<index key="Publication place">Publication place</index>
-										<index key="Rubricator">Rubricator</index>
-										<index key="Recordist">Recordist</index>
-										<index key="Recording engineer">Recording engineer</index>
-										<index key="Addressee">Addressee</index>
-										<index key="Radio director">Radio director</index>
-										<index key="Redaktor">Redaktor</index>
-										<index key="Renderer">Renderer</index>
-										<index key="Researcher">Researcher</index>
-										<index key="Reviewer">Reviewer</index>
-										<index key="Radio producer">Radio producer</index>
-										<index key="Repository">Repository</index>
-										<index key="Reporter">Reporter</index>
-										<index key="Responsible party">Responsible party</index>
-										<index key="Respondent-appellee">Respondent-appellee</index>
-										<index key="Restager">Restager</index>
-										<index key="Respondent">Respondent</index>
-										<index key="Restorationist">Restorationist</index>
-										<index key="Respondent-appellant">Respondent-appellant</index>
-										<index key="Research team head">Research team head</index>
-										<index key="Research team member">Research team member</index>
-										<index key="Scientific advisor">Scientific advisor</index>
-										<index key="Scenarist">Scenarist</index>
-										<index key="Sculptor">Sculptor</index>
-										<index key="Scribe">Scribe</index>
-										<index key="Sound designer">Sound designer</index>
-										<index key="Secretary">Secretary</index>
-										<index key="Stage director">Stage director</index>
-										<index key="Signer">Signer</index>
-										<index key="Supporting host">Supporting host</index>
-										<index key="Seller">Seller</index>
-										<index key="Singer">Singer</index>
-										<index key="Speaker">Speaker</index>
-										<index key="Sponsor">Sponsor</index>
-										<index key="Second party">Second party</index>
-										<index key="Surveyor">Surveyor</index>
-										<index key="Set designer">Set designer</index>
-										<index key="Setting">Setting</index>
-										<index key="Storyteller">Storyteller</index>
-										<index key="Stage manager">Stage manager</index>
-										<index key="Standards body">Standards body</index>
-										<index key="Stereotyper">Stereotyper</index>
-										<index key="Technical director">Technical director</index>
-										<index key="Teacher">Teacher</index>
-										<index key="Thesis advisor">Thesis advisor</index>
-										<index key="Television director">Television director</index>
-										<index key="Television producer">Television producer</index>
-										<index key="Transcriber">Transcriber</index>
-										<index key="Translator">Translator</index>
-										<index key="Type designer">Type designer</index>
-										<index key="Typographer">Typographer</index>
-										<index key="University place">University place</index>
-										<index key="Voice actor">Voice actor</index>
-										<index key="Videographer">Videographer</index>
-										<index key="Vocalist">Vocalist</index>
-										<index key="Writer of added commentary">Writer of added commentary</index>
-										<index key="Writer of added lyrics">Writer of added lyrics</index>
-										<index key="Writer of accompanying material">Writer of accompanying material</index>
-										<index key="Writer of added text">Writer of added text</index>
-										<index key="Woodcutter">Woodcutter</index>
-										<index key="Wood engraver">Wood engraver</index>
-										<index key="Writer of introduction">Writer of introduction</index>
-										<index key="Witness">Witness</index>
-										<index key="Writer of preface">Writer of preface</index>
-										<index key="Writer of supplementary textual content">Writer of supplementary textual content</index>
-									</options>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
-										</create>
-										<read>
-											<path>mods:role/mods:roleTerm</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
-					</element>
-				</children>
-			</element>
-			<element name="contributors_corporate_group">
-				<properties>
-					<type>tabs</type>
-					<access>TRUE</access>
-					<title>Group Contributors</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="0">
-						<properties>
-							<type>tabpanel</type>
-							<access>TRUE</access>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>name</value>
-								</create>
-								<read>
-									<path>mods:name[@type = 'corporate']</path>
-									<context>parent</context>
-								</read>
-								<update>NULL</update>
-								<delete>
-									<path>self::node()</path>
-									<context>self</context>
-								</delete>
-							</actions>
-						</properties>
-						<children>
-							<element name="type">
-								<properties>
-									<type>hidden</type>
-									<access>TRUE</access>
-									<default_value>corporate</default_value>
-									<title>Type</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>attribute</type>
-											<prefix>NULL</prefix>
-											<value>type</value>
-										</create>
-										<read>
-											<path>@type</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="namePart">
-								<properties>
-									<type>textfield</type>
-									<access>TRUE</access>
-									<title>Name</title>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
-										</create>
-										<read>
-											<path>mods:namePart</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-							<element name="role">
-								<properties>
-									<type>select</type>
-									<access>TRUE</access>
-									<title>Role</title>
-									<options>
-										<index key="Abridger">Abridger</index>
-										<index key="Art copyist">Art copyist</index>
-										<index key="Actor">Actor</index>
-										<index key="Art director">Art director</index>
-										<index key="Adapter">Adapter</index>
-										<index key="Author of afterword, colophon, etc.">Author of afterword, colophon, etc.</index>
-										<index key="Analyst">Analyst</index>
-										<index key="Animator">Animator</index>
-										<index key="Annotator">Annotator</index>
-										<index key="Bibliographic antecedent">Bibliographic antecedent</index>
-										<index key="Appellee">Appellee</index>
-										<index key="Appellant">Appellant</index>
-										<index key="Applicant">Applicant</index>
-										<index key="Author in quotations or text abstracts">Author in quotations or text abstracts</index>
-										<index key="Architect">Architect</index>
-										<index key="Artistic director">Artistic director</index>
-										<index key="Arranger">Arranger</index>
-										<index key="Artist">Artist</index>
-										<index key="Assignee">Assignee</index>
-										<index key="Associated name">Associated name</index>
-										<index key="Autographer">Autographer</index>
-										<index key="Attributed name">Attributed name</index>
-										<index key="Auctioneer">Auctioneer</index>
-										<index key="Author of dialog">Author of dialog</index>
-										<index key="Author of introduction, etc.">Author of introduction, etc.</index>
-										<index key="Screenwriter">Screenwriter</index>
-										<index key="Author">Author</index>
-										<index key="Binding designer">Binding designer</index>
-										<index key="Bookjacket designer">Bookjacket designer</index>
-										<index key="Book designer">Book designer</index>
-										<index key="Book producer">Book producer</index>
-										<index key="Blurb writer">Blurb writer</index>
-										<index key="Binder">Binder</index>
-										<index key="Bookplate designer">Bookplate designer</index>
-										<index key="Broadcaster">Broadcaster</index>
-										<index key="Braille embosser">Braille embosser</index>
-										<index key="Bookseller">Bookseller</index>
-										<index key="Caster">Caster</index>
-										<index key="Conceptor">Conceptor</index>
-										<index key="Choreographer">Choreographer</index>
-										<index key="Collaborator">Collaborator</index>
-										<index key="Client">Client</index>
-										<index key="Calligrapher">Calligrapher</index>
-										<index key="Colorist">Colorist</index>
-										<index key="Collotyper">Collotyper</index>
-										<index key="Commentator">Commentator</index>
-										<index key="Composer">Composer</index>
-										<index key="Compositor">Compositor</index>
-										<index key="Conductor">Conductor</index>
-										<index key="Cinematographer">Cinematographer</index>
-										<index key="Censor">Censor</index>
-										<index key="Contestant-appellee">Contestant-appellee</index>
-										<index key="Collector">Collector</index>
-										<index key="Compiler">Compiler</index>
-										<index key="Conservator">Conservator</index>
-										<index key="Collection registrar">Collection registrar</index>
-										<index key="Contestant">Contestant</index>
-										<index key="Contestant-appellant">Contestant-appellant</index>
-										<index key="Court governed">Court governed</index>
-										<index key="Cover designer">Cover designer</index>
-										<index key="Copyright claimant">Copyright claimant</index>
-										<index key="Complainant-appellee">Complainant-appellee</index>
-										<index key="Copyright holder">Copyright holder</index>
-										<index key="Complainant">Complainant</index>
-										<index key="Complainant-appellant">Complainant-appellant</index>
-										<index key="Creator">Creator</index>
-										<index key="Correspondent">Correspondent</index>
-										<index key="Corrector">Corrector</index>
-										<index key="Court reporter">Court reporter</index>
-										<index key="Consultant">Consultant</index>
-										<index key="Consultant to a project">Consultant to a project</index>
-										<index key="Costume designer">Costume designer</index>
-										<index key="Contributor">Contributor</index>
-										<index key="Contestee-appellee">Contestee-appellee</index>
-										<index key="Cartographer">Cartographer</index>
-										<index key="Contractor">Contractor</index>
-										<index key="Contestee">Contestee</index>
-										<index key="Contestee-appellant">Contestee-appellant</index>
-										<index key="Curator">Curator</index>
-										<index key="Commentator for written text">Commentator for written text</index>
-										<index key="Distribution place">Distribution place</index>
-										<index key="Defendant">Defendant</index>
-										<index key="Defendant-appellee">Defendant-appellee</index>
-										<index key="Defendant-appellant">Defendant-appellant</index>
-										<index key="Degree granting institution">Degree granting institution</index>
-										<index key="Degree supervisor">Degree supervisor</index>
-										<index key="Dissertant">Dissertant</index>
-										<index key="Delineator">Delineator</index>
-										<index key="Dancer">Dancer</index>
-										<index key="Donor">Donor</index>
-										<index key="Depicted">Depicted</index>
-										<index key="Depositor">Depositor</index>
-										<index key="Draftsman">Draftsman</index>
-										<index key="Director">Director</index>
-										<index key="Designer">Designer</index>
-										<index key="Distributor">Distributor</index>
-										<index key="Data contributor">Data contributor</index>
-										<index key="Dedicatee">Dedicatee</index>
-										<index key="Data manager">Data manager</index>
-										<index key="Dedicator">Dedicator</index>
-										<index key="Dubious author">Dubious author</index>
-										<index key="Editor of compilation">Editor of compilation</index>
-										<index key="Editor of moving image work">Editor of moving image work</index>
-										<index key="Editor">Editor</index>
-										<index key="Engraver">Engraver</index>
-										<index key="Electrician">Electrician</index>
-										<index key="Electrotyper">Electrotyper</index>
-										<index key="Engineer">Engineer</index>
-										<index key="Enacting jurisdiction">Enacting jurisdiction</index>
-										<index key="Etcher">Etcher</index>
-										<index key="Event place">Event place</index>
-										<index key="Expert">Expert</index>
-										<index key="Facsimilist">Facsimilist</index>
-										<index key="Film distributor">Film distributor</index>
-										<index key="Field director">Field director</index>
-										<index key="Film editor">Film editor</index>
-										<index key="Film director">Film director</index>
-										<index key="Filmmaker">Filmmaker</index>
-										<index key="Former owner">Former owner</index>
-										<index key="Film producer">Film producer</index>
-										<index key="Funder">Funder</index>
-										<index key="First party">First party</index>
-										<index key="Forger">Forger</index>
-										<index key="Geographic information specialist">Geographic information specialist</index>
-										<index key="Graphic technician">Graphic technician</index>
-										<index key="Host institution">Host institution</index>
-										<index key="Honoree">Honoree</index>
-										<index key="Host">Host</index>
-										<index key="Illustrator">Illustrator</index>
-										<index key="Illuminator">Illuminator</index>
-										<index key="Inscriber">Inscriber</index>
-										<index key="Inventor">Inventor</index>
-										<index key="Issuing body">Issuing body</index>
-										<index key="Instrumentalist">Instrumentalist</index>
-										<index key="Interviewee">Interviewee</index>
-										<index key="Interviewer">Interviewer</index>
-										<index key="Judge">Judge</index>
-										<index key="Jurisdiction governed">Jurisdiction governed</index>
-										<index key="Laboratory">Laboratory</index>
-										<index key="Librettist">Librettist</index>
-										<index key="Laboratory director">Laboratory director</index>
-										<index key="Lead">Lead</index>
-										<index key="Libelee-appellee">Libelee-appellee</index>
-										<index key="Libelee">Libelee</index>
-										<index key="Lender">Lender</index>
-										<index key="Libelee-appellant">Libelee-appellant</index>
-										<index key="Lighting designer">Lighting designer</index>
-										<index key="Libelant-appellee">Libelant-appellee</index>
-										<index key="Libelant">Libelant</index>
-										<index key="Libelant-appellant">Libelant-appellant</index>
-										<index key="Landscape architect">Landscape architect</index>
-										<index key="Licensee">Licensee</index>
-										<index key="Licensor">Licensor</index>
-										<index key="Lithographer">Lithographer</index>
-										<index key="Lyricist">Lyricist</index>
-										<index key="Music copyist">Music copyist</index>
-										<index key="Metadata contact">Metadata contact</index>
-										<index key="Medium">Medium</index>
-										<index key="Manufacture place">Manufacture place</index>
-										<index key="Manufacturer">Manufacturer</index>
-										<index key="Moderator">Moderator</index>
-										<index key="Monitor">Monitor</index>
-										<index key="Marbler">Marbler</index>
-										<index key="Markup editor">Markup editor</index>
-										<index key="Musical director">Musical director</index>
-										<index key="Metal-engraver">Metal-engraver</index>
-										<index key="Minute taker">Minute taker</index>
-										<index key="Musician">Musician</index>
-										<index key="Narrator">Narrator</index>
-										<index key="Opponent">Opponent</index>
-										<index key="Originator">Originator</index>
-										<index key="Organizer">Organizer</index>
-										<index key="Onscreen presenter">Onscreen presenter</index>
-										<index key="Other">Other</index>
-										<index key="Owner">Owner</index>
-										<index key="Panelist">Panelist</index>
-										<index key="Patron">Patron</index>
-										<index key="Publishing director">Publishing director</index>
-										<index key="Publisher">Publisher</index>
-										<index key="Project director">Project director</index>
-										<index key="Proofreader">Proofreader</index>
-										<index key="Photographer">Photographer</index>
-										<index key="Platemaker">Platemaker</index>
-										<index key="Permitting agency">Permitting agency</index>
-										<index key="Production manager">Production manager</index>
-										<index key="Printer of plates">Printer of plates</index>
-										<index key="Papermaker">Papermaker</index>
-										<index key="Puppeteer">Puppeteer</index>
-										<index key="Praeses">Praeses</index>
-										<index key="Process contact">Process contact</index>
-										<index key="Production personnel">Production personnel</index>
-										<index key="Presenter">Presenter</index>
-										<index key="Performer">Performer</index>
-										<index key="Programmer">Programmer</index>
-										<index key="Printmaker">Printmaker</index>
-										<index key="Production company">Production company</index>
-										<index key="Producer">Producer</index>
-										<index key="Production place">Production place</index>
-										<index key="Production designer">Production designer</index>
-										<index key="Printer">Printer</index>
-										<index key="Provider">Provider</index>
-										<index key="Patent applicant">Patent applicant</index>
-										<index key="Plaintiff-appellee">Plaintiff-appellee</index>
-										<index key="Plaintiff">Plaintiff</index>
-										<index key="Patent holder">Patent holder</index>
-										<index key="Plaintiff-appellant">Plaintiff-appellant</index>
-										<index key="Publication place">Publication place</index>
-										<index key="Rubricator">Rubricator</index>
-										<index key="Recordist">Recordist</index>
-										<index key="Recording engineer">Recording engineer</index>
-										<index key="Addressee">Addressee</index>
-										<index key="Radio director">Radio director</index>
-										<index key="Redaktor">Redaktor</index>
-										<index key="Renderer">Renderer</index>
-										<index key="Researcher">Researcher</index>
-										<index key="Reviewer">Reviewer</index>
-										<index key="Radio producer">Radio producer</index>
-										<index key="Repository">Repository</index>
-										<index key="Reporter">Reporter</index>
-										<index key="Responsible party">Responsible party</index>
-										<index key="Respondent-appellee">Respondent-appellee</index>
-										<index key="Restager">Restager</index>
-										<index key="Respondent">Respondent</index>
-										<index key="Restorationist">Restorationist</index>
-										<index key="Respondent-appellant">Respondent-appellant</index>
-										<index key="Research team head">Research team head</index>
-										<index key="Research team member">Research team member</index>
-										<index key="Scientific advisor">Scientific advisor</index>
-										<index key="Scenarist">Scenarist</index>
-										<index key="Sculptor">Sculptor</index>
-										<index key="Scribe">Scribe</index>
-										<index key="Sound designer">Sound designer</index>
-										<index key="Secretary">Secretary</index>
-										<index key="Stage director">Stage director</index>
-										<index key="Signer">Signer</index>
-										<index key="Supporting host">Supporting host</index>
-										<index key="Seller">Seller</index>
-										<index key="Singer">Singer</index>
-										<index key="Speaker">Speaker</index>
-										<index key="Sponsor">Sponsor</index>
-										<index key="Second party">Second party</index>
-										<index key="Surveyor">Surveyor</index>
-										<index key="Set designer">Set designer</index>
-										<index key="Setting">Setting</index>
-										<index key="Storyteller">Storyteller</index>
-										<index key="Stage manager">Stage manager</index>
-										<index key="Standards body">Standards body</index>
-										<index key="Stereotyper">Stereotyper</index>
-										<index key="Technical director">Technical director</index>
-										<index key="Teacher">Teacher</index>
-										<index key="Thesis advisor">Thesis advisor</index>
-										<index key="Television director">Television director</index>
-										<index key="Television producer">Television producer</index>
-										<index key="Transcriber">Transcriber</index>
-										<index key="Translator">Translator</index>
-										<index key="Type designer">Type designer</index>
-										<index key="Typographer">Typographer</index>
-										<index key="University place">University place</index>
-										<index key="Voice actor">Voice actor</index>
-										<index key="Videographer">Videographer</index>
-										<index key="Vocalist">Vocalist</index>
-										<index key="Writer of added commentary">Writer of added commentary</index>
-										<index key="Writer of added lyrics">Writer of added lyrics</index>
-										<index key="Writer of accompanying material">Writer of accompanying material</index>
-										<index key="Writer of added text">Writer of added text</index>
-										<index key="Woodcutter">Woodcutter</index>
-										<index key="Wood engraver">Wood engraver</index>
-										<index key="Writer of introduction">Writer of introduction</index>
-										<index key="Witness">Witness</index>
-										<index key="Writer of preface">Writer of preface</index>
-										<index key="Writer of supplementary textual content">Writer of supplementary textual content</index>
-									</options>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
-										</create>
-										<read>
-											<path>mods:role/mods:roleTerm</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>NULL</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
-					</element>
-				</children>
-			</element>
-			<element name="subjects_group">
-				<properties>
-					<type>fieldset</type>
-					<access>TRUE</access>
-					<title>Subjects</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="subjects">
-						<properties>
-							<type>tags</type>
-							<access>TRUE</access>
-							<title>LC Subject Headings (LCSH)</title>
-							<description>Use full double-dash format with spaces, e.g. Open spaces -- Ontario -- Toronto</description>
-							<tree>TRUE</tree>
-						</properties>
-						<children>
-							<element name="0">
-								<properties>
-									<type>tag</type>
-									<access>TRUE</access>
-									<tree>TRUE</tree>
-									<actions>
-										<create>
-											<path>self::node()</path>
-											<context>parent</context>
-											<schema/>
-											<type>xml</type>
-											<prefix>NULL</prefix>
-											<value>&lt;subject authority="lcsh"&gt;&lt;topic&gt;%value%&lt;/topic&gt;&lt;/subject&gt;</value>
-										</create>
-										<read>
-											<path>mods:subject[@authority='lcsh']/mods:topic</path>
-											<context>parent</context>
-										</read>
-										<update>
-											<path>self::node()</path>
-											<context>self</context>
-										</update>
-										<delete>
-											<path>self::node()</path>
-											<context>self</context>
-										</delete>
-									</actions>
-								</properties>
-								<children/>
-							</element>
-						</children>
-					</element>
-				</children>
-			</element>
-			<element name="originInfo">
-				<properties>
-					<type>fieldset</type>
-					<access>TRUE</access>
-					<tree>TRUE</tree>
-					<title>Dates</title>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>originInfo</value>
-						</create>
-						<read>
-							<path>mods:originInfo</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children>
-					<element name="dateIssued">
-						<properties>
-							<type>date_popup</type>
-							<access>TRUE</access>
-							<title>Publication Date</title>
-							<description>Date of publication (if published) or last revised date.</description>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>element</type>
-									<prefix>NULL</prefix>
-									<value>dateIssued</value>
-								</create>
-								<read>
-									<path>mods:dateIssued</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-					<element name="dateOther">
-						<properties>
-							<type>date_popup</type>
-							<access>TRUE</access>
-							<description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
-							<title>Embargo Date</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;mods:dateOther type="dateAvailable"&gt;%value%&lt;/mods:dateOther&gt;</value>
-								</create>
-								<read>
-									<path>mods:dateOther[@type="dateAvailable"]</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
-			</element>
-			<element name="licensing">
-				<properties>
-					<type>fieldset</type>
-					<access>TRUE</access>
-					<title>Licensing</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="accessCondition">
-						<properties>
-							<type>select</type>
-							<access>TRUE</access>
-							<description>Copyright information related to the publication; could be related to who owns the copyright to the abstract, etc.</description>
-							<options>
-								<index key="Creative Commons Attribution 4.0 International Public License; https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC-BY) License</index>
-								<index key="All Rights Reserved">Full Copyright (no license)</index>
-							</options>
-							<title>Copyright Information</title>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;mods:accessCondition type="restrictionOnAccess"&gt;%value%&lt;/mods:accessCondition&gt;</value>
-								</create>
-								<read>
-									<path>mods:accessCondition[@type='restrictionOnAccess']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
-			</element>
-			<!-- FORM-SPECIFIC -->
-			<element name="note_citation">
-				<properties>
-					<type>textarea</type>
-					<access>TRUE</access>
-					<description>If this work has been published, please provide as much information as possible (e.g., journal title, pages).</description>
-					<title>Citation</title>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>xml</type>
-							<prefix>NULL</prefix>
-							<value>&lt;mods:note type="citation/reference"&gt;%value%&lt;/mods:note&gt;</value>
-						</create>
-						<read>
-							<path>mods:note[@type="citation/reference"]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-			<!-- OPTIONAL ELEMENTS -->
-			<element name="identifiers">
-				<properties>
-					<type>fieldset</type>
-					<access>TRUE</access>
-					<title>Identifiers</title>
-					<tree>TRUE</tree>
-				</properties>
-				<children>
-					<element name="isbn">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<title>International Standard Book Number (ISBN)</title>
-							<description>Include hyphens in 10- or 13-digit number; e.g. 978-0-662-48548-3</description>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;identifier type="isbn"&gt;%value%&lt;/identifier&gt;</value>
-								</create>
-								<read>
-									<path>mods:identifier[@type='isbn']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-					<element name="doi">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<title>Digital Object Identifier (DOI)</title>
-							<description>Begin with prefix number; e.g. 10.6084/m9.figshare.3142000; do not include http://dx.doi.org</description>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;identifier type="doi"&gt;%value%&lt;/identifier&gt;</value>
-								</create>
-								<read>
-									<path>mods:identifier[@type='doi']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-					<element name="uri">
-						<properties>
-							<type>textfield</type>
-							<access>TRUE</access>
-							<title>Uniform Resource Identifier (URI)</title>
-							<description>e.g. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, use the DOI prefixed by http://dx.doi.org/, e.g. http://dx.doi.org/10.1002/poi3.91</description>
-							<tree>TRUE</tree>
-							<actions>
-								<create>
-									<path>self::node()</path>
-									<context>parent</context>
-									<schema/>
-									<type>xml</type>
-									<prefix>NULL</prefix>
-									<value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
-								</create>
-								<read>
-									<path>mods:identifier[@type='uri']</path>
-									<context>parent</context>
-								</read>
-								<update>
-									<path>self::node()</path>
-									<context>self</context>
-								</update>
-								<delete>NULL</delete>
-							</actions>
-						</properties>
-						<children/>
-					</element>
-				</children>
-			</element>
-			<element name="note">
-				<properties>
-					<type>textarea</type>
-					<access>TRUE</access>
-					<title>Note</title>
-					<description>Any additional information about the item that may be relevant.</description>
-					<tree>TRUE</tree>
-					<actions>
-						<create>
-							<path>self::node()</path>
-							<context>parent</context>
-							<schema/>
-							<type>element</type>
-							<prefix>NULL</prefix>
-							<value>note</value>
-						</create>
-						<read>
-							<path>mods:note[not(@*)]</path>
-							<context>parent</context>
-						</read>
-						<update>
-							<path>self::node()</path>
-							<context>self</context>
-						</update>
-						<delete>NULL</delete>
-					</actions>
-				</properties>
-				<children/>
-			</element>
-		</children>
-	</form>
+  <properties>
+    <root_name>mods:mods</root_name>
+    <schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
+    <namespaces default="http://www.loc.gov/mods/v3">
+      <namespace prefix="mods">http://www.loc.gov/mods/v3</namespace>
+      <namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</namespace>
+      <namespace prefix="xlink">http://www.w3.org/1999/xlink</namespace>
+    </namespaces>
+  </properties>
+  <form>
+    <properties>
+      <type>form</type>
+      <access>TRUE</access>
+      <tree>TRUE</tree>
+      <actions>
+        <create>NULL</create>
+        <read>
+          <path>//mods:mods[1]</path>
+          <context>document</context>
+        </read>
+        <update>NULL</update>
+        <delete>NULL</delete>
+      </actions>
+    </properties>
+    <children>
+      <element name="form_name_research">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <title>Research Submission</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children/>
+      </element>
+      <element name="hidden">
+        <properties>
+          <type>hidden</type>
+          <access>TRUE</access>
+          <description>These elements will be hidden and have hardcoded values based on the form.</description>
+          <title>FOR REVIEW ONLY</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="typeOfResource">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <default_value>text</default_value>
+              <description>Values constrained to MODS guidelines</description>
+              <title>Type Of Resource</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;typeOfResource&gt;%value%&lt;/typeOfResource&gt;</value>
+                </create>
+                <read>
+                  <path>mods:typeOfResource</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="location">
+            <properties>
+              <type>markup</type>
+              <access>TRUE</access>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>location</value>
+                </create>
+                <read>
+                  <path>mods:location</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="language">
+        <properties>
+          <type>select</type>
+          <access>TRUE</access>
+          <default_value>eng</default_value>
+          <options>
+            <aar>Afar</aar>
+            <abk>Abkhazian</abk>
+            <ace>Achinese</ace>
+            <ach>Acoli</ach>
+            <ada>Adangme</ada>
+            <ady>Adyghe; Adygei</ady>
+            <afa>Afro-Asiatic languages</afa>
+            <afh>Afrihili</afh>
+            <afr>Afrikaans</afr>
+            <ain>Ainu</ain>
+            <aka>Akan</aka>
+            <akk>Akkadian</akk>
+            <alb>Albanian</alb>
+            <ale>Aleut</ale>
+            <alg>Algonquian languages</alg>
+            <alt>Southern Altai</alt>
+            <amh>Amharic</amh>
+            <ang>English, Old (ca. 450-1100)</ang>
+            <anp>Angika</anp>
+            <apa>Apache languages</apa>
+            <ara>Arabic</ara>
+            <arc>Aramaic (700-300 BCE)</arc>
+            <arg>Aragonese</arg>
+            <arm>Armenian</arm>
+            <arn>Mapudungun; Mapuche</arn>
+            <arp>Arapaho</arp>
+            <art>Artificial languages</art>
+            <arw>Arawak</arw>
+            <asm>Assamese</asm>
+            <ast>Asturian; Bable; Leonese; Asturleonese</ast>
+            <ath>Athapascan languages</ath>
+            <aus>Australian languages</aus>
+            <ava>Avaric</ava>
+            <ave>Avestan</ave>
+            <awa>Awadhi</awa>
+            <aym>Aymara</aym>
+            <aze>Azerbaijani</aze>
+            <bad>Banda languages</bad>
+            <bai>Bamileke languages</bai>
+            <bak>Bashkir</bak>
+            <bal>Baluchi</bal>
+            <bam>Bambara</bam>
+            <ban>Balinese</ban>
+            <baq>Basque</baq>
+            <bas>Basa</bas>
+            <bat>Baltic languages</bat>
+            <bej>Beja; Bedawiyet</bej>
+            <bel>Belarusian</bel>
+            <bem>Bemba</bem>
+            <ben>Bengali</ben>
+            <ber>Berber languages</ber>
+            <bho>Bhojpuri</bho>
+            <bih>Bihari languages</bih>
+            <bik>Bikol</bik>
+            <bin>Bini; Edo</bin>
+            <bis>Bislama</bis>
+            <bla>Siksika</bla>
+            <bnt>Bantu languages</bnt>
+            <bos>Bosnian</bos>
+            <bra>Braj</bra>
+            <bre>Breton</bre>
+            <btk>Batak languages</btk>
+            <bua>Buriat</bua>
+            <bug>Buginese</bug>
+            <bul>Bulgarian</bul>
+            <bur>Burmese</bur>
+            <byn>Blin; Bilin</byn>
+            <cad>Caddo</cad>
+            <cai>Central American Indian languages</cai>
+            <car>Galibi Carib</car>
+            <cat>Catalan; Valencian</cat>
+            <cau>Caucasian languages</cau>
+            <ceb>Cebuano</ceb>
+            <cel>Celtic languages</cel>
+            <cha>Chamorro</cha>
+            <chb>Chibcha</chb>
+            <che>Chechen</che>
+            <chg>Chagatai</chg>
+            <chi>Chinese</chi>
+            <chk>Chuukese</chk>
+            <chm>Mari</chm>
+            <chn>Chinook jargon</chn>
+            <cho>Choctaw</cho>
+            <chp>Chipewyan; Dene Suline</chp>
+            <chr>Cherokee</chr>
+            <chu>Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic</chu>
+            <chv>Chuvash</chv>
+            <chy>Cheyenne</chy>
+            <cmc>Chamic languages</cmc>
+            <cop>Coptic</cop>
+            <cor>Cornish</cor>
+            <cos>Corsican</cos>
+            <cpe>Creoles and pidgins, English based</cpe>
+            <cpf>Creoles and pidgins, French-based</cpf>
+            <cpp>Creoles and pidgins, Portuguese-based</cpp>
+            <cre>Cree</cre>
+            <crh>Crimean Tatar; Crimean Turkish</crh>
+            <crp>Creoles and pidgins</crp>
+            <csb>Kashubian</csb>
+            <cus>Cushitic languages</cus>
+            <cze>Czech</cze>
+            <dak>Dakota</dak>
+            <dan>Danish</dan>
+            <dar>Dargwa</dar>
+            <day>Land Dayak languages</day>
+            <del>Delaware</del>
+            <den>Slave (Athapascan)</den>
+            <dgr>Dogrib</dgr>
+            <din>Dinka</din>
+            <div>Divehi; Dhivehi; Maldivian</div>
+            <doi>Dogri</doi>
+            <dra>Dravidian languages</dra>
+            <dsb>Lower Sorbian</dsb>
+            <dua>Duala</dua>
+            <dum>Dutch, Middle (ca.1050-1350)</dum>
+            <dut>Dutch; Flemish</dut>
+            <dyu>Dyula</dyu>
+            <dzo>Dzongkha</dzo>
+            <efi>Efik</efi>
+            <egy>Egyptian (Ancient)</egy>
+            <eka>Ekajuk</eka>
+            <elx>Elamite</elx>
+            <eng>English</eng>
+            <enm>English, Middle (1100-1500)</enm>
+            <epo>Esperanto</epo>
+            <est>Estonian</est>
+            <ewe>Ewe</ewe>
+            <ewo>Ewondo</ewo>
+            <fan>Fang</fan>
+            <fao>Faroese</fao>
+            <fat>Fanti</fat>
+            <fij>Fijian</fij>
+            <fil>Filipino; Pilipino</fil>
+            <fin>Finnish</fin>
+            <fiu>Finno-Ugrian languages</fiu>
+            <fon>Fon</fon>
+            <fre>French</fre>
+            <frm>French, Middle (ca.1400-1600)</frm>
+            <fro>French, Old (842-ca.1400)</fro>
+            <frr>Northern Frisian</frr>
+            <frs>Eastern Frisian</frs>
+            <fry>Western Frisian</fry>
+            <ful>Fulah</ful>
+            <fur>Friulian</fur>
+            <gaa>Ga</gaa>
+            <gay>Gayo</gay>
+            <gba>Gbaya</gba>
+            <gem>Germanic languages</gem>
+            <geo>Georgian</geo>
+            <ger>German</ger>
+            <gez>Geez</gez>
+            <gil>Gilbertese</gil>
+            <gla>Gaelic; Scottish Gaelic</gla>
+            <gle>Irish</gle>
+            <glg>Galician</glg>
+            <glv>Manx</glv>
+            <gmh>German, Middle High (ca.1050-1500)</gmh>
+            <goh>German, Old High (ca.750-1050)</goh>
+            <gon>Gondi</gon>
+            <gor>Gorontalo</gor>
+            <got>Gothic</got>
+            <grb>Grebo</grb>
+            <grc>Greek, Ancient (to 1453)</grc>
+            <gre>Greek, Modern (1453-)</gre>
+            <grn>Guarani</grn>
+            <gsw>Swiss German; Alemannic; Alsatian</gsw>
+            <guj>Gujarati</guj>
+            <gwi>Gwich'in</gwi>
+            <hai>Haida</hai>
+            <hat>Haitian; Haitian Creole</hat>
+            <hau>Hausa</hau>
+            <haw>Hawaiian</haw>
+            <heb>Hebrew</heb>
+            <her>Herero</her>
+            <hil>Hiligaynon</hil>
+            <him>Himachali languages; Western Pahari languages</him>
+            <hin>Hindi</hin>
+            <hit>Hittite</hit>
+            <hmn>Hmong; Mong</hmn>
+            <hmo>Hiri Motu</hmo>
+            <hrv>Croatian</hrv>
+            <hsb>Upper Sorbian</hsb>
+            <hun>Hungarian</hun>
+            <hup>Hupa</hup>
+            <iba>Iban</iba>
+            <ibo>Igbo</ibo>
+            <ice>Icelandic</ice>
+            <ido>Ido</ido>
+            <iii>Sichuan Yi; Nuosu</iii>
+            <ijo>Ijo languages</ijo>
+            <iku>Inuktitut</iku>
+            <ile>Interlingue; Occidental</ile>
+            <ilo>Iloko</ilo>
+            <ina>Interlingua (International Auxiliary Language Association)</ina>
+            <inc>Indic languages</inc>
+            <ind>Indonesian</ind>
+            <ine>Indo-European languages</ine>
+            <inh>Ingush</inh>
+            <ipk>Inupiaq</ipk>
+            <ira>Iranian languages</ira>
+            <iro>Iroquoian languages</iro>
+            <ita>Italian</ita>
+            <jav>Javanese</jav>
+            <jbo>Lojban</jbo>
+            <jpn>Japanese</jpn>
+            <jpr>Judeo-Persian</jpr>
+            <jrb>Judeo-Arabic</jrb>
+            <kaa>Kara-Kalpak</kaa>
+            <kab>Kabyle</kab>
+            <kac>Kachin; Jingpho</kac>
+            <kal>Kalaallisut; Greenlandic</kal>
+            <kam>Kamba</kam>
+            <kan>Kannada</kan>
+            <kar>Karen languages</kar>
+            <kas>Kashmiri</kas>
+            <kau>Kanuri</kau>
+            <kaw>Kawi</kaw>
+            <kaz>Kazakh</kaz>
+            <kbd>Kabardian</kbd>
+            <kha>Khasi</kha>
+            <khi>Khoisan languages</khi>
+            <khm>Central Khmer</khm>
+            <kho>Khotanese; Sakan</kho>
+            <kik>Kikuyu; Gikuyu</kik>
+            <kin>Kinyarwanda</kin>
+            <kir>Kirghiz; Kyrgyz</kir>
+            <kmb>Kimbundu</kmb>
+            <kok>Konkani</kok>
+            <kom>Komi</kom>
+            <kon>Kongo</kon>
+            <kor>Korean</kor>
+            <kos>Kosraean</kos>
+            <kpe>Kpelle</kpe>
+            <krc>Karachay-Balkar</krc>
+            <krl>Karelian</krl>
+            <kro>Kru languages</kro>
+            <kru>Kurukh</kru>
+            <kua>Kuanyama; Kwanyama</kua>
+            <kum>Kumyk</kum>
+            <kur>Kurdish</kur>
+            <kut>Kutenai</kut>
+            <lad>Ladino</lad>
+            <lah>Lahnda</lah>
+            <lam>Lamba</lam>
+            <lao>Lao</lao>
+            <lat>Latin</lat>
+            <lav>Latvian</lav>
+            <lez>Lezghian</lez>
+            <lim>Limburgan; Limburger; Limburgish</lim>
+            <lin>Lingala</lin>
+            <lit>Lithuanian</lit>
+            <lol>Mongo</lol>
+            <loz>Lozi</loz>
+            <ltz>Luxembourgish; Letzeburgesch</ltz>
+            <lua>Luba-Lulua</lua>
+            <lub>Luba-Katanga</lub>
+            <lug>Ganda</lug>
+            <lui>Luiseno</lui>
+            <lun>Lunda</lun>
+            <luo>Luo (Kenya and Tanzania)</luo>
+            <lus>Lushai</lus>
+            <mac>Macedonian</mac>
+            <mad>Madurese</mad>
+            <mag>Magahi</mag>
+            <mah>Marshallese</mah>
+            <mai>Maithili</mai>
+            <mak>Makasar</mak>
+            <mal>Malayalam</mal>
+            <man>Mandingo</man>
+            <mao>Maori</mao>
+            <map>Austronesian languages</map>
+            <mar>Marathi</mar>
+            <mas>Masai</mas>
+            <may>Malay</may>
+            <mdf>Moksha</mdf>
+            <mdr>Mandar</mdr>
+            <men>Mende</men>
+            <mga>Irish, Middle (900-1200)</mga>
+            <mic>Mi'kmaq; Micmac</mic>
+            <min>Minangkabau</min>
+            <mis>Uncoded languages</mis>
+            <mkh>Mon-Khmer languages</mkh>
+            <mlg>Malagasy</mlg>
+            <mlt>Maltese</mlt>
+            <mnc>Manchu</mnc>
+            <mni>Manipuri</mni>
+            <mno>Manobo languages</mno>
+            <moh>Mohawk</moh>
+            <mon>Mongolian</mon>
+            <mos>Mossi</mos>
+            <mul>Multiple languages</mul>
+            <mun>Munda languages</mun>
+            <mus>Creek</mus>
+            <mwl>Mirandese</mwl>
+            <mwr>Marwari</mwr>
+            <myn>Mayan languages</myn>
+            <myv>Erzya</myv>
+            <nah>Nahuatl languages</nah>
+            <nai>North American Indian languages</nai>
+            <nap>Neapolitan</nap>
+            <nau>Nauru</nau>
+            <nav>Navajo; Navaho</nav>
+            <nbl>Ndebele, South; South Ndebele</nbl>
+            <nde>Ndebele, North; North Ndebele</nde>
+            <ndo>Ndonga</ndo>
+            <nds>Low German; Low Saxon; German, Low; Saxon, Low</nds>
+            <nep>Nepali</nep>
+            <new>Nepal Bhasa; Newari</new>
+            <nia>Nias</nia>
+            <nic>Niger-Kordofanian languages</nic>
+            <niu>Niuean</niu>
+            <nno>Norwegian Nynorsk; Nynorsk, Norwegian</nno>
+            <nob>Bokm&#xE5;l, Norwegian; Norwegian Bokm&#xE5;l</nob>
+            <nog>Nogai</nog>
+            <non>Norse, Old</non>
+            <nor>Norwegian</nor>
+            <nqo>N'Ko</nqo>
+            <nso>Pedi; Sepedi; Northern Sotho</nso>
+            <nub>Nubian languages</nub>
+            <nwc>Classical Newari; Old Newari; Classical Nepal Bhasa</nwc>
+            <nya>Chichewa; Chewa; Nyanja</nya>
+            <nym>Nyamwezi</nym>
+            <nyn>Nyankole</nyn>
+            <nyo>Nyoro</nyo>
+            <nzi>Nzima</nzi>
+            <oci>Occitan (post 1500)</oci>
+            <oji>Ojibwa</oji>
+            <ori>Oriya</ori>
+            <orm>Oromo</orm>
+            <osa>Osage</osa>
+            <oss>Ossetian; Ossetic</oss>
+            <ota>Turkish, Ottoman (1500-1928)</ota>
+            <oto>Otomian languages</oto>
+            <paa>Papuan languages</paa>
+            <pag>Pangasinan</pag>
+            <pal>Pahlavi</pal>
+            <pam>Pampanga; Kapampangan</pam>
+            <pan>Panjabi; Punjabi</pan>
+            <pap>Papiamento</pap>
+            <pau>Palauan</pau>
+            <peo>Persian, Old (ca.600-400 B.C.)</peo>
+            <per>Persian</per>
+            <phi>Philippine languages</phi>
+            <phn>Phoenician</phn>
+            <pli>Pali</pli>
+            <pol>Polish</pol>
+            <pon>Pohnpeian</pon>
+            <por>Portuguese</por>
+            <pra>Prakrit languages</pra>
+            <pro>Proven&#xE7;al, Old (to 1500);Occitan, Old (to 1500)</pro>
+            <pus>Pushto; Pashto</pus>
+            <index key="qaa-qtz">Reserved for local use</index>
+            <que>Quechua</que>
+            <raj>Rajasthani</raj>
+            <rap>Rapanui</rap>
+            <rar>Rarotongan; Cook Islands Maori</rar>
+            <roa>Romance languages</roa>
+            <roh>Romansh</roh>
+            <rom>Romany</rom>
+            <rum>Romanian; Moldavian; Moldovan</rum>
+            <run>Rundi</run>
+            <rup>Aromanian; Arumanian; Macedo-Romanian</rup>
+            <rus>Russian</rus>
+            <sad>Sandawe</sad>
+            <sag>Sango</sag>
+            <sah>Yakut</sah>
+            <sai>South American Indian languages</sai>
+            <sal>Salishan languages</sal>
+            <sam>Samaritan Aramaic</sam>
+            <san>Sanskrit</san>
+            <sas>Sasak</sas>
+            <sat>Santali</sat>
+            <scn>Sicilian</scn>
+            <sco>Scots</sco>
+            <sel>Selkup</sel>
+            <sem>Semitic languages</sem>
+            <sga>Irish, Old (to 900)</sga>
+            <sgn>Sign Languages</sgn>
+            <shn>Shan</shn>
+            <sid>Sidamo</sid>
+            <sin>Sinhala; Sinhalese</sin>
+            <sio>Siouan languages</sio>
+            <sit>Sino-Tibetan languages</sit>
+            <sla>Slavic languages</sla>
+            <slo>Slovak</slo>
+            <slv>Slovenian</slv>
+            <sma>Southern Sami</sma>
+            <sme>Northern Sami</sme>
+            <smi>Sami languages</smi>
+            <smj>Lule Sami</smj>
+            <smn>Inari Sami</smn>
+            <smo>Samoan</smo>
+            <sms>Skolt Sami</sms>
+            <sna>Shona</sna>
+            <snd>Sindhi</snd>
+            <snk>Soninke</snk>
+            <sog>Sogdian</sog>
+            <som>Somali</som>
+            <son>Songhai languages</son>
+            <sot>Sotho, Southern</sot>
+            <spa>Spanish; Castilian</spa>
+            <srd>Sardinian</srd>
+            <srn>Sranan Tongo</srn>
+            <srp>Serbian</srp>
+            <srr>Serer</srr>
+            <ssa>Nilo-Saharan languages</ssa>
+            <ssw>Swati</ssw>
+            <suk>Sukuma</suk>
+            <sun>Sundanese</sun>
+            <sus>Susu</sus>
+            <sux>Sumerian</sux>
+            <swa>Swahili</swa>
+            <swe>Swedish</swe>
+            <syc>Classical Syriac</syc>
+            <syr>Syriac</syr>
+            <tah>Tahitian</tah>
+            <tai>Tai languages</tai>
+            <tam>Tamil</tam>
+            <tat>Tatar</tat>
+            <tel>Telugu</tel>
+            <tem>Timne</tem>
+            <ter>Tereno</ter>
+            <tet>Tetum</tet>
+            <tgk>Tajik</tgk>
+            <tgl>Tagalog</tgl>
+            <tha>Thai</tha>
+            <tib>Tibetan</tib>
+            <tig>Tigre</tig>
+            <tir>Tigrinya</tir>
+            <tiv>Tiv</tiv>
+            <tkl>Tokelau</tkl>
+            <tlh>Klingon; tlhIngan-Hol</tlh>
+            <tli>Tlingit</tli>
+            <tmh>Tamashek</tmh>
+            <tog>Tonga (Nyasa)</tog>
+            <ton>Tonga (Tonga Islands)</ton>
+            <tpi>Tok Pisin</tpi>
+            <tsi>Tsimshian</tsi>
+            <tsn>Tswana</tsn>
+            <tso>Tsonga</tso>
+            <tuk>Turkmen</tuk>
+            <tum>Tumbuka</tum>
+            <tup>Tupi languages</tup>
+            <tur>Turkish</tur>
+            <tut>Altaic languages</tut>
+            <tvl>Tuvalu</tvl>
+            <twi>Twi</twi>
+            <tyv>Tuvinian</tyv>
+            <udm>Udmurt</udm>
+            <uga>Ugaritic</uga>
+            <uig>Uighur; Uyghur</uig>
+            <ukr>Ukrainian</ukr>
+            <umb>Umbundu</umb>
+            <und>Undetermined</und>
+            <urd>Urdu</urd>
+            <uzb>Uzbek</uzb>
+            <vai>Vai</vai>
+            <ven>Venda</ven>
+            <vie>Vietnamese</vie>
+            <vol>Volap&#xFC;k</vol>
+            <vot>Votic</vot>
+            <wak>Wakashan languages</wak>
+            <wal>Wolaitta; Wolaytta</wal>
+            <war>Waray</war>
+            <was>Washo</was>
+            <wel>Welsh</wel>
+            <wen>Sorbian languages</wen>
+            <wln>Walloon</wln>
+            <wol>Wolof</wol>
+            <xal>Kalmyk; Oirat</xal>
+            <xho>Xhosa</xho>
+            <yao>Yao</yao>
+            <yap>Yapese</yap>
+            <yid>Yiddish</yid>
+            <yor>Yoruba</yor>
+            <ypk>Yupik languages</ypk>
+            <zap>Zapotec</zap>
+            <zbl>Blissymbols; Blissymbolics; Bliss</zbl>
+            <zen>Zenaga</zen>
+            <zgh>Standard Moroccan Tamazight</zgh>
+            <zha>Zhuang; Chuang</zha>
+            <znd>Zande languages</znd>
+            <zul>Zulu</zul>
+            <zun>Zuni</zun>
+            <zxx>No linguistic content; Not applicable</zxx>
+            <zza>Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki</zza>
+          </options>
+          <title>Language</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+            </create>
+            <read>
+              <path>mods:language/mods:languageTerm[@authority="iso639-2b" and @type="code"]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="genre">
+        <properties>
+          <type>select</type>
+          <access>TRUE</access>
+          <default_value>article</default_value>
+          <options>
+            <index key="abstract or summary">abstract or summary</index>
+            <index key="art original">art original</index>
+            <index key="art reproduction">art reproduction</index>
+            <article>article</article>
+            <atlas>atlas</atlas>
+            <autobiography>autobiography</autobiography>
+            <bibliography>bibliography</bibliography>
+            <biography>biography</biography>
+            <book>book</book>
+            <book_contribution>book_contribution</book_contribution>
+            <calendar>calendar</calendar>
+            <catalog>catalog</catalog>
+            <chart>chart</chart>
+            <index key="comic or graphic novel">comic or graphic novel</index>
+            <index key="comic strip">comic strip</index>
+            <index key="conference publication">conference publication</index>
+            <database>database</database>
+            <dictionary>dictionary</dictionary>
+            <diorama>diorama</diorama>
+            <directory>directory</directory>
+            <discography>discography</discography>
+            <drama>drama</drama>
+            <encyclopedia>encyclopedia</encyclopedia>
+            <essay>essay</essay>
+            <festschrift>festschrift</festschrift>
+            <fiction>fiction</fiction>
+            <filmography>filmography</filmography>
+            <filmstrip>filmstrip</filmstrip>
+            <index key="finding aid">finding aid</index>
+            <index key="flash card">flash card</index>
+            <folktale>folktale</folktale>
+            <font>font</font>
+            <game>game</game>
+            <globe>globe</globe>
+            <index key="government publication">government publication</index>
+            <graphic>graphic</graphic>
+            <handbook>handbook</handbook>
+            <history>history</history>
+            <index key="humor, satire">humor, satire</index>
+            <hymnal>hymnal</hymnal>
+            <index>index</index>
+            <instruction>instruction</instruction>
+            <interview>interview</interview>
+            <issue>issue</issue>
+            <journal>journal</journal>
+            <kit>kit</kit>
+            <index key="language instruction">language instruction</index>
+            <index key="law report or digest">law report or digest</index>
+            <index key="legal article">legal article</index>
+            <index key="legal case and case notes">legal case and case notes</index>
+            <legislation>legislation</legislation>
+            <letter>letter</letter>
+            <index key="loose-leaf">loose-leaf</index>
+            <map>map</map>
+            <memoir>memoir</memoir>
+            <index key="microscope slide">microscope slide</index>
+            <model>model</model>
+            <index key="motion picture">motion picture</index>
+            <index key="multivolume monograph">multivolume monograph</index>
+            <newspaper>newspaper</newspaper>
+            <novel>novel</novel>
+            <index key="numeric data">numeric data</index>
+            <occasional>occasional</occasional>
+            <offprint>offprint</offprint>
+            <index key="online system or service">online system or service</index>
+            <other>other</other>
+            <patent>patent</patent>
+            <periodical>periodical</periodical>
+            <picture>picture</picture>
+            <poetry>poetry</poetry>
+            <popular_press>popular_press</popular_press>
+            <presentation>presentation</presentation>
+            <index key="programmed text">programmed text</index>
+            <realia>realia</realia>
+            <rehearsal>rehearsal</rehearsal>
+            <index key="remote sensing image">remote sensing image</index>
+            <reporting>reporting</reporting>
+            <review>review</review>
+            <script>script</script>
+            <series>series</series>
+            <index key="short story">short story</index>
+            <slide>slide</slide>
+            <sound>sound</sound>
+            <speech>speech</speech>
+            <index key="standard or specification">standard or specification</index>
+            <statistics>statistics</statistics>
+            <index key="survey of literature">survey of literature</index>
+            <index key="technical drawing">technical drawing</index>
+            <index key="technical report">technical report</index>
+            <techreport>techreport</techreport>
+            <thesis>thesis</thesis>
+            <toy>toy</toy>
+            <transparency>transparency</transparency>
+            <treaty>treaty</treaty>
+            <unpublished_paper>unpublished_paper</unpublished_paper>
+            <videorecording>videorecording</videorecording>
+            <index key="web site">web site</index>
+            <working_paper>working_paper</working_paper>
+            <yearbook>yearbook</yearbook>
+          </options>
+          <title>Genre</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;genre authority="marcgt"&gt;%value%&lt;/genre&gt;</value>
+            </create>
+            <read>
+              <path>mods:genre</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="titleInfo">
+        <properties>
+          <type>markup</type>
+          <access>TRUE</access>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>titleInfo</value>
+            </create>
+            <read>
+              <path>mods:titleInfo[not(@*)]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="title">
+            <properties>
+              <type>textarea</type>
+              <access>TRUE</access>
+              <description>Title of the item.</description>
+              <rows>2</rows>
+              <title>Title</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>title</value>
+                </create>
+                <read>
+                  <path>mods:title</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="abstract">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <description>Abstract or summary of the item.</description>
+          <rows>12</rows>
+          <title>Abstract</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>abstract</value>
+            </create>
+            <read>
+              <path>mods:abstract</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="contributors_personal_group">
+        <properties>
+          <type>tabs</type>
+          <access>TRUE</access>
+          <title>Individual Contributors</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="0">
+            <properties>
+              <type>tabpanel</type>
+              <access>TRUE</access>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>name</value>
+                </create>
+                <read>
+                  <path>mods:name[@type = 'personal']</path>
+                  <context>parent</context>
+                </read>
+                <update>NULL</update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children>
+              <element name="type">
+                <properties>
+                  <type>hidden</type>
+                  <access>TRUE</access>
+                  <default_value>personal</default_value>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>type</value>
+                    </create>
+                    <read>
+                      <path>@type</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="namePartGiven">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <title>First Name Middle Name or Initial.</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;namePart type='given'&gt;%value%&lt;/namePart&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:namePart[@type = 'given']</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="namePartFamily">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <title>Last Name</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;namePart type='family'&gt;%value%&lt;/namePart&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:namePart[@type='family']</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="role">
+                <properties>
+                  <type>select</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <default_value>Author</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <options>
+                    <Abridger>Abridger</Abridger>
+                    <index key="Art copyist">Art copyist</index>
+                    <Actor>Actor</Actor>
+                    <index key="Art director">Art director</index>
+                    <Adapter>Adapter</Adapter>
+                    <index key="Author of afterword, colophon, etc.">Author of afterword, colophon, etc.</index>
+                    <Analyst>Analyst</Analyst>
+                    <Animator>Animator</Animator>
+                    <Annotator>Annotator</Annotator>
+                    <index key="Bibliographic antecedent">Bibliographic antecedent</index>
+                    <Appellee>Appellee</Appellee>
+                    <Appellant>Appellant</Appellant>
+                    <Applicant>Applicant</Applicant>
+                    <index key="Author in quotations or text abstracts">Author in quotations or text abstracts</index>
+                    <Architect>Architect</Architect>
+                    <index key="Artistic director">Artistic director</index>
+                    <Arranger>Arranger</Arranger>
+                    <Artist>Artist</Artist>
+                    <Assignee>Assignee</Assignee>
+                    <index key="Associated name">Associated name</index>
+                    <Autographer>Autographer</Autographer>
+                    <index key="Attributed name">Attributed name</index>
+                    <Auctioneer>Auctioneer</Auctioneer>
+                    <index key="Author of dialog">Author of dialog</index>
+                    <index key="Author of introduction, etc.">Author of introduction, etc.</index>
+                    <Screenwriter>Screenwriter</Screenwriter>
+                    <Author>Author</Author>
+                    <index key="Binding designer">Binding designer</index>
+                    <index key="Bookjacket designer">Bookjacket designer</index>
+                    <index key="Book designer">Book designer</index>
+                    <index key="Book producer">Book producer</index>
+                    <index key="Blurb writer">Blurb writer</index>
+                    <Binder>Binder</Binder>
+                    <index key="Bookplate designer">Bookplate designer</index>
+                    <Broadcaster>Broadcaster</Broadcaster>
+                    <index key="Braille embosser">Braille embosser</index>
+                    <Bookseller>Bookseller</Bookseller>
+                    <Caster>Caster</Caster>
+                    <Conceptor>Conceptor</Conceptor>
+                    <Choreographer>Choreographer</Choreographer>
+                    <Collaborator>Collaborator</Collaborator>
+                    <Client>Client</Client>
+                    <Calligrapher>Calligrapher</Calligrapher>
+                    <Colorist>Colorist</Colorist>
+                    <Collotyper>Collotyper</Collotyper>
+                    <Commentator>Commentator</Commentator>
+                    <Composer>Composer</Composer>
+                    <Compositor>Compositor</Compositor>
+                    <Conductor>Conductor</Conductor>
+                    <Cinematographer>Cinematographer</Cinematographer>
+                    <Censor>Censor</Censor>
+                    <index key="Contestant-appellee">Contestant-appellee</index>
+                    <Collector>Collector</Collector>
+                    <Compiler>Compiler</Compiler>
+                    <Conservator>Conservator</Conservator>
+                    <index key="Collection registrar">Collection registrar</index>
+                    <Contestant>Contestant</Contestant>
+                    <index key="Contestant-appellant">Contestant-appellant</index>
+                    <index key="Court governed">Court governed</index>
+                    <index key="Cover designer">Cover designer</index>
+                    <index key="Copyright claimant">Copyright claimant</index>
+                    <index key="Complainant-appellee">Complainant-appellee</index>
+                    <index key="Copyright holder">Copyright holder</index>
+                    <Complainant>Complainant</Complainant>
+                    <index key="Complainant-appellant">Complainant-appellant</index>
+                    <Creator>Creator</Creator>
+                    <Correspondent>Correspondent</Correspondent>
+                    <Corrector>Corrector</Corrector>
+                    <index key="Court reporter">Court reporter</index>
+                    <Consultant>Consultant</Consultant>
+                    <index key="Consultant to a project">Consultant to a project</index>
+                    <index key="Costume designer">Costume designer</index>
+                    <Contributor>Contributor</Contributor>
+                    <index key="Contestee-appellee">Contestee-appellee</index>
+                    <Cartographer>Cartographer</Cartographer>
+                    <Contractor>Contractor</Contractor>
+                    <Contestee>Contestee</Contestee>
+                    <index key="Contestee-appellant">Contestee-appellant</index>
+                    <Curator>Curator</Curator>
+                    <index key="Commentator for written text">Commentator for written text</index>
+                    <index key="Distribution place">Distribution place</index>
+                    <Defendant>Defendant</Defendant>
+                    <index key="Defendant-appellee">Defendant-appellee</index>
+                    <index key="Defendant-appellant">Defendant-appellant</index>
+                    <index key="Degree granting institution">Degree granting institution</index>
+                    <index key="Degree supervisor">Degree supervisor</index>
+                    <Dissertant>Dissertant</Dissertant>
+                    <Delineator>Delineator</Delineator>
+                    <Dancer>Dancer</Dancer>
+                    <Donor>Donor</Donor>
+                    <Depicted>Depicted</Depicted>
+                    <Depositor>Depositor</Depositor>
+                    <Draftsman>Draftsman</Draftsman>
+                    <Director>Director</Director>
+                    <Designer>Designer</Designer>
+                    <Distributor>Distributor</Distributor>
+                    <index key="Data contributor">Data contributor</index>
+                    <Dedicatee>Dedicatee</Dedicatee>
+                    <index key="Data manager">Data manager</index>
+                    <Dedicator>Dedicator</Dedicator>
+                    <index key="Dubious author">Dubious author</index>
+                    <index key="Editor of compilation">Editor of compilation</index>
+                    <index key="Editor of moving image work">Editor of moving image work</index>
+                    <Editor>Editor</Editor>
+                    <Engraver>Engraver</Engraver>
+                    <Electrician>Electrician</Electrician>
+                    <Electrotyper>Electrotyper</Electrotyper>
+                    <Engineer>Engineer</Engineer>
+                    <index key="Enacting jurisdiction">Enacting jurisdiction</index>
+                    <Etcher>Etcher</Etcher>
+                    <index key="Event place">Event place</index>
+                    <Expert>Expert</Expert>
+                    <Facsimilist>Facsimilist</Facsimilist>
+                    <index key="Film distributor">Film distributor</index>
+                    <index key="Field director">Field director</index>
+                    <index key="Film editor">Film editor</index>
+                    <index key="Film director">Film director</index>
+                    <Filmmaker>Filmmaker</Filmmaker>
+                    <index key="Former owner">Former owner</index>
+                    <index key="Film producer">Film producer</index>
+                    <Funder>Funder</Funder>
+                    <index key="First party">First party</index>
+                    <Forger>Forger</Forger>
+                    <index key="Geographic information specialist">Geographic information specialist</index>
+                    <index key="Graphic technician">Graphic technician</index>
+                    <index key="Host institution">Host institution</index>
+                    <Honoree>Honoree</Honoree>
+                    <Host>Host</Host>
+                    <Illustrator>Illustrator</Illustrator>
+                    <Illuminator>Illuminator</Illuminator>
+                    <Inscriber>Inscriber</Inscriber>
+                    <Inventor>Inventor</Inventor>
+                    <index key="Issuing body">Issuing body</index>
+                    <Instrumentalist>Instrumentalist</Instrumentalist>
+                    <Interviewee>Interviewee</Interviewee>
+                    <Interviewer>Interviewer</Interviewer>
+                    <Judge>Judge</Judge>
+                    <index key="Jurisdiction governed">Jurisdiction governed</index>
+                    <Laboratory>Laboratory</Laboratory>
+                    <Librettist>Librettist</Librettist>
+                    <index key="Laboratory director">Laboratory director</index>
+                    <Lead>Lead</Lead>
+                    <index key="Libelee-appellee">Libelee-appellee</index>
+                    <Libelee>Libelee</Libelee>
+                    <Lender>Lender</Lender>
+                    <index key="Libelee-appellant">Libelee-appellant</index>
+                    <index key="Lighting designer">Lighting designer</index>
+                    <index key="Libelant-appellee">Libelant-appellee</index>
+                    <Libelant>Libelant</Libelant>
+                    <index key="Libelant-appellant">Libelant-appellant</index>
+                    <index key="Landscape architect">Landscape architect</index>
+                    <Licensee>Licensee</Licensee>
+                    <Licensor>Licensor</Licensor>
+                    <Lithographer>Lithographer</Lithographer>
+                    <Lyricist>Lyricist</Lyricist>
+                    <index key="Music copyist">Music copyist</index>
+                    <index key="Metadata contact">Metadata contact</index>
+                    <Medium>Medium</Medium>
+                    <index key="Manufacture place">Manufacture place</index>
+                    <Manufacturer>Manufacturer</Manufacturer>
+                    <Moderator>Moderator</Moderator>
+                    <Monitor>Monitor</Monitor>
+                    <Marbler>Marbler</Marbler>
+                    <index key="Markup editor">Markup editor</index>
+                    <index key="Musical director">Musical director</index>
+                    <index key="Metal-engraver">Metal-engraver</index>
+                    <index key="Minute taker">Minute taker</index>
+                    <Musician>Musician</Musician>
+                    <Narrator>Narrator</Narrator>
+                    <Opponent>Opponent</Opponent>
+                    <Originator>Originator</Originator>
+                    <Organizer>Organizer</Organizer>
+                    <index key="Onscreen presenter">Onscreen presenter</index>
+                    <Other>Other</Other>
+                    <Owner>Owner</Owner>
+                    <Panelist>Panelist</Panelist>
+                    <Patron>Patron</Patron>
+                    <index key="Publishing director">Publishing director</index>
+                    <Publisher>Publisher</Publisher>
+                    <index key="Project director">Project director</index>
+                    <Proofreader>Proofreader</Proofreader>
+                    <Photographer>Photographer</Photographer>
+                    <Platemaker>Platemaker</Platemaker>
+                    <index key="Permitting agency">Permitting agency</index>
+                    <index key="Production manager">Production manager</index>
+                    <index key="Printer of plates">Printer of plates</index>
+                    <Papermaker>Papermaker</Papermaker>
+                    <Puppeteer>Puppeteer</Puppeteer>
+                    <Praeses>Praeses</Praeses>
+                    <index key="Process contact">Process contact</index>
+                    <index key="Production personnel">Production personnel</index>
+                    <Presenter>Presenter</Presenter>
+                    <Performer>Performer</Performer>
+                    <Programmer>Programmer</Programmer>
+                    <Printmaker>Printmaker</Printmaker>
+                    <index key="Production company">Production company</index>
+                    <Producer>Producer</Producer>
+                    <index key="Production place">Production place</index>
+                    <index key="Production designer">Production designer</index>
+                    <Printer>Printer</Printer>
+                    <Provider>Provider</Provider>
+                    <index key="Patent applicant">Patent applicant</index>
+                    <index key="Plaintiff-appellee">Plaintiff-appellee</index>
+                    <Plaintiff>Plaintiff</Plaintiff>
+                    <index key="Patent holder">Patent holder</index>
+                    <index key="Plaintiff-appellant">Plaintiff-appellant</index>
+                    <index key="Publication place">Publication place</index>
+                    <Rubricator>Rubricator</Rubricator>
+                    <Recordist>Recordist</Recordist>
+                    <index key="Recording engineer">Recording engineer</index>
+                    <Addressee>Addressee</Addressee>
+                    <index key="Radio director">Radio director</index>
+                    <Redaktor>Redaktor</Redaktor>
+                    <Renderer>Renderer</Renderer>
+                    <Researcher>Researcher</Researcher>
+                    <Reviewer>Reviewer</Reviewer>
+                    <index key="Radio producer">Radio producer</index>
+                    <Repository>Repository</Repository>
+                    <Reporter>Reporter</Reporter>
+                    <index key="Responsible party">Responsible party</index>
+                    <index key="Respondent-appellee">Respondent-appellee</index>
+                    <Restager>Restager</Restager>
+                    <Respondent>Respondent</Respondent>
+                    <Restorationist>Restorationist</Restorationist>
+                    <index key="Respondent-appellant">Respondent-appellant</index>
+                    <index key="Research team head">Research team head</index>
+                    <index key="Research team member">Research team member</index>
+                    <index key="Scientific advisor">Scientific advisor</index>
+                    <Scenarist>Scenarist</Scenarist>
+                    <Sculptor>Sculptor</Sculptor>
+                    <Scribe>Scribe</Scribe>
+                    <index key="Sound designer">Sound designer</index>
+                    <Secretary>Secretary</Secretary>
+                    <index key="Stage director">Stage director</index>
+                    <Signer>Signer</Signer>
+                    <index key="Supporting host">Supporting host</index>
+                    <Seller>Seller</Seller>
+                    <Singer>Singer</Singer>
+                    <Speaker>Speaker</Speaker>
+                    <Sponsor>Sponsor</Sponsor>
+                    <index key="Second party">Second party</index>
+                    <Surveyor>Surveyor</Surveyor>
+                    <index key="Set designer">Set designer</index>
+                    <Setting>Setting</Setting>
+                    <Storyteller>Storyteller</Storyteller>
+                    <index key="Stage manager">Stage manager</index>
+                    <index key="Standards body">Standards body</index>
+                    <Stereotyper>Stereotyper</Stereotyper>
+                    <index key="Technical director">Technical director</index>
+                    <Teacher>Teacher</Teacher>
+                    <index key="Thesis advisor">Thesis advisor</index>
+                    <index key="Television director">Television director</index>
+                    <index key="Television producer">Television producer</index>
+                    <Transcriber>Transcriber</Transcriber>
+                    <Translator>Translator</Translator>
+                    <index key="Type designer">Type designer</index>
+                    <Typographer>Typographer</Typographer>
+                    <index key="University place">University place</index>
+                    <index key="Voice actor">Voice actor</index>
+                    <Videographer>Videographer</Videographer>
+                    <Vocalist>Vocalist</Vocalist>
+                    <index key="Writer of added commentary">Writer of added commentary</index>
+                    <index key="Writer of added lyrics">Writer of added lyrics</index>
+                    <index key="Writer of accompanying material">Writer of accompanying material</index>
+                    <index key="Writer of added text">Writer of added text</index>
+                    <Woodcutter>Woodcutter</Woodcutter>
+                    <index key="Wood engraver">Wood engraver</index>
+                    <index key="Writer of introduction">Writer of introduction</index>
+                    <Witness>Witness</Witness>
+                    <index key="Writer of preface">Writer of preface</index>
+                    <index key="Writer of supplementary textual content">Writer of supplementary textual content</index>
+                  </options>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Role</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:role/mods:roleTerm</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
+      <element name="contributors_corporate_group">
+        <properties>
+          <type>tabs</type>
+          <access>TRUE</access>
+          <title>Group Contributors</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="0">
+            <properties>
+              <type>tabpanel</type>
+              <access>TRUE</access>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>name</value>
+                </create>
+                <read>
+                  <path>mods:name[@type = 'corporate']</path>
+                  <context>parent</context>
+                </read>
+                <update>NULL</update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children>
+              <element name="type">
+                <properties>
+                  <type>hidden</type>
+                  <access>TRUE</access>
+                  <default_value>corporate</default_value>
+                  <title>Type</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>type</value>
+                    </create>
+                    <read>
+                      <path>@type</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="namePart">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <title>Name</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:namePart</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="role">
+                <properties>
+                  <type>select</type>
+                  <access>TRUE</access>
+                  <options>
+                    <Abridger>Abridger</Abridger>
+                    <index key="Art copyist">Art copyist</index>
+                    <Actor>Actor</Actor>
+                    <index key="Art director">Art director</index>
+                    <Adapter>Adapter</Adapter>
+                    <index key="Author of afterword, colophon, etc.">Author of afterword, colophon, etc.</index>
+                    <Analyst>Analyst</Analyst>
+                    <Animator>Animator</Animator>
+                    <Annotator>Annotator</Annotator>
+                    <index key="Bibliographic antecedent">Bibliographic antecedent</index>
+                    <Appellee>Appellee</Appellee>
+                    <Appellant>Appellant</Appellant>
+                    <Applicant>Applicant</Applicant>
+                    <index key="Author in quotations or text abstracts">Author in quotations or text abstracts</index>
+                    <Architect>Architect</Architect>
+                    <index key="Artistic director">Artistic director</index>
+                    <Arranger>Arranger</Arranger>
+                    <Artist>Artist</Artist>
+                    <Assignee>Assignee</Assignee>
+                    <index key="Associated name">Associated name</index>
+                    <Autographer>Autographer</Autographer>
+                    <index key="Attributed name">Attributed name</index>
+                    <Auctioneer>Auctioneer</Auctioneer>
+                    <index key="Author of dialog">Author of dialog</index>
+                    <index key="Author of introduction, etc.">Author of introduction, etc.</index>
+                    <Screenwriter>Screenwriter</Screenwriter>
+                    <Author>Author</Author>
+                    <index key="Binding designer">Binding designer</index>
+                    <index key="Bookjacket designer">Bookjacket designer</index>
+                    <index key="Book designer">Book designer</index>
+                    <index key="Book producer">Book producer</index>
+                    <index key="Blurb writer">Blurb writer</index>
+                    <Binder>Binder</Binder>
+                    <index key="Bookplate designer">Bookplate designer</index>
+                    <Broadcaster>Broadcaster</Broadcaster>
+                    <index key="Braille embosser">Braille embosser</index>
+                    <Bookseller>Bookseller</Bookseller>
+                    <Caster>Caster</Caster>
+                    <Conceptor>Conceptor</Conceptor>
+                    <Choreographer>Choreographer</Choreographer>
+                    <Collaborator>Collaborator</Collaborator>
+                    <Client>Client</Client>
+                    <Calligrapher>Calligrapher</Calligrapher>
+                    <Colorist>Colorist</Colorist>
+                    <Collotyper>Collotyper</Collotyper>
+                    <Commentator>Commentator</Commentator>
+                    <Composer>Composer</Composer>
+                    <Compositor>Compositor</Compositor>
+                    <Conductor>Conductor</Conductor>
+                    <Cinematographer>Cinematographer</Cinematographer>
+                    <Censor>Censor</Censor>
+                    <index key="Contestant-appellee">Contestant-appellee</index>
+                    <Collector>Collector</Collector>
+                    <Compiler>Compiler</Compiler>
+                    <Conservator>Conservator</Conservator>
+                    <index key="Collection registrar">Collection registrar</index>
+                    <Contestant>Contestant</Contestant>
+                    <index key="Contestant-appellant">Contestant-appellant</index>
+                    <index key="Court governed">Court governed</index>
+                    <index key="Cover designer">Cover designer</index>
+                    <index key="Copyright claimant">Copyright claimant</index>
+                    <index key="Complainant-appellee">Complainant-appellee</index>
+                    <index key="Copyright holder">Copyright holder</index>
+                    <Complainant>Complainant</Complainant>
+                    <index key="Complainant-appellant">Complainant-appellant</index>
+                    <Creator>Creator</Creator>
+                    <Correspondent>Correspondent</Correspondent>
+                    <Corrector>Corrector</Corrector>
+                    <index key="Court reporter">Court reporter</index>
+                    <Consultant>Consultant</Consultant>
+                    <index key="Consultant to a project">Consultant to a project</index>
+                    <index key="Costume designer">Costume designer</index>
+                    <Contributor>Contributor</Contributor>
+                    <index key="Contestee-appellee">Contestee-appellee</index>
+                    <Cartographer>Cartographer</Cartographer>
+                    <Contractor>Contractor</Contractor>
+                    <Contestee>Contestee</Contestee>
+                    <index key="Contestee-appellant">Contestee-appellant</index>
+                    <Curator>Curator</Curator>
+                    <index key="Commentator for written text">Commentator for written text</index>
+                    <index key="Distribution place">Distribution place</index>
+                    <Defendant>Defendant</Defendant>
+                    <index key="Defendant-appellee">Defendant-appellee</index>
+                    <index key="Defendant-appellant">Defendant-appellant</index>
+                    <index key="Degree granting institution">Degree granting institution</index>
+                    <index key="Degree supervisor">Degree supervisor</index>
+                    <Dissertant>Dissertant</Dissertant>
+                    <Delineator>Delineator</Delineator>
+                    <Dancer>Dancer</Dancer>
+                    <Donor>Donor</Donor>
+                    <Depicted>Depicted</Depicted>
+                    <Depositor>Depositor</Depositor>
+                    <Draftsman>Draftsman</Draftsman>
+                    <Director>Director</Director>
+                    <Designer>Designer</Designer>
+                    <Distributor>Distributor</Distributor>
+                    <index key="Data contributor">Data contributor</index>
+                    <Dedicatee>Dedicatee</Dedicatee>
+                    <index key="Data manager">Data manager</index>
+                    <Dedicator>Dedicator</Dedicator>
+                    <index key="Dubious author">Dubious author</index>
+                    <index key="Editor of compilation">Editor of compilation</index>
+                    <index key="Editor of moving image work">Editor of moving image work</index>
+                    <Editor>Editor</Editor>
+                    <Engraver>Engraver</Engraver>
+                    <Electrician>Electrician</Electrician>
+                    <Electrotyper>Electrotyper</Electrotyper>
+                    <Engineer>Engineer</Engineer>
+                    <index key="Enacting jurisdiction">Enacting jurisdiction</index>
+                    <Etcher>Etcher</Etcher>
+                    <index key="Event place">Event place</index>
+                    <Expert>Expert</Expert>
+                    <Facsimilist>Facsimilist</Facsimilist>
+                    <index key="Film distributor">Film distributor</index>
+                    <index key="Field director">Field director</index>
+                    <index key="Film editor">Film editor</index>
+                    <index key="Film director">Film director</index>
+                    <Filmmaker>Filmmaker</Filmmaker>
+                    <index key="Former owner">Former owner</index>
+                    <index key="Film producer">Film producer</index>
+                    <Funder>Funder</Funder>
+                    <index key="First party">First party</index>
+                    <Forger>Forger</Forger>
+                    <index key="Geographic information specialist">Geographic information specialist</index>
+                    <index key="Graphic technician">Graphic technician</index>
+                    <index key="Host institution">Host institution</index>
+                    <Honoree>Honoree</Honoree>
+                    <Host>Host</Host>
+                    <Illustrator>Illustrator</Illustrator>
+                    <Illuminator>Illuminator</Illuminator>
+                    <Inscriber>Inscriber</Inscriber>
+                    <Inventor>Inventor</Inventor>
+                    <index key="Issuing body">Issuing body</index>
+                    <Instrumentalist>Instrumentalist</Instrumentalist>
+                    <Interviewee>Interviewee</Interviewee>
+                    <Interviewer>Interviewer</Interviewer>
+                    <Judge>Judge</Judge>
+                    <index key="Jurisdiction governed">Jurisdiction governed</index>
+                    <Laboratory>Laboratory</Laboratory>
+                    <Librettist>Librettist</Librettist>
+                    <index key="Laboratory director">Laboratory director</index>
+                    <Lead>Lead</Lead>
+                    <index key="Libelee-appellee">Libelee-appellee</index>
+                    <Libelee>Libelee</Libelee>
+                    <Lender>Lender</Lender>
+                    <index key="Libelee-appellant">Libelee-appellant</index>
+                    <index key="Lighting designer">Lighting designer</index>
+                    <index key="Libelant-appellee">Libelant-appellee</index>
+                    <Libelant>Libelant</Libelant>
+                    <index key="Libelant-appellant">Libelant-appellant</index>
+                    <index key="Landscape architect">Landscape architect</index>
+                    <Licensee>Licensee</Licensee>
+                    <Licensor>Licensor</Licensor>
+                    <Lithographer>Lithographer</Lithographer>
+                    <Lyricist>Lyricist</Lyricist>
+                    <index key="Music copyist">Music copyist</index>
+                    <index key="Metadata contact">Metadata contact</index>
+                    <Medium>Medium</Medium>
+                    <index key="Manufacture place">Manufacture place</index>
+                    <Manufacturer>Manufacturer</Manufacturer>
+                    <Moderator>Moderator</Moderator>
+                    <Monitor>Monitor</Monitor>
+                    <Marbler>Marbler</Marbler>
+                    <index key="Markup editor">Markup editor</index>
+                    <index key="Musical director">Musical director</index>
+                    <index key="Metal-engraver">Metal-engraver</index>
+                    <index key="Minute taker">Minute taker</index>
+                    <Musician>Musician</Musician>
+                    <Narrator>Narrator</Narrator>
+                    <Opponent>Opponent</Opponent>
+                    <Originator>Originator</Originator>
+                    <Organizer>Organizer</Organizer>
+                    <index key="Onscreen presenter">Onscreen presenter</index>
+                    <Other>Other</Other>
+                    <Owner>Owner</Owner>
+                    <Panelist>Panelist</Panelist>
+                    <Patron>Patron</Patron>
+                    <index key="Publishing director">Publishing director</index>
+                    <Publisher>Publisher</Publisher>
+                    <index key="Project director">Project director</index>
+                    <Proofreader>Proofreader</Proofreader>
+                    <Photographer>Photographer</Photographer>
+                    <Platemaker>Platemaker</Platemaker>
+                    <index key="Permitting agency">Permitting agency</index>
+                    <index key="Production manager">Production manager</index>
+                    <index key="Printer of plates">Printer of plates</index>
+                    <Papermaker>Papermaker</Papermaker>
+                    <Puppeteer>Puppeteer</Puppeteer>
+                    <Praeses>Praeses</Praeses>
+                    <index key="Process contact">Process contact</index>
+                    <index key="Production personnel">Production personnel</index>
+                    <Presenter>Presenter</Presenter>
+                    <Performer>Performer</Performer>
+                    <Programmer>Programmer</Programmer>
+                    <Printmaker>Printmaker</Printmaker>
+                    <index key="Production company">Production company</index>
+                    <Producer>Producer</Producer>
+                    <index key="Production place">Production place</index>
+                    <index key="Production designer">Production designer</index>
+                    <Printer>Printer</Printer>
+                    <Provider>Provider</Provider>
+                    <index key="Patent applicant">Patent applicant</index>
+                    <index key="Plaintiff-appellee">Plaintiff-appellee</index>
+                    <Plaintiff>Plaintiff</Plaintiff>
+                    <index key="Patent holder">Patent holder</index>
+                    <index key="Plaintiff-appellant">Plaintiff-appellant</index>
+                    <index key="Publication place">Publication place</index>
+                    <Rubricator>Rubricator</Rubricator>
+                    <Recordist>Recordist</Recordist>
+                    <index key="Recording engineer">Recording engineer</index>
+                    <Addressee>Addressee</Addressee>
+                    <index key="Radio director">Radio director</index>
+                    <Redaktor>Redaktor</Redaktor>
+                    <Renderer>Renderer</Renderer>
+                    <Researcher>Researcher</Researcher>
+                    <Reviewer>Reviewer</Reviewer>
+                    <index key="Radio producer">Radio producer</index>
+                    <Repository>Repository</Repository>
+                    <Reporter>Reporter</Reporter>
+                    <index key="Responsible party">Responsible party</index>
+                    <index key="Respondent-appellee">Respondent-appellee</index>
+                    <Restager>Restager</Restager>
+                    <Respondent>Respondent</Respondent>
+                    <Restorationist>Restorationist</Restorationist>
+                    <index key="Respondent-appellant">Respondent-appellant</index>
+                    <index key="Research team head">Research team head</index>
+                    <index key="Research team member">Research team member</index>
+                    <index key="Scientific advisor">Scientific advisor</index>
+                    <Scenarist>Scenarist</Scenarist>
+                    <Sculptor>Sculptor</Sculptor>
+                    <Scribe>Scribe</Scribe>
+                    <index key="Sound designer">Sound designer</index>
+                    <Secretary>Secretary</Secretary>
+                    <index key="Stage director">Stage director</index>
+                    <Signer>Signer</Signer>
+                    <index key="Supporting host">Supporting host</index>
+                    <Seller>Seller</Seller>
+                    <Singer>Singer</Singer>
+                    <Speaker>Speaker</Speaker>
+                    <Sponsor>Sponsor</Sponsor>
+                    <index key="Second party">Second party</index>
+                    <Surveyor>Surveyor</Surveyor>
+                    <index key="Set designer">Set designer</index>
+                    <Setting>Setting</Setting>
+                    <Storyteller>Storyteller</Storyteller>
+                    <index key="Stage manager">Stage manager</index>
+                    <index key="Standards body">Standards body</index>
+                    <Stereotyper>Stereotyper</Stereotyper>
+                    <index key="Technical director">Technical director</index>
+                    <Teacher>Teacher</Teacher>
+                    <index key="Thesis advisor">Thesis advisor</index>
+                    <index key="Television director">Television director</index>
+                    <index key="Television producer">Television producer</index>
+                    <Transcriber>Transcriber</Transcriber>
+                    <Translator>Translator</Translator>
+                    <index key="Type designer">Type designer</index>
+                    <Typographer>Typographer</Typographer>
+                    <index key="University place">University place</index>
+                    <index key="Voice actor">Voice actor</index>
+                    <Videographer>Videographer</Videographer>
+                    <Vocalist>Vocalist</Vocalist>
+                    <index key="Writer of added commentary">Writer of added commentary</index>
+                    <index key="Writer of added lyrics">Writer of added lyrics</index>
+                    <index key="Writer of accompanying material">Writer of accompanying material</index>
+                    <index key="Writer of added text">Writer of added text</index>
+                    <Woodcutter>Woodcutter</Woodcutter>
+                    <index key="Wood engraver">Wood engraver</index>
+                    <index key="Writer of introduction">Writer of introduction</index>
+                    <Witness>Witness</Witness>
+                    <index key="Writer of preface">Writer of preface</index>
+                    <index key="Writer of supplementary textual content">Writer of supplementary textual content</index>
+                  </options>
+                  <title>Role</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;mods:role&gt;&lt;mods:roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/mods:roleTerm&gt;&lt;/mods:role&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:role/mods:roleTerm</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
+      <element name="subjects_group">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <title>Subjects</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="subjects">
+            <properties>
+              <type>tags</type>
+              <access>TRUE</access>
+              <description>Use full double-dash format with spaces, e.g. Open spaces -- Ontario -- Toronto</description>
+              <title>LC Subject Headings (LCSH)</title>
+              <tree>TRUE</tree>
+            </properties>
+            <children>
+              <element name="0">
+                <properties>
+                  <type>tag</type>
+                  <access>TRUE</access>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;subject authority="lcsh"&gt;&lt;topic&gt;%value%&lt;/topic&gt;&lt;/subject&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:subject[@authority='lcsh']/mods:topic</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
+      <element name="originInfo">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <title>Dates</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>originInfo</value>
+            </create>
+            <read>
+              <path>mods:originInfo</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="dateIssued">
+            <properties>
+              <type>date_popup</type>
+              <access>TRUE</access>
+              <description>Date of publication (if published) or last revised date.</description>
+              <title>Publication Date</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateIssued</value>
+                </create>
+                <read>
+                  <path>mods:dateIssued</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="dateOther">
+            <properties>
+              <type>date_popup</type>
+              <access>TRUE</access>
+              <description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
+              <title>Embargo Date</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;mods:dateOther type="dateAvailable"&gt;%value%&lt;/mods:dateOther&gt;</value>
+                </create>
+                <read>
+                  <path>mods:dateOther[@type="dateAvailable"]</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="licensing">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <title>Licensing</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="accessCondition">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <description>Copyright information related to the publication; could be related to who owns the copyright to the abstract, etc.</description>
+              <options>
+                <index key="Creative Commons Attribution 4.0 International Public License; https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC-BY) License</index>
+                <index key="All Rights Reserved">Full Copyright (no license)</index>
+              </options>
+              <title>Copyright Information</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;mods:accessCondition type="restrictionOnAccess"&gt;%value%&lt;/mods:accessCondition&gt;</value>
+                </create>
+                <read>
+                  <path>mods:accessCondition[@type='restrictionOnAccess']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="note_citation">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <description>If this work has been published, please provide as much information as possible (e.g., journal title, pages).</description>
+          <title>Citation</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;mods:note type="citation/reference"&gt;%value%&lt;/mods:note&gt;</value>
+            </create>
+            <read>
+              <path>mods:note[@type="citation/reference"]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="identifiers">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <title>Identifiers</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="isbn">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>Include hyphens in 10- or 13-digit number; e.g. 978-0-662-48548-3</description>
+              <title>International Standard Book Number (ISBN)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="isbn"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='isbn']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="doi">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>Begin with prefix number; e.g. 10.6084/m9.figshare.3142000; do not include http://dx.doi.org</description>
+              <title>Digital Object Identifier (DOI)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="doi"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='doi']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="uri">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>e.g. http://www.ncbi.nlm.nih.gov/pubmed/22722519; if the item has a DOI but not a URI, use the DOI prefixed by http://dx.doi.org/, e.g. http://dx.doi.org/10.1002/poi3.91</description>
+              <title>Uniform Resource Identifier (URI)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='uri']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="note">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <description>Any additional information about the item that may be relevant.</description>
+          <title>Note</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>note</value>
+            </create>
+            <read>
+              <path>mods:note[not(@*)]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+    </children>
+  </form>
 </definition>
