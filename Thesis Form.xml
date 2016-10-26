@@ -1712,24 +1712,11 @@
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <index key="Academic Administration">Academic Administration</index>
-                    <index key="Act II Studio">Act II Studio</index>
                     <index key="Aerospace Engineering">Aerospace Engineering</index>
                     <index key="Architectural Science">Architectural Science</index>
                     <index key="Arts and Contemporary Studies">Arts and Contemporary Studies</index>
-                    <index key="Bell Globemedia Chair">Bell Globemedia Chair</index>
-                    <BURSAR>BURSAR</BURSAR>
-                    <index key="CAW-Sam Gindin Chair in Social Justice and Democracy">CAW-Sam Gindin Chair in Social Justice and Democracy</index>
-                    <index key="Centre for Digital Humanities (CDH)">Centre for Digital Humanities (CDH)</index>
-                    <index key="Centre for Global Health and Health Equity">Centre for Global Health and Health Equity</index>
-                    <index key="Centre for Indigenous Governance">Centre for Indigenous Governance</index>
-                    <index key="Centre for Labour Management Relations">Centre for Labour Management Relations</index>
-                    <index key="Centre for Learning Technologies">Centre for Learning Technologies</index>
-                    <index key="Centre for Student Development and Counselling">Centre for Student Development and Counselling</index>
-                    <index key="Centre for Studies in Food Security">Centre for Studies in Food Security</index>
-                    <index key="Centre for Study of Commercial Activity">Centre for Study of Commercial Activity</index>
-                    <index key="Centre for Urban Energy">Centre for Urban Energy</index>
-                    <index key="Centre for Voluntary Sector Studies">Centre for Voluntary Sector Studies</index>
                     <index key="Chemical Engineering">Chemical Engineering</index>
                     <index key="Chemistry and Biology">Chemistry and Biology</index>
                     <index key="Civil Engineering">Civil Engineering</index>
@@ -1738,102 +1725,36 @@
                     <index key="Computer Science">Computer Science</index>
                     <index key="Criminal Justice and Criminology">Criminal Justice and Criminology</index>
                     <index key="Daphne Cockwell School of Nursing">Daphne Cockwell School of Nursing</index>
-                    <index key="Dean's Research Fund (DRF)">Dean's Research Fund (DRF)</index>
                     <index key="Digital Media Projects Office (DMP)">Digital Media Projects Office (DMP)</index>
                     <index key="Digital Media Zone">Digital Media Zone</index>
-                    <index key="Diversity Institute">Diversity Institute</index>
-                    <index key="Downtown East Community Development Collective (DECDC)">Downtown East Community Development Collective (DECDC)</index>
                     <Economics>Economics</Economics>
                     <index key="Electrical and Computer Engineering">Electrical and Computer Engineering</index>
-                    <index key="Employment and Educational Equity">Employment and Educational Equity</index>
                     <English>English</English>
-                    <index key="Entrepreneurship Research Institute">Entrepreneurship Research Institute</index>
                     <index key="Environmental Applied Science and Management">Environmental Applied Science and Management</index>
                     <index key="Experiential Design and Gaming Environments (EDGE) Lab">Experiential Design and Gaming Environments (EDGE) Lab</index>
-                    <index key="Faculty of Arts">Faculty of Arts</index>
-                    <index key="Faculty of Communication and Design">Faculty of Communication and Design</index>
-                    <index key="Faculty of Community Services">Faculty of Community Services</index>
                     <index key="Faculty of Engineering, Architecture and Science">Faculty of Engineering, Architecture and Science</index>
                     <index key="Film and Photography Preservation and Collections Management">Film and Photography Preservation and Collections Management</index>
-                    <index key="French and Spanish">French and Spanish</index>
-                    <index key="FRP Particpants' Voices">FRP Particpants' Voices</index>
-                    <index key="G. Raymond Chang School of Continuing Education">G. Raymond Chang School of Continuing Education</index>
-                    <index key="Geographic Analysis Program">Geographic Analysis Program</index>
-                    <Geography>Geography</Geography>
-                    <index key="Gerrard Resource Centre">Gerrard Resource Centre</index>
-                    <index key="Global Management Studies">Global Management Studies</index>
-                    <index key="Head Office">Head Office</index>
-                    <History>History</History>
-                    <index key="Human Resources Management/Organizational Behaviour (HRMOB)">Human Resources Management/Organizational Behaviour (HRMOB)</index>
                     <index key="Immigration and Settlement Studies">Immigration and Settlement Studies</index>
-                    <index key="Inclusive Media and Design Centre (IMDC)">Inclusive Media and Design Centre (IMDC)</index>
                     <index key="Industrial Engineering Program">Industrial Engineering Program</index>
-                    <index key="Infoscape Research Lab">Infoscape Research Lab</index>
-                    <index key="Institute for Stress and Wellbeing Research">Institute for Stress and Wellbeing Research</index>
-                    <index key="Institute for the Study of Corporate Social Responsibility">Institute for the Study of Corporate Social Responsibility</index>
                     <index key="Interior Design">Interior Design</index>
-                    <index key="Law Research Centre">Law Research Centre</index>
-                    <index key="Learning and Teaching Office">Learning and Teaching Office</index>
-                    <index key="Library and Archives">Library and Archives</index>
-                    <index key="Management Education Research Institute (MERI)">Management Education Research Institute (MERI)</index>
                     <Mathematics>Mathematics</Mathematics>
                     <index key="Mechanical and Industrial Engineering">Mechanical and Industrial Engineering</index>
-                    <index key="Midwifery Education Program">Midwifery Education Program</index>
-                    <index key="Modern Culture Multimedia Centre">Modern Culture Multimedia Centre</index>
-                    <index key="Modern Literature and Culture Research Center (MLC)">Modern Literature and Culture Research Center (MLC)</index>
                     <index key="Molecular Science">Molecular Science</index>
-                    <index key="Office of Research Services">Office of Research Services</index>
-                    <index key="Office of the Dean">Office of the Dean</index>
-                    <index key="Office of the President">Office of the President</index>
-                    <index key="Office of the Provost and Vice-President Academic">Office of the Provost and Vice-President Academic</index>
-                    <Other>Other</Other>
                     <Philosophy>Philosophy</Philosophy>
                     <Physics>Physics</Physics>
                     <index key="Policy Studies">Policy Studies</index>
                     <index key="Politics and Public Administration">Politics and Public Administration</index>
                     <Psychology>Psychology</Psychology>
-                    <index key="Psychology Research and Training Centre (PRTC)">Psychology Research and Training Centre (PRTC)</index>
-                    <index key="RBC Immigrant, Diversity and Inclusion Project">RBC Immigrant, Diversity and Inclusion Project</index>
-                    <index key="Research and Innovation">Research and Innovation</index>
-                    <index key="Rogers Communication Centre">Rogers Communication Centre</index>
-                    <index key="RTA School of Media">RTA School of Media</index>
-                    <index key="Ryerson Caribbean Research Centre">Ryerson Caribbean Research Centre</index>
-                    <index key="Ryerson Centre for Immigration and Settlement (RCIS)">Ryerson Centre for Immigration and Settlement (RCIS)</index>
                     <index key="Ryerson Image Centre (RIC)">Ryerson Image Centre (RIC)</index>
-                    <index key="Ryerson Institute for Aerospace Design and Innovation (RIADI)">Ryerson Institute for Aerospace Design and Innovation (RIADI)</index>
-                    <index key="Ryerson International Initiatives Fund (RIIF)">Ryerson International Initiatives Fund (RIIF)</index>
-                    <index key="Ryerson Journalism Alumni Association (RJAA)">Ryerson Journalism Alumni Association (RJAA)</index>
-                    <index key="Ryerson Journalism Research Centre (RJRC)">Ryerson Journalism Research Centre (RJRC)</index>
-                    <index key="School of Applied Geography">School of Applied Geography</index>
-                    <index key="School of Child and Youth Care">School of Child and Youth Care</index>
-                    <index key="School of Disability Studies">School of Disability Studies</index>
                     <index key="School of Early Childhood Education">School of Early Childhood Education</index>
-                    <index key="School of Fashion">School of Fashion</index>
-                    <index key="School of Graphic Communications Management">School of Graphic Communications Management</index>
-                    <index key="School of Health Services Management">School of Health Services Management</index>
                     <index key="School of Image Arts">School of Image Arts</index>
-                    <index key="School of Journalism">School of Journalism</index>
-                    <index key="School of Nutrition">School of Nutrition</index>
-                    <index key="School of Occupational and Public Health">School of Occupational and Public Health</index>
-                    <index key="School of Professional Communication">School of Professional Communication</index>
-                    <index key="School of Radio and Television Arts">School of Radio and Television Arts</index>
-                    <index key="School of Social Work">School of Social Work</index>
                     <index key="School of Urban and Regional Planning">School of Urban and Regional Planning</index>
-                    <index key="SMART Lab">SMART Lab</index>
+                    <index key="Social Work">Social Work</index>
                     <Sociology>Sociology</Sociology>
-                    <index key="Student Services">Student Services</index>
                     <index key="Ted Rogers School of Business Management">Ted Rogers School of Business Management</index>
-                    <index key="Ted Rogers School of Hospitality and Tourism Management">Ted Rogers School of Hospitality and Tourism Management</index>
                     <index key="Ted Rogers School of Information Technology Management">Ted Rogers School of Information Technology Management</index>
                     <index key="Ted Rogers School of Management">Ted Rogers School of Management</index>
-                    <index key="Ted Rogers School of Retail Management">Ted Rogers School of Retail Management</index>
-                    <index key="Theatre School">Theatre School</index>
-                    <index key="TRSM Accounting">TRSM Accounting</index>
-                    <index key="TRSM Law and Business">TRSM Law and Business</index>
-                    <index key="TRSM Marketing">TRSM Marketing</index>
-                    <index key="Writing Centre">Writing Centre</index>
                     <index key="Yeates School of Graduate Studies">Yeates School of Graduate Studies</index>
-                    <index key="Zone Learning">Zone Learning</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
