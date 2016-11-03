@@ -825,7 +825,7 @@
               <value>abstract</value>
             </create>
             <read>
-              <path>mods:abstract</path>
+              <path>mods:abstract/descendant-or-self::*[last()]</path>
               <context>parent</context>
             </read>
             <update>
