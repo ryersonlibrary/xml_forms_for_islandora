@@ -1744,7 +1744,7 @@
         <children>
           <element name="dateIssued">
             <properties>
-              <type>date_popup</type>
+              <type>datepicker_xml_form_element</type>
               <access>TRUE</access>
               <description>Date of publication (if published) or last revised date.</description>
               <title>Publication Date</title>
@@ -1773,7 +1773,7 @@
           </element>
           <element name="dateOther">
             <properties>
-              <type>date_popup</type>
+              <type>datepicker_xml_form_element</type>
               <access>TRUE</access>
               <description>Applies only to published works where the publisher has placed an embargo. Maximum 24 months from date of publication.</description>
               <title>Embargo Date</title>
