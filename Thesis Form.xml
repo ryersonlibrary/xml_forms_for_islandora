@@ -1767,15 +1767,13 @@
                     <index key="Professional Communication">Professional Communication</index>
                     <Psychology>Psychology</Psychology>
                     <index key="Public Policy and Administration">Public Policy and Administration</index>
-                    <index key="School of Early Childhood Education">School of Early Childhood Education</index>
-                    <index key="School of Image Arts">School of Image Arts</index>
                     <index key="Social Work">Social Work</index>
                     <Sociology>Sociology</Sociology>
                     <index key="Spatial Analysis">Spatial Analysis</index>
                     <index key="Urban Development">Urban Development</index>
-                    <index key="Ted Rogers School of Business Management">Ted Rogers School of Business Management</index>
-                    <index key="Ted Rogers School of Information Technology Management">Ted Rogers School of Information Technology Management</index>
-                    <index key="Ted Rogers School of Management">Ted Rogers School of Management</index>
+                    <index key="Business Management (Ted Rogers School of Management)">Business Management (Ted Rogers School of Management)</index>
+                    <index key="Information Technology Management (Ted Rogers School of Management)of Information Technology Management">Information Technology Management (Ted Rogers School of Management)</index>
+                    <index key="Management (Ted Rogers School of Management)">Management (Ted Rogers School of Management)</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
