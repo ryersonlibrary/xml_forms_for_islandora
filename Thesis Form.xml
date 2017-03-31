@@ -1723,7 +1723,7 @@
                 </properties>
                 <children/>
               </element>
-              <element name="department">
+              <element name="program">
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
@@ -1757,13 +1757,12 @@
                     <index key="Industrial Engineering Program">Industrial Engineering Program</index>
                     <index key="Interior Design">Interior Design</index>
                     <index key="Literatures of Modernity">Literatures of Modernity</index>
-                    <index key="Management of Technology and Innovation">Management of Technology and Innovation</index>
+                    <index key="Management of Technology and Innovation (Ted Rogers School of Management)">Management of Technology and Innovation (Ted Rogers School of Management)</index>
                     <index key="Mechanical and Industrial Engineering">Mechanical and Industrial Engineering</index>
                     <index key="Molecular Science">Molecular Science</index>
                     <Nursing>Nursing</Nursing>
                     <Philosophy>Philosophy</Philosophy>
                     <index key="Photographic Preservation and Collections Management">Photographic Preservation and Collections Management</index>
-                    <Physics>Physics</Physics>
                     <index key="Policy Studies">Policy Studies</index>
                     <index key="Professional Communication">Professional Communication</index>
                     <Psychology>Psychology</Psychology>
@@ -1777,11 +1776,10 @@
                     <index key="Ted Rogers School of Business Management">Ted Rogers School of Business Management</index>
                     <index key="Ted Rogers School of Information Technology Management">Ted Rogers School of Information Technology Management</index>
                     <index key="Ted Rogers School of Management">Ted Rogers School of Management</index>
-                    <index key="Yeates School of Graduate Studies">Yeates School of Graduate Studies</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
-                  <title>Department</title>
+                  <title>Program</title>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -1794,34 +1792,6 @@
                     </create>
                     <read>
                       <path>etd:department</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="discipline">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <title>Program</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>etd</prefix>
-                      <value>etd:discipline</value>
-                    </create>
-                    <read>
-                      <path>etd:discipline</path>
                       <context>parent</context>
                     </read>
                     <update>
